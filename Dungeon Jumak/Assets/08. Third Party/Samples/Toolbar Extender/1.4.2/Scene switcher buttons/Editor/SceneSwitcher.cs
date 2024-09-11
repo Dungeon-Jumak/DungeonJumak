@@ -40,26 +40,32 @@ namespace UnityToolbarExtender.Examples
                 SceneHelper.OpenScene("Start");
             }
 
-            if (GUILayout.Button(new GUIContent("Wait", "Waiting Scene")))
+            if (GUILayout.Button(new GUIContent("Main", "Main Scene")))
             {
-                SceneHelper.OpenScene("Waiting");
+                SceneHelper.OpenScene("Main");
             }
-
-            if (GUILayout.Button(new GUIContent("Market", "Market Scene")))
-            {
-                SceneHelper.OpenScene("Market");
-            }
-
 
             if (GUILayout.Button(new GUIContent("Stage1", "Stage1 Scene")))
             {
                 SceneHelper.OpenScene("Stage1", 1);
             }
 
-            if (GUILayout.Button(new GUIContent("Jumak", "Jumak Scene")))
+            if (GUILayout.Button(new GUIContent("Jumak", "Jumak Dev Scene")))
             {
                 SceneHelper.OpenScene("Jumak", 2);
             }
+
+            if (GUILayout.Button(new GUIContent("Market", "Market Dev Scene")))
+            {
+                SceneHelper.OpenScene("Market", 2);
+            }
+
+            if (GUILayout.Button(new GUIContent("UI", "Common UI Dev Scene")))
+            {
+                SceneHelper.OpenScene("UI", 2);
+            }
+
+
         }
     }
 
@@ -70,7 +76,7 @@ namespace UnityToolbarExtender.Examples
             var saved = EditorSceneManager.SaveCurrentModifiedScenesIfUserWantsTo();
             if (saved)
             {
-                _ = EditorSceneManager.OpenScene($"Assets/Scenes/{name}.unity");
+                _ = EditorSceneManager.OpenScene($"Assets/05. Scenes/{name}.unity");
             }
         }
 
@@ -79,11 +85,11 @@ namespace UnityToolbarExtender.Examples
             var saved = EditorSceneManager.SaveCurrentModifiedScenesIfUserWantsTo();
             if (saved && SceneCheck == 1)
             {
-                _ = EditorSceneManager.OpenScene($"Assets/Scenes/Dungeon/{name}.unity");
+                _ = EditorSceneManager.OpenScene($"Assets/05. Scenes/Dungeon/{name}.unity");
             }
             else if (saved && SceneCheck == 2)
             {
-                _ = EditorSceneManager.OpenScene($"Assets/Scenes/Jumak/{name}.unity");
+                _ = EditorSceneManager.OpenScene($"Assets/05. Scenes/Dev/{name}.unity");
             }
         }
     }
