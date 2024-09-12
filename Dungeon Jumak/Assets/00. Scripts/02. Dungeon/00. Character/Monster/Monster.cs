@@ -5,7 +5,7 @@ using UnityEngine;
 using Interfaces;
 
 //Ect
-using Data.Monster;
+using Data.Character;
 
 public class Monster : IDamageable, ITurnable, IMovable
 {

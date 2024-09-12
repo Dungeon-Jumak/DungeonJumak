@@ -1,14 +1,14 @@
 //Engine
 using UnityEngine;
 
-namespace Data.Monster
+namespace Data.Character
 {
-    [CreateAssetMenu(fileName = "MonsterData", menuName = "Scriptable/Monster")]
+    [CreateAssetMenu(fileName = "MonsterData", menuName = "Scriptable/Character/Monster")]
     public class MonsterData_Base : ScriptableObject
     {
         [Header("몬스터 정보")]
         [Tooltip("몬스터의 이름을 설정합니다.")]
-        [SerializeField] private string m_monsterName;
+        [SerializeField] private string m_name;
 
         [Space(10)]
         [Header("전투 스탯")]
@@ -26,7 +26,7 @@ namespace Data.Monster
         [Tooltip("몬스터의 이동 속도를 설정합니다.")]
         [SerializeField] private float m_speed;
 
-        public string MonsterName { get { return m_monsterName; } }
+        public string MonsterName { get { return m_name; } }
         public float Damage { get { return m_attackDamage; } }
         public float Hp { get { return m_hp; } }
         public float Xp { get { return m_xp; } }
