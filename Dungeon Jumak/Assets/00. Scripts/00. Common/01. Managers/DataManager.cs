@@ -1,4 +1,4 @@
-// System
+ï»¿// System
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -8,14 +8,14 @@ using UnityEngine;
 
 public class DataManager<T>
 {
-    // ÆÄÀÏ °æ·Î
+    // íŒŒì¼ ê²½ë¡œ
     private static string dataFilePath = Application.persistentDataPath + "/GameData.json";
 
     [Serializable]
     public class SerializableData
     {
-        public int id;  // ½Äº°ÀÚ
-        public T data;   // ½ÇÁ¦ µ¥ÀÌÅÍ
+        public int id;  // ì‹ë³„ì
+        public T data;   // ì‹¤ì œ ë°ì´í„°
 
         public SerializableData(int id, T data)
         {
@@ -26,7 +26,7 @@ public class DataManager<T>
 
     public class DataSaver
     {
-        // µ¥ÀÌÅÍ ¸®½ºÆ®¸¦ JSON Çü½ÄÀ¸·Î º¯È¯ÇÏ¿© ÆÄÀÏ¿¡¼­ °ü¸®
+        // ë°ì´í„° ë¦¬ìŠ¤íŠ¸ë¥¼ JSON í˜•ì‹ìœ¼ë¡œ ë³€í™˜í•˜ì—¬ íŒŒì¼ì—ì„œ ê´€ë¦¬
         public static void SaveData(List<SerializableData> dataList)
         {
             string jsonData = JsonUtility.ToJson(dataList);
@@ -36,7 +36,7 @@ public class DataManager<T>
 
     public class DataLoader
     {
-        // µ¥ÀÌÅÍ ÆÄÀÏ¿¡¼­ µ¥ÀÌÅÍ ¸®½ºÆ®¸¦ ºÒ·¯¿È
+        // ë°ì´í„° íŒŒì¼ì—ì„œ ë°ì´í„° ë¦¬ìŠ¤íŠ¸ë¥¼ ë¶ˆëŸ¬ì˜´
         public static List<SerializableData> LoadData()
         {
             List<SerializableData> dataList = new List<SerializableData>();
@@ -48,13 +48,13 @@ public class DataManager<T>
             }
             else
             {
-                Debug.LogWarning("ºÒ·¯¿Ã µ¥ÀÌÅÍ°¡ ¾ø½À´Ï´Ù.");
+                Debug.LogWarning("ë¶ˆëŸ¬ì˜¬ ë°ì´í„°ê°€ ì—†ìŠµë‹ˆë‹¤.");
             }
 
             return dataList;
         }
 
-        // µ¥ÀÌÅÍ ¸®½ºÆ®¸¦ Dictionary·Î º¯È¯ÇÏ¿© ¹İÈ¯
+        // ë°ì´í„° ë¦¬ìŠ¤íŠ¸ë¥¼ Dictionaryë¡œ ë³€í™˜í•˜ì—¬ ë°˜í™˜
         public static Dictionary<int, T> GetDataDictionary(List<SerializableData> dataList)
         {
             Dictionary<int, T> dataDictionary = new Dictionary<int, T>();
@@ -67,7 +67,7 @@ public class DataManager<T>
             return dataDictionary;
         }
 
-        // Dictionary¿¡¼­ ID¸¦ »ç¿ëÇÏ¿© µ¥ÀÌÅÍ¸¦ Ã£¾Æ ¹İÈ¯
+        // Dictionaryì—ì„œ IDë¥¼ ì‚¬ìš©í•˜ì—¬ ë°ì´í„°ë¥¼ ì°¾ì•„ ë°˜í™˜
         public static T GetDataById(Dictionary<int, T> dataDictionary, int id)
         {
             T resultData;
@@ -78,7 +78,7 @@ public class DataManager<T>
             }
             else
             {
-                Debug.LogWarning("ID¿¡ ÇØ´çÇÏ´Â µ¥ÀÌÅÍ¸¦ Ã£À» ¼ö ¾ø½À´Ï´Ù.");
+                Debug.LogWarning("IDì— í•´ë‹¹í•˜ëŠ” ë°ì´í„°ë¥¼ ì°¾ì„ ìˆ˜ ì—†ìŠµë‹ˆë‹¤.");
                 return default(T);
             }
         }

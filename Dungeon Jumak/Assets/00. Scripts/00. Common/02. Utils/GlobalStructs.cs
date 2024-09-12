@@ -1,11 +1,11 @@
-//Engine
+ï»¿//Engine
 using UnityEngine;
 
 namespace Utils.Structs
 {
 
     /// <summary>
-    /// ±Û·Î¹úÇÏ°Ô ¾²ÀÏ Structs ±¸Á¶Ã¼µéÀ» ¸ğ¾ÆµÎ´Â °ø°£ÀÔ´Ï´Ù.
+    /// ê¸€ë¡œë²Œí•˜ê²Œ ì“°ì¼ Structs êµ¬ì¡°ì²´ë“¤ì„ ëª¨ì•„ë‘ëŠ” ê³µê°„ì…ë‹ˆë‹¤.
     /// </summary>
 
     /*

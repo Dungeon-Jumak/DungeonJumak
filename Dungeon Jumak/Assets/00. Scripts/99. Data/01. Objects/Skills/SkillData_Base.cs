@@ -1,4 +1,4 @@
-//Engine
+ï»¿//Engine
 using UnityEngine;
 
 namespace Data.Object
@@ -6,11 +6,11 @@ namespace Data.Object
     [CreateAssetMenu(fileName = "SkillData", menuName = "Scriptable/Skill")]
     public class SkillData_Base : ScriptableObject
     {
-        [Header("½ºÅ³ Á¤º¸")]
-        [Tooltip("½ºÅ³ÀÇ ÀÌ¸§À» ¼³Á¤ÇÕ´Ï´Ù.")]
+        [Header("ìŠ¤í‚¬ ì •ë³´")]
+        [Tooltip("ìŠ¤í‚¬ì˜ ì´ë¦„ì„ ì„¤ì •í•©ë‹ˆë‹¤.")]
         [SerializeField] private string m_name;
 
-        [Tooltip("½ºÅ³ÀÌ ¸ó½ºÅÍ¿¡°Ô °¡ÇÏ´Â °ø°İ µ¥¹ÌÁö ¼öÄ¡¸¦ ¼³Á¤ÇÕ´Ï´Ù.")]
+        [Tooltip("ìŠ¤í‚¬ì´ ëª¬ìŠ¤í„°ì—ê²Œ ê°€í•˜ëŠ” ê³µê²© ë°ë¯¸ì§€ ìˆ˜ì¹˜ë¥¼ ì„¤ì •í•©ë‹ˆë‹¤.")]
         [SerializeField] private float m_attackDamage;
     }
 }

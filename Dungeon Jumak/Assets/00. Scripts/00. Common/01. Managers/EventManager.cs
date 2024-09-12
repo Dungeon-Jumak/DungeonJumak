@@ -1,4 +1,4 @@
-//System
+ï»¿//System
 using System;
 using System.Collections.Generic;
 
@@ -19,16 +19,16 @@ public class TransformEventArgs : EventArgs
 }
 
 /// <summary>
-/// ÀÌº¥Æ®¸¦ °ü¸®ÇÏ´Â ½Ì±ÛÅæ ÀÌº¥Æ® ¸Å´ÏÀú Å¬·¡½ºÀÔ´Ï´Ù.
-/// ´Ù¾çÇÑ ¿­°ÅÇü Å¸ÀÔ¿¡ ´ëÇØ ÀÌº¥Æ®¸¦ µî·ÏÇÏ°í ½ÇÇàÇÒ ¼ö ÀÖ½À´Ï´Ù.
+/// ì´ë²¤íŠ¸ë¥¼ ê´€ë¦¬í•˜ëŠ” ì‹±ê¸€í†¤ ì´ë²¤íŠ¸ ë§¤ë‹ˆì € í´ë˜ìŠ¤ì…ë‹ˆë‹¤.
+/// ë‹¤ì–‘í•œ ì—´ê±°í˜• íƒ€ì…ì— ëŒ€í•´ ì´ë²¤íŠ¸ë¥¼ ë“±ë¡í•˜ê³  ì‹¤í–‰í•  ìˆ˜ ìˆìŠµë‹ˆë‹¤.
 /// </summary>
-/// <typeparam name="TEnum">¿­°ÅÇü Å¸ÀÔ</typeparam>
+/// <typeparam name="TEnum">ì—´ê±°í˜• íƒ€ì…</typeparam>
 
 public class EventManager<TEnum> where TEnum : Enum
 {
     #region Singleton
 
-    // ½Ì±ÛÅæ ÀÎ½ºÅÏ½º
+    // ì‹±ê¸€í†¤ ì¸ìŠ¤í„´ìŠ¤
     private static EventManager<TEnum> s_Instance;
     public static EventManager<TEnum> Instance
     {
@@ -48,10 +48,10 @@ public class EventManager<TEnum> where TEnum : Enum
     private Dictionary<TEnum, List<OnEvent>> m_Listeners = new Dictionary<TEnum, List<OnEvent>>();
 
     /// <summary>
-    /// ¸®½º³Ê¸¦ Ãß°¡ÇÏ´Â ÇÔ¼ö
+    /// ë¦¬ìŠ¤ë„ˆë¥¼ ì¶”ê°€í•˜ëŠ” í•¨ìˆ˜
     /// </summary>
-    /// <param name="_eventType">ÀÌº¥Æ® Å¸ÀÔ</param>
-    /// <param name="_listener">ÀÌº¥Æ® ¸®½º³Ê</param>
+    /// <param name="_eventType">ì´ë²¤íŠ¸ íƒ€ì…</param>
+    /// <param name="_listener">ì´ë²¤íŠ¸ ë¦¬ìŠ¤ë„ˆ</param>
     public void AddListener(TEnum _eventType, OnEvent _listener)
     {
         if (!m_Listeners.TryGetValue(_eventType, out var listenList))
@@ -63,11 +63,11 @@ public class EventManager<TEnum> where TEnum : Enum
     }
 
     /// <summary>
-    /// ÀÌº¥Æ®¸¦ ¹ß»ı½ÃÅ°´Â ÇÔ¼ö
+    /// ì´ë²¤íŠ¸ë¥¼ ë°œìƒì‹œí‚¤ëŠ” í•¨ìˆ˜
     /// </summary>
-    /// <param name="_eventType">ÀÌº¥Æ® Å¸ÀÔ</param>
-    /// <param name="_sender">ÀÌº¥Æ®¸¦ ¹ß»ı½ÃÅ² °´Ã¼</param>
-    /// <param name="_args">ÀÌº¥Æ®¿Í ÇÔ²² Àü´ŞµÇ´Â Ãß°¡ µ¥ÀÌÅÍ</param>
+    /// <param name="_eventType">ì´ë²¤íŠ¸ íƒ€ì…</param>
+    /// <param name="_sender">ì´ë²¤íŠ¸ë¥¼ ë°œìƒì‹œí‚¨ ê°ì²´</param>
+    /// <param name="_args">ì´ë²¤íŠ¸ì™€ í•¨ê»˜ ì „ë‹¬ë˜ëŠ” ì¶”ê°€ ë°ì´í„°</param>
     public void PostNotification(TEnum _eventType, Component _sender, TransformEventArgs _args = null)
     {
         if (!m_Listeners.TryGetValue(_eventType, out var listenList))
@@ -80,10 +80,10 @@ public class EventManager<TEnum> where TEnum : Enum
     }
 
     /// <summary>
-    /// ¸®½º³Ê¸¦ Á¦°ÅÇÏ´Â ÇÔ¼ö
+    /// ë¦¬ìŠ¤ë„ˆë¥¼ ì œê±°í•˜ëŠ” í•¨ìˆ˜
     /// </summary>
-    /// <param name="_eventType">ÀÌº¥Æ® Å¸ÀÔ</param>
-    /// <param name="_target">Á¦°ÅÇÒ Å¸°Ù °´Ã¼</param>
+    /// <param name="_eventType">ì´ë²¤íŠ¸ íƒ€ì…</param>
+    /// <param name="_target">ì œê±°í•  íƒ€ê²Ÿ ê°ì²´</param>
     public void RemoveListener(TEnum _eventType, object _target)
     {
         if (!m_Listeners.ContainsKey(_eventType))
@@ -103,16 +103,16 @@ public class EventManager<TEnum> where TEnum : Enum
     }
 
     /// <summary>
-    /// Æ¯Á¤ ÀÌº¥Æ® Å¸ÀÔÀÇ ¸ğµç ¸®½º³Ê¸¦ Á¦°ÅÇÏ´Â ÇÔ¼ö
+    /// íŠ¹ì • ì´ë²¤íŠ¸ íƒ€ì…ì˜ ëª¨ë“  ë¦¬ìŠ¤ë„ˆë¥¼ ì œê±°í•˜ëŠ” í•¨ìˆ˜
     /// </summary>
-    /// <param name="_eventType">ÀÌº¥Æ® Å¸ÀÔ</param>
+    /// <param name="_eventType">ì´ë²¤íŠ¸ íƒ€ì…</param>
     public void RemoveEvent(TEnum _eventType)
     {
         m_Listeners.Remove(_eventType);
     }
 
     /// <summary>
-    /// null °ªÀÌ Æ÷ÇÔµÈ ¸®½º³ÊµéÀ» Á¦°ÅÇÏ´Â ÇÔ¼ö
+    /// null ê°’ì´ í¬í•¨ëœ ë¦¬ìŠ¤ë„ˆë“¤ì„ ì œê±°í•˜ëŠ” í•¨ìˆ˜
     /// </summary>
     public void RemoveRedundancies()
     {

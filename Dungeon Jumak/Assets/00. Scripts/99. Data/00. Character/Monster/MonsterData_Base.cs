@@ -1,4 +1,4 @@
-//Engine
+ï»¿//Engine
 using UnityEngine;
 
 namespace Data.Character
@@ -6,24 +6,24 @@ namespace Data.Character
     [CreateAssetMenu(fileName = "MonsterData", menuName = "Scriptable/Character/Monster")]
     public class MonsterData_Base : ScriptableObject
     {
-        [Header("¸ó½ºÅÍ Á¤º¸")]
-        [Tooltip("¸ó½ºÅÍÀÇ ÀÌ¸§À» ¼³Á¤ÇÕ´Ï´Ù.")]
+        [Header("ëª¬ìŠ¤í„° ì •ë³´")]
+        [Tooltip("ëª¬ìŠ¤í„°ì˜ ì´ë¦„ì„ ì„¤ì •í•©ë‹ˆë‹¤.")]
         [SerializeField] private string m_name;
 
         [Space(10)]
-        [Header("ÀüÅõ ½ºÅÈ")]
-        [Tooltip("¸ó½ºÅÍ°¡ ÇÃ·¹ÀÌ¾î¿¡°Ô °¡ÇÏ´Â °ø°İ µ¥¹ÌÁö ¼öÄ¡¸¦ ¼³Á¤ÇÕ´Ï´Ù.")]
+        [Header("ì „íˆ¬ ìŠ¤íƒ¯")]
+        [Tooltip("ëª¬ìŠ¤í„°ê°€ í”Œë ˆì´ì–´ì—ê²Œ ê°€í•˜ëŠ” ê³µê²© ë°ë¯¸ì§€ ìˆ˜ì¹˜ë¥¼ ì„¤ì •í•©ë‹ˆë‹¤.")]
         [SerializeField] private float m_attackDamage;
 
-        [Tooltip("¸ó½ºÅÍÀÇ Ã¼·Â(HP)¸¦ ¼³Á¤ÇÕ´Ï´Ù.")]
+        [Tooltip("ëª¬ìŠ¤í„°ì˜ ì²´ë ¥(HP)ë¥¼ ì„¤ì •í•©ë‹ˆë‹¤.")]
         [SerializeField] private float m_hp;
 
-        [Tooltip("¸ó½ºÅÍ Ã³Ä¡ ½Ã ÇÃ·¹ÀÌ¾î¿¡°Ô Á¦°øÇÏ´Â °æÇèÄ¡(XP)¸¦ ¼³Á¤ÇÕ´Ï´Ù.")]
+        [Tooltip("ëª¬ìŠ¤í„° ì²˜ì¹˜ ì‹œ í”Œë ˆì´ì–´ì—ê²Œ ì œê³µí•˜ëŠ” ê²½í—˜ì¹˜(XP)ë¥¼ ì„¤ì •í•©ë‹ˆë‹¤.")]
         [SerializeField] private float m_xp;
 
         [Space(10)]
-        [Header("ÀÌµ¿ ½ºÅÈ")]
-        [Tooltip("¸ó½ºÅÍÀÇ ÀÌµ¿ ¼Óµµ¸¦ ¼³Á¤ÇÕ´Ï´Ù.")]
+        [Header("ì´ë™ ìŠ¤íƒ¯")]
+        [Tooltip("ëª¬ìŠ¤í„°ì˜ ì´ë™ ì†ë„ë¥¼ ì„¤ì •í•©ë‹ˆë‹¤.")]
         [SerializeField] private float m_speed;
 
         public string MonsterName { get { return m_name; } }

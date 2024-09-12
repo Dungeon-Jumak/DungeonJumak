@@ -1,10 +1,10 @@
-//Engine
+ï»¿//Engine
 using UnityEngine;
 
 namespace Utils.EnumTypes {
 
     /// <summary>
-    /// ±Û·Î¹úÇÏ°Ô ¾²ÀÏ Enum ¿­°ÅÇü Å¸ÀÔµéÀ» ¸ğ¾ÆµÎ´Â °ø°£ÀÔ´Ï´Ù.
+    /// ê¸€ë¡œë²Œí•˜ê²Œ ì“°ì¼ Enum ì—´ê±°í˜• íƒ€ì…ë“¤ì„ ëª¨ì•„ë‘ëŠ” ê³µê°„ì…ë‹ˆë‹¤.
     /// </summary>
 
     /*

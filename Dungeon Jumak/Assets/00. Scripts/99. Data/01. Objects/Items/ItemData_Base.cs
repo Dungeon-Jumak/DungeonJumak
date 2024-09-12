@@ -1,4 +1,4 @@
-//Engine
+ï»¿//Engine
 using UnityEngine;
 
 namespace Data.Object
@@ -6,8 +6,8 @@ namespace Data.Object
     [CreateAssetMenu(fileName = "ItemData", menuName = "Scriptable/Item")]
     public class ItemData_Base : ScriptableObject
     {
-        [Header("¾ÆÀÌÅÛ Á¤º¸")]
-        [Tooltip("¾ÆÀÌÅÛÀÇ ÀÌ¸§À» ¼³Á¤ÇÕ´Ï´Ù.")]
+        [Header("ì•„ì´í…œ ì •ë³´")]
+        [Tooltip("ì•„ì´í…œì˜ ì´ë¦„ì„ ì„¤ì •í•©ë‹ˆë‹¤.")]
         [SerializeField] private string m_name;
     }
 }

@@ -1,10 +1,10 @@
-// Engine
+﻿// Engine
 using UnityEngine;
 
 /// <summary>
-/// ���� ��ü�� �����ϴ� �̱��� ���� �Ŵ��� Ŭ�����Դϴ�.
-/// �ٸ� �Ŵ������� �̱���ó�� ����ϱ� ���� �ҷ����� �뵵�θ� �ִ��� Ȱ���ϰ� 
-/// �߰����� ����� �ִ��� �ٸ� ��ũ��Ʈ�� Ȱ���ϵ��� �սô�.
+/// 게임 전체를 관리하는 싱글톤 게임 매니저 클래스입니다.
+/// 다른 매니저들을 싱글톤처럼 사용하기 위해 불러오는 용도로만 최대한 활용하고 
+/// 추가적인 기능은 최대한 다른 스크립트를 활용하도록 합시다.
 /// </summary>
 public class GameManager : MonoBehaviour
 {
