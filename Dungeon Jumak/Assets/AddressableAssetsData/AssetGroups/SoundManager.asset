@@ -1,0 +1,205 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: SoundManager
+  m_EditorClassIdentifier: 
+  m_GroupName: SoundManager
+  m_Data:
+    m_SerializedData: []
+  m_GUID: 7fcc11fd573412f48902f894cb7a4bc4
+  m_SerializeEntries:
+  - m_GUID: 8bf587316400e2b4ea7154c1f63c0090
+    m_Address: Assets/01. Resources/Audio
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 873d45cb4ad3a9540919ea13a64ad364
+    m_Address: Assets/01. Resources/Audio/Mixer
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 171084603a9e50a4f8315f2990be961f
+    m_Address: Assets/01. Resources/Audio/SFX/Dungeon
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 71b3198e6e85ff44e829baed1bee0561
+    m_Address: Assets/01. Resources/Audio/SFX
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 4ae24e740548074468c153c946c12e3f
+    m_Address: Assets/01. Resources/Audio/BGM
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 076ad47c07028fb49afe0e1aad3e400d
+    m_Address: Assets/01. Resources/Audio/BGM/Dungeon Map.wav
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - BGM
+  - m_GUID: 69226adf9a020874b965a33b58daa390
+    m_Address: Assets/01. Resources/Audio/BGM/Map Back.wav
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - BGM
+  - m_GUID: 04af2d33f7fca794a93ae01ce2bb0dd6
+    m_Address: Assets/01. Resources/Audio/SFX/Main/Get Coin.wav
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main_SFX
+  - m_GUID: db1d9bb24d91aec45b2a5e6fcf9adb3b
+    m_Address: Assets/01. Resources/Audio/SFX/Main/MiniGame Failure.wav
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main_SFX
+  - m_GUID: e78160233e7bb3e4c905f5e3e9edf4f7
+    m_Address: Assets/01. Resources/Audio/SFX/Main/Eating Gukbab.wav
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main_SFX
+  - m_GUID: 9385286416f6a3349b2823fefa26ddd1
+    m_Address: Assets/01. Resources/Audio/SFX/Main/Place Food.wav
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main_SFX
+  - m_GUID: 87f9a4360db47604aaf4e1eefe7bcb5a
+    m_Address: Assets/01. Resources/Audio/SFX/Main/Baking Pajeon.wav
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main_SFX
+  - m_GUID: 2f65ddf587c87674f91e560f9fbc3ce8
+    m_Address: "Assets/01. Resources/Audio/SFX/Main/Make Fire (\uC794\uD5A5).wav"
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main_SFX
+  - m_GUID: 3ae133f862d1f63479b810fa03d6cf2f
+    m_Address: Assets/01. Resources/Audio/SFX/Main/Drink RiceJuice.wav
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main_SFX
+  - m_GUID: 93d049481e4bebb4b9bf006fa9675582
+    m_Address: Assets/01. Resources/Audio/SFX/ETC/Calculate
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - ETC_SFX
+  - m_GUID: 5a1586307d461d14caccef4dde5be5fe
+    m_Address: Assets/01. Resources/Audio/SFX/Dungeon/Level Up.wav
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Dungeon_SFX
+  - m_GUID: 60611c686ad6eab45877e45c3c8df36e
+    m_Address: Assets/01. Resources/Audio/SFX/Main
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main_SFX
+  - m_GUID: f448ee6897102924289070be23a16c86
+    m_Address: Assets/01. Resources/Audio/SFX/ETC
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - ETC_SFX
+  - m_GUID: 76af796387ae011419a98c114ba619bd
+    m_Address: Assets/01. Resources/Audio/BGM/Dungeon Stage1.wav
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - BGM
+  - m_GUID: 80d42678b93f55b49aa4729a045c5470
+    m_Address: Assets/01. Resources/Audio/BGM/Shop.wav
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - BGM
+  - m_GUID: fe8ec34546584e846ac34384daab04ed
+    m_Address: Assets/01. Resources/Audio/BGM/Jumak.wav
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - BGM
+  - m_GUID: 0851ccdc5b2b6b6468582ad16c492a79
+    m_Address: Assets/01. Resources/Audio/BGM/Waiting Scene.wav
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - BGM
+  - m_GUID: 3b961586bd2977c4c877065884e8cedc
+    m_Address: Assets/01. Resources/Audio/BGM/Map Front.wav
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - BGM
+  - m_GUID: 52acef4d98a6eda4e9e099f676be53b2
+    m_Address: Assets/01. Resources/Audio/SFX/Main/Cooking Sound.wav
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main_SFX
+  - m_GUID: 4e5c719fbf54a5c45b60e13dca0f8c33
+    m_Address: Assets/01. Resources/Audio/SFX/Main/Pick Up Food.wav
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main_SFX
+  - m_GUID: 7f8209d39c54eb043b8ebbef4267c777
+    m_Address: Assets/01. Resources/Audio/SFX/Main/Throw Away.wav
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main_SFX
+  - m_GUID: 08643511d11038d4e848b5e1cc8ae00e
+    m_Address: Assets/01. Resources/Audio/SFX/Main/MiniGame Success.wav
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main_SFX
+  - m_GUID: 12661a5337e4fae4d8c9a50c202ba51d
+    m_Address: Assets/01. Resources/Audio/SFX/Main/Walk Sound1.wav
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main_SFX
+  - m_GUID: 6fb885514e5079741be8979c036ccd3f
+    m_Address: Assets/01. Resources/Audio/SFX/Main/Make Fire.wav
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main_SFX
+  - m_GUID: dda9e560835264c44b259de98adce061
+    m_Address: Assets/01. Resources/Audio/Mixer/Audio Mixer.mixer
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Mixer
+  - m_GUID: aab9d4cb19c977e4099d397fd3cd1d9c
+    m_Address: Assets/01. Resources/Audio/SFX/Dungeon/Player Hit.wav
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Dungeon_SFX
+  - m_GUID: 8c5d545588a7d834fa7cae8e67d212b3
+    m_Address: Assets/01. Resources/Audio/SFX/Dungeon/Monster Hit.wav
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Dungeon_SFX
+  - m_GUID: 1e90032b2f301824981cbac7fb2d0ded
+    m_Address: Assets/01. Resources/Audio/SFX/Dungeon/Draw Magic.wav
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Dungeon_SFX
+  - m_GUID: 1fe94bf4b4e5c6246804fa9ee13398c1
+    m_Address: Assets/01. Resources/Audio/SFX/Dungeon/Pick Up Item.wav
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Dungeon_SFX
+  - m_GUID: 991652e4094164746b6f137d04a2581d
+    m_Address: Assets/01. Resources/Audio/SFX/Dungeon/Fire Shield.wav
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Dungeon_SFX
+  - m_GUID: 24d5542f3358a8c478f39e42d3da367c
+    m_Address: Assets/01. Resources/Audio/SFX/Dungeon/Fire Ball.wav
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Dungeon_SFX
+  - m_GUID: f7470b51e28c1214ca71e52dd261d6df
+    m_Address: Assets/01. Resources/Audio/SFX/Dungeon/Pig Hit.wav
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Dungeon_SFX
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: 979ede1356bc65a4090c27709eca3218, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: f48324f3b1ab37d47a27985659e636fd, type: 2}
+    - {fileID: 11400000, guid: 7bcc26e9a0cf5d145a60b895039f8258, type: 2}
