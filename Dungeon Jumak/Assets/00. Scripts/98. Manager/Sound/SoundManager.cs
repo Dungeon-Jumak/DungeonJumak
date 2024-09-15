@@ -169,7 +169,7 @@ public class SoundManager : MonoBehaviour
     {
         foreach (Define.SFX_Label labelEnum in System.Enum.GetValues(typeof(Define.SFX_Label)))
         {
-            string label = labelEnum.ToString();
+            string label = labelEnum.ToString(); // 열거형을 문자열로 변환
             var handle = Addressables.LoadAssetsAsync<AudioClip>(label, null);
             await handle.Task;
 
