@@ -1,4 +1,4 @@
-//System
+ï»¿//System
 using System.Collections;
 using System.Collections.Generic;
 
@@ -13,7 +13,7 @@ public class UI_PopUp : UI_Base
     }
 
     /// <summary>
-    /// ÆË¾÷À» ´İ±â À§ÇÑ ¸Ş¼Òµå
+    /// íŒì—…ì„ ë‹«ê¸° ìœ„í•œ ë©”ì†Œë“œ
     /// </summary>
     public virtual void ClosePopUpUI()
     {

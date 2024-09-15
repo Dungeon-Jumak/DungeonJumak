@@ -1,4 +1,4 @@
-//System
+ï»¿//System
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -22,13 +22,13 @@ public class UI_DefaultPopUp : UI_PopUp
 
     public override void Init()
     {
-        //ºÎ¸ğ ÃÊ±âÈ­ ÇÔ¼ö ¿À¹ö¶óÀÌµù
+        //ë¶€ëª¨ ì´ˆê¸°í™” í•¨ìˆ˜ ì˜¤ë²„ë¼ì´ë”©
         base.Init();
 
-        //¿ÀºêÁ§Æ® ¹ÙÀÎµù
+        //ì˜¤ë¸Œì íŠ¸ ë°”ì¸ë”©
         Bind<Button>(typeof(Buttons));
 
-        //ÀÌº¥Æ® ¹ÙÀÎµù
+        //ì´ë²¤íŠ¸ ë°”ì¸ë”©
         GetButton((int)Buttons.Dim).gameObject.BindEvent(ClosePopUp);
     }
 

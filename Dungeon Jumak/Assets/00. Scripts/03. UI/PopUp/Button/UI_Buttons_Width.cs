@@ -1,4 +1,4 @@
-//System
+﻿//System
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -38,6 +38,6 @@ public class UI_Buttons_Width : UI_PopUp
 
     public void OpenDefaultPopUp(PointerEventData _data)
     {
-        GameManager.UI.ShowPopupUI<UI_PopUp>("DefaultPopUp");
+        GameManager.UI.ShowPopupUI<UI_PopUp>("DefaultPopUp  ");
     }
 }

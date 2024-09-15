@@ -1,4 +1,4 @@
-//System
+ï»¿//System
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -8,39 +8,39 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-//¸ğµç UIµéÀÇ Á¶»ó Å¬·¡½º
+//ëª¨ë“  UIë“¤ì˜ ì¡°ìƒ í´ë˜ìŠ¤
 public class UI_Base : MonoBehaviour
 {
     protected Dictionary<Type, UnityEngine.Object[]> m_objects = new Dictionary<Type, UnityEngine.Object[]>();
 
     /// <summary>
-    /// UIÀÇ ÀÌ¸§À» Ã£¾Æ ¹ÙÀÎµùÇØÁÖ´Â ÇÔ¼ö
+    /// UIì˜ ì´ë¦„ì„ ì°¾ì•„ ë°”ì¸ë”©í•´ì£¼ëŠ” í•¨ìˆ˜
     /// </summary>
     /// <typeparam name="T"></typeparam>
     /// <param name="type"></param>
     protected void Bind<T> (Type _type) where T : UnityEngine.Object
     {
-        string[] names = Enum.GetNames(_type);                                  //ÇØ´çÇÏ´Â Å¸ÀÓÀÇ Enum¾ÈÀÇ ¿ä¼ÒµéÀ» ¹è¿­¿¡ ºÒ·¯¿È
-        UnityEngine.Object[] objects = new UnityEngine.Object[names.Length];    //ºÒ·¯¿Â ¿ä¼Ò ¹è¿­ÀÇ ±æÀÌ ¸¸Å­ ¿ÀºêÁ§Æ® ¹è¿­À» »ı¼º
-        m_objects.Add(typeof(T), objects);                                      //µñ¼Å´õ¸®¿¡ ¿ÀºêÁ§Æ® Ãß°¡
+        string[] names = Enum.GetNames(_type);                                  //í•´ë‹¹í•˜ëŠ” íƒ€ì„ì˜ Enumì•ˆì˜ ìš”ì†Œë“¤ì„ ë°°ì—´ì— ë¶ˆëŸ¬ì˜´
+        UnityEngine.Object[] objects = new UnityEngine.Object[names.Length];    //ë¶ˆëŸ¬ì˜¨ ìš”ì†Œ ë°°ì—´ì˜ ê¸¸ì´ ë§Œí¼ ì˜¤ë¸Œì íŠ¸ ë°°ì—´ì„ ìƒì„±
+        m_objects.Add(typeof(T), objects);                                      //ë”•ì…”ë”ë¦¬ì— ì˜¤ë¸Œì íŠ¸ ì¶”ê°€
 
-        for (int i = 0; i < names.Length; i++)                                  //¿ä¼ÒÀÇ ±æÀÌ¸¸Å­ ¹İº¹
+        for (int i = 0; i < names.Length; i++)                                  //ìš”ì†Œì˜ ê¸¸ì´ë§Œí¼ ë°˜ë³µ
         {
-            if (typeof(T) == typeof(GameObject))                                //Á¦³×¸¯ Å¸ÀÔÀÌ GameObjectÀÏ °æ¿ì
-                objects[i] = Util.FindChild(gameObject, names[i], true);        //°ÔÀÓ ¿ÀºêÁ§Æ®¸¸ Ã£´Â FindChild È£Ãâ (¸ğµç ÀÚ½ÄµéÀ» Å½»ö)
-            else                                                                //Á¦³×¸¯ Å¸ÀÓÀÌ GameObjec°¡ ¾Æ´Ò °æ¿ì
-                objects[i] = Util.FindChild<T>(gameObject, names[i], true);     //FincChild<T> È£Ãâ (¸ğµç ÀÚ½ÄµéÀ» Å½»ö)
+            if (typeof(T) == typeof(GameObject))                                //ì œë„¤ë¦­ íƒ€ì…ì´ GameObjectì¼ ê²½ìš°
+                objects[i] = Util.FindChild(gameObject, names[i], true);        //ê²Œì„ ì˜¤ë¸Œì íŠ¸ë§Œ ì°¾ëŠ” FindChild í˜¸ì¶œ (ëª¨ë“  ìì‹ë“¤ì„ íƒìƒ‰)
+            else                                                                //ì œë„¤ë¦­ íƒ€ì„ì´ GameObjecê°€ ì•„ë‹ ê²½ìš°
+                objects[i] = Util.FindChild<T>(gameObject, names[i], true);     //FincChild<T> í˜¸ì¶œ (ëª¨ë“  ìì‹ë“¤ì„ íƒìƒ‰)
 
 
-            if (objects[i] == null)                                             //Å½»ö °á°ú ¾Æ¹«°Íµµ ¾ø´Ù¸é
-                Debug.Log($"Failed to bind({names[i]}");                        //¹ÙÀÎµå ½ÇÆĞ!
+            if (objects[i] == null)                                             //íƒìƒ‰ ê²°ê³¼ ì•„ë¬´ê²ƒë„ ì—†ë‹¤ë©´
+                Debug.Log($"Failed to bind({names[i]}");                        //ë°”ì¸ë“œ ì‹¤íŒ¨!
                 
         }
     }
 
     /// <summary>
-    /// T ÄÄÆ÷³ÍÆ®¸¦ °¡Áö¸ç, ÀÎµ¦½º¿¡ ÇØ´çÇÏ´Â ¿ÀºêÁ§Æ®¸¦ TÅ¸ÀÔÀ¸·Î °¡Á®¿À±â À§ÇÑ ¸Ş¼Òµå
-    /// EnumÀ» int·Î º¯È¯ÇÏ¿© ÆÄ¶ó¹ÌÅÍ·Î Àü´Ş
+    /// T ì»´í¬ë„ŒíŠ¸ë¥¼ ê°€ì§€ë©°, ì¸ë±ìŠ¤ì— í•´ë‹¹í•˜ëŠ” ì˜¤ë¸Œì íŠ¸ë¥¼ Tíƒ€ì…ìœ¼ë¡œ ê°€ì ¸ì˜¤ê¸° ìœ„í•œ ë©”ì†Œë“œ
+    /// Enumì„ intë¡œ ë³€í™˜í•˜ì—¬ íŒŒë¼ë¯¸í„°ë¡œ ì „ë‹¬
     /// </summary>
     /// <typeparam name="T"></typeparam>
     /// <param name="_idx"></param>
@@ -49,10 +49,10 @@ public class UI_Base : MonoBehaviour
     {
         UnityEngine.Object[] objects = null;
 
-        if (m_objects.TryGetValue(typeof(T), out objects) == false) //µñ¼Å³Ê¸®¿¡¼­ key¿¡ ÇØ´çÇÏ´Â value¸¦ ÀúÀå, ¸¸¾à ¾ø´Ù¸é nullÀ» ¸®ÅÏ
+        if (m_objects.TryGetValue(typeof(T), out objects) == false) //ë”•ì…”ë„ˆë¦¬ì—ì„œ keyì— í•´ë‹¹í•˜ëŠ” valueë¥¼ ì €ì¥, ë§Œì•½ ì—†ë‹¤ë©´ nullì„ ë¦¬í„´
             return null;
 
-        return objects[_idx] as T;                                  //ÇØ´çÇÏ´Â ¿ÀºêÁ§Æ® ¹è¿­À» T ÄÄÆ÷³ÍÆ®·Î ¸®ÅÏ
+        return objects[_idx] as T;                                  //í•´ë‹¹í•˜ëŠ” ì˜¤ë¸Œì íŠ¸ ë°°ì—´ì„ T ì»´í¬ë„ŒíŠ¸ë¡œ ë¦¬í„´
     }
 
     protected GameObject GetObject (int idx) { return Get<GameObject>(idx); }

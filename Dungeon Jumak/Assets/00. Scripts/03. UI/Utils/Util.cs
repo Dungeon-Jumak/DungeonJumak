@@ -1,4 +1,4 @@
-//System
+ï»¿//System
 using System.Collections;
 using System.Collections.Generic;
 
@@ -8,22 +8,22 @@ using UnityEngine;
 public class Util : MonoBehaviour
 {
     /// <summary>
-    /// °ÔÀÓ ¿ÀºêÁ§Æ®ÀÇ ÄÄÆ÷³ÍÆ®¸¦ °¡Á®¿À°Å³ª Ãß°¡ÇÏ±â À§ÇÑ ¸Ş¼Òµå
+    /// ê²Œì„ ì˜¤ë¸Œì íŠ¸ì˜ ì»´í¬ë„ŒíŠ¸ë¥¼ ê°€ì ¸ì˜¤ê±°ë‚˜ ì¶”ê°€í•˜ê¸° ìœ„í•œ ë©”ì†Œë“œ
     /// </summary>
     /// <typeparam name="T"></typeparam>
     /// <param name="_go"></param>
     /// <returns></returns>
     public static T GetOrAddComponent<T> (GameObject _go) where T : UnityEngine.Component
     {
-        T component = _go.GetComponent<T>();                        //°ÔÀÓ ¿ÀºêÁ§Æ®ÀÇ ÄÄÆ÷³ÍÆ®¸¦ °¡Á®¿È
+        T component = _go.GetComponent<T>();                        //ê²Œì„ ì˜¤ë¸Œì íŠ¸ì˜ ì»´í¬ë„ŒíŠ¸ë¥¼ ê°€ì ¸ì˜´
 
-        if (component == null) component = _go.AddComponent<T>();   //¸¸¾à ºñ¾î ÀÖ´Ù¸é ÇØ´çÇÏ´Â ÄÄÆ÷³ÍÆ®¸¦ Ãß°¡ÇÏ°í °¡Á®¿È
+        if (component == null) component = _go.AddComponent<T>();   //ë§Œì•½ ë¹„ì–´ ìˆë‹¤ë©´ í•´ë‹¹í•˜ëŠ” ì»´í¬ë„ŒíŠ¸ë¥¼ ì¶”ê°€í•˜ê³  ê°€ì ¸ì˜´
                 
-        return component;                                           //ÄÄÆ÷³ÍÆ® ¸®ÅÏ
+        return component;                                           //ì»´í¬ë„ŒíŠ¸ ë¦¬í„´
     }
 
     /// <summary>
-    /// ÀÚ½Äµé Áß GameObject¸¸ °¡Á®¿À±â À§ÇÑ ¸Ş¼Òµå
+    /// ìì‹ë“¤ ì¤‘ GameObjectë§Œ ê°€ì ¸ì˜¤ê¸° ìœ„í•œ ë©”ì†Œë“œ
     /// </summary>
     /// <param name="_go"></param>
     /// <param name="_name"></param>
@@ -31,16 +31,16 @@ public class Util : MonoBehaviour
     /// <returns></returns>
     public static GameObject FindChild(GameObject _go, string _name = null, bool _recursive = false)
     {
-        Transform transform = FindChild<Transform>(_go, _name, _recursive); //ÀÚ½Ä ¿ÀºêÁ§Æ®¸¦ Å½»ö
+        Transform transform = FindChild<Transform>(_go, _name, _recursive); //ìì‹ ì˜¤ë¸Œì íŠ¸ë¥¼ íƒìƒ‰
         
-        if (transform == null) return null;                                 //Ã£Áö ¸øÇß´Ù¸é null°ª ¸®ÅÏ
+        if (transform == null) return null;                                 //ì°¾ì§€ ëª»í–ˆë‹¤ë©´ nullê°’ ë¦¬í„´
 
-        return transform.gameObject;                                        //Ã£Àº GameObject ¸®ÅÏ
+        return transform.gameObject;                                        //ì°¾ì€ GameObject ë¦¬í„´
     }
 
     /// <summary>
-    /// go ¿ÀºêÁ§Æ®ÀÇ ¸ğµç ÀÚ½Äµé Áß "T component¸¦ °®°í ÀÌ¸§ÀÌ °°Àº ÀÚ½Ä ¿ÀºêÁ§Æ®"¸¦ Ã£±â À§ÇÑ ¸Ş¼Òµå
-    /// ¸¸¾à ÆÄ¶ó¹ÌÅÍ¿¡ ÀÌ¸§À» ³ÖÁö ¾ÊÀ» °æ¿ì ÄÄÆ÷³ÍÆ®¿¡ ÇØ´çµÇ´Â °Í¸¸ Ã£À¸¸é µÈ´Ù.
+    /// go ì˜¤ë¸Œì íŠ¸ì˜ ëª¨ë“  ìì‹ë“¤ ì¤‘ "T componentë¥¼ ê°–ê³  ì´ë¦„ì´ ê°™ì€ ìì‹ ì˜¤ë¸Œì íŠ¸"ë¥¼ ì°¾ê¸° ìœ„í•œ ë©”ì†Œë“œ
+    /// ë§Œì•½ íŒŒë¼ë¯¸í„°ì— ì´ë¦„ì„ ë„£ì§€ ì•Šì„ ê²½ìš° ì»´í¬ë„ŒíŠ¸ì— í•´ë‹¹ë˜ëŠ” ê²ƒë§Œ ì°¾ìœ¼ë©´ ëœë‹¤.
     /// </summary>
     /// <typeparam name="T"></typeparam>
     /// <param name="_go"></param>
@@ -49,17 +49,17 @@ public class Util : MonoBehaviour
     /// <returns></returns>
     public static T FindChild<T> (GameObject _go, string _name = null, bool _recursive = false) where T : UnityEngine.Object
     {
-        if (_go == null) return null;                                           //°ÔÀÓ ¿ÀºêÁ§Æ®°¡ ºñ¾î ÀÖ´Ù¸é ½ÇÇà X
+        if (_go == null) return null;                                           //ê²Œì„ ì˜¤ë¸Œì íŠ¸ê°€ ë¹„ì–´ ìˆë‹¤ë©´ ì‹¤í–‰ X
 
-        if (_recursive == false)                                                //Á÷¼Ó ÀÚ½Ä ¿ÀºêÁ§Æ®¸¸ Å½»ö
+        if (_recursive == false)                                                //ì§ì† ìì‹ ì˜¤ë¸Œì íŠ¸ë§Œ íƒìƒ‰
         {
-            for (int i = 0; i < _go.transform.childCount; i++)                  //ÆÄ¶ó¹ÌÅÍ¿¡¼­ ¹ŞÀº °ÔÀÓ ¿ÀºêÁ§Æ®ÀÇ ÀÚ½Ä ¿ÀºêÁ§Æ® ¼ö¸¸Å­ ¹İº¹
+            for (int i = 0; i < _go.transform.childCount; i++)                  //íŒŒë¼ë¯¸í„°ì—ì„œ ë°›ì€ ê²Œì„ ì˜¤ë¸Œì íŠ¸ì˜ ìì‹ ì˜¤ë¸Œì íŠ¸ ìˆ˜ë§Œí¼ ë°˜ë³µ
             {
-                Transform transform = _go.transform.GetChild(i);                //¼ø¼­´ë·Î ÀÚ½Ä ¿ÀºêÁ§Æ®ÀÇ Æ®·£½ºÆûÀ» ºÒ·¯¿È
+                Transform transform = _go.transform.GetChild(i);                //ìˆœì„œëŒ€ë¡œ ìì‹ ì˜¤ë¸Œì íŠ¸ì˜ íŠ¸ëœìŠ¤í¼ì„ ë¶ˆëŸ¬ì˜´
 
-                if (string.IsNullOrEmpty(_name) || transform.name == _name)     //¸¸¾à ÀÌ¸§ÀÌ ¾ø°Å³ª ÀÚ½Ä ¿ÀºêÁ§ÀÇ ÀÌ¸§°ú °°´Ù¸é
+                if (string.IsNullOrEmpty(_name) || transform.name == _name)     //ë§Œì•½ ì´ë¦„ì´ ì—†ê±°ë‚˜ ìì‹ ì˜¤ë¸Œì ì˜ ì´ë¦„ê³¼ ê°™ë‹¤ë©´
                 {
-                    T component = transform.GetComponent<T>();                  //ÄÄÆ÷³ÍÆ®¸¦ °¡Á®¿À°í ¸®ÅÏ
+                    T component = transform.GetComponent<T>();                  //ì»´í¬ë„ŒíŠ¸ë¥¼ ê°€ì ¸ì˜¤ê³  ë¦¬í„´
                     if (component != null)
                         return component;
                 }
@@ -67,10 +67,10 @@ public class Util : MonoBehaviour
         }
         else
         {
-            foreach(T component in _go.GetComponentsInChildren<T>())            //¸ğµç ÀÚ½Ä ¿ÀºêÁ§Æ®¸¦ Å½»ö
+            foreach(T component in _go.GetComponentsInChildren<T>())            //ëª¨ë“  ìì‹ ì˜¤ë¸Œì íŠ¸ë¥¼ íƒìƒ‰
             {
-                if (string.IsNullOrEmpty(_name) || component.name == _name)     //¸¸¾à ÀÌ¸§ÀÌ ¾ø°Å³ª, °¡Á®¿Â ÄÄÆ÷³ÍÀÇ ÀÌ¸§°ú °°´Ù¸é
-                    return component;                                           //ÄÄÆ÷³ÍÆ® ¸®ÅÏ
+                if (string.IsNullOrEmpty(_name) || component.name == _name)     //ë§Œì•½ ì´ë¦„ì´ ì—†ê±°ë‚˜, ê°€ì ¸ì˜¨ ì»´í¬ë„Œì˜ ì´ë¦„ê³¼ ê°™ë‹¤ë©´
+                    return component;                                           //ì»´í¬ë„ŒíŠ¸ ë¦¬í„´
             }
         }
 

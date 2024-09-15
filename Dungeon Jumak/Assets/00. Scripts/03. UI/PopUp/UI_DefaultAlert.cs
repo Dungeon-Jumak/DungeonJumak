@@ -1,11 +1,11 @@
-//Unity
+ï»¿//Unity
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 public class UI_DefaultAlert : UI_PopUp
 {
-    [Header("¾Ë·µÀÌ ´İÈ÷´Âµ¥ °É¸®´Â ½Ã°£")]
+    [Header("ì•ŒëŸ¿ì´ ë‹«íˆëŠ”ë° ê±¸ë¦¬ëŠ” ì‹œê°„")]
     [SerializeField] private float m_closedTIme = 3f;
 
     private void OnEnable()
@@ -25,15 +25,15 @@ public class UI_DefaultAlert : UI_PopUp
 
     public override void Init()
     {
-        //ºÎ¸ğ ÃÊ±âÈ­ ÇÔ¼ö ¿À¹ö¶óÀÌµù
+        //ë¶€ëª¨ ì´ˆê¸°í™” í•¨ìˆ˜ ì˜¤ë²„ë¼ì´ë”©
         base.Init();
 
-        //¿ÀºêÁ§Æ® ¹ÙÀÎµù
+        //ì˜¤ë¸Œì íŠ¸ ë°”ì¸ë”©
         Bind<Text>(typeof(Texts));
     }
 
     /// <summary>
-    /// ¾Ë·µÀ» ´İ±â À§ÇÑ ÇÔ¼ö, 3ÃÊ ÈÄ¿¡ ½ÇÇà (Invoke »ç¿ë)
+    /// ì•ŒëŸ¿ì„ ë‹«ê¸° ìœ„í•œ í•¨ìˆ˜, 3ì´ˆ í›„ì— ì‹¤í–‰ (Invoke ì‚¬ìš©)
     /// </summary>
     public void CloseAlert()
     {

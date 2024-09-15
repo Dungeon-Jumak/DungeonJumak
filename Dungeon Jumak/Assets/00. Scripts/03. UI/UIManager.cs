@@ -1,4 +1,4 @@
-//System
+ï»¿//System
 using System.Collections;
 using System.Collections.Generic;
 
@@ -7,9 +7,9 @@ using UnityEngine;
 using UnityEngine.UI;
 
 
-//UI¸¦ °ü¸® ÇÏ±â À§ÇÑ Å¬·¡½º
-// Scene UI : SceneÀÌ ¿­·ÈÀ» ¶§, ÇÑ¹ø¸¸ ¿­¸®¸é µÇ´Â UI
-// Popup UI : Scene Áß°£¿¡ ¿Ã¶ó¿Ã ¼ö ÀÖ´Â UI | StackÀ¸·Î °ü¸®
+//UIë¥¼ ê´€ë¦¬ í•˜ê¸° ìœ„í•œ í´ë˜ìŠ¤
+// Scene UI : Sceneì´ ì—´ë ¸ì„ ë•Œ, í•œë²ˆë§Œ ì—´ë¦¬ë©´ ë˜ëŠ” UI
+// Popup UI : Scene ì¤‘ê°„ì— ì˜¬ë¼ì˜¬ ìˆ˜ ìˆëŠ” UI | Stackìœ¼ë¡œ ê´€ë¦¬
 public class UIManager
 {
     int m_order = 10;                                           
@@ -21,38 +21,38 @@ public class UIManager
     {
         get
         {
-            GameObject root = GameObject.Find("@UI_Root");      //UI ÃÖ»óÀ§ ºÎ¸ğ¸¦ Å½»ö
+            GameObject root = GameObject.Find("@UI_Root");      //UI ìµœìƒìœ„ ë¶€ëª¨ë¥¼ íƒìƒ‰
             if (root == null)
-                root = new GameObject { name = "@UI_Root" };    //¾øÀ» °æ¿ì »õ·Î »ı¼º
+                root = new GameObject { name = "@UI_Root" };    //ì—†ì„ ê²½ìš° ìƒˆë¡œ ìƒì„±
 
             return root;
         }
     }   
 
     /// <summary>
-    /// Äµ¹ö½º¸¦ ¼¼ÆÃÇÏ±â À§ÇÑ ¸Ş¼Òµå
+    /// ìº”ë²„ìŠ¤ë¥¼ ì„¸íŒ…í•˜ê¸° ìœ„í•œ ë©”ì†Œë“œ
     /// </summary>
     /// <param name="_go"></param>
     /// <param name="_sort"></param>
     public void SetCanvas(GameObject _go, bool _sort = true)
     {
-        Canvas canvas = Util.GetOrAddComponent<Canvas>(_go);        //ÆÄ¶ó¹ÌÅÍ·Î ¹ŞÀº °ÔÀÓ¿ÀºêÁ§Æ®ÀÇ Canvas ÄÄÆ÷³ÍÆ®¸¦ °¡Á®¿È
+        Canvas canvas = Util.GetOrAddComponent<Canvas>(_go);        //íŒŒë¼ë¯¸í„°ë¡œ ë°›ì€ ê²Œì„ì˜¤ë¸Œì íŠ¸ì˜ Canvas ì»´í¬ë„ŒíŠ¸ë¥¼ ê°€ì ¸ì˜´
 
-        canvas.renderMode = RenderMode.ScreenSpaceOverlay;          //·»´õ ¸ğµå ¼³Á¤
+        canvas.renderMode = RenderMode.ScreenSpaceOverlay;          //ë Œë” ëª¨ë“œ ì„¤ì •
 
-        canvas.overrideSorting = true;                              //Á¤·Ä ¼ø¼­ È°¼ºÈ­
+        canvas.overrideSorting = true;                              //ì •ë ¬ ìˆœì„œ í™œì„±í™”
 
         if (_sort)
         {
-            canvas.sortingOrder = m_order;                          //ÃÊ±â¿¡ ¼³Á¤ÇÑ (10+@)ÀÇ °ªÀ¸·Î Á¤·Ä ¼ø¼­¸¦ ¼³Á¤
-            m_order++;                                              //´ÙÀ½¿¡ ¿Ã¶ó¿Ã UI¸¦ À§ÇØ +1
+            canvas.sortingOrder = m_order;                          //ì´ˆê¸°ì— ì„¤ì •í•œ (10+@)ì˜ ê°’ìœ¼ë¡œ ì •ë ¬ ìˆœì„œë¥¼ ì„¤ì •
+            m_order++;                                              //ë‹¤ìŒì— ì˜¬ë¼ì˜¬ UIë¥¼ ìœ„í•´ +1
         }
         else
-            canvas.sortingOrder = 0;                                //Á¤·Ä ¿©ºÎ°¡ FalseÀÏ °æ¿ì Á¤·Ä ¼ø¼­¸¦ 0À¸·Î ¼³Á¤
+            canvas.sortingOrder = 0;                                //ì •ë ¬ ì—¬ë¶€ê°€ Falseì¼ ê²½ìš° ì •ë ¬ ìˆœì„œë¥¼ 0ìœ¼ë¡œ ì„¤ì •
     }
 
     /// <summary>
-    /// UI ¾ÈÀÇ ÀÚ½Ä ¾ÆÀÌÅÛÀ» »ı¼ºÇÏ±â À§ÇÑ ¸Ş¼Òµå
+    /// UI ì•ˆì˜ ìì‹ ì•„ì´í…œì„ ìƒì„±í•˜ê¸° ìœ„í•œ ë©”ì†Œë“œ
     /// </summary>
     /// <typeparam name="T"></typeparam>
     /// <param name="_parent"></param>
@@ -60,38 +60,38 @@ public class UIManager
     /// <returns></returns>
     public T MakeSubItem<T> (Transform _parent = null, string _name = null) where T : UI_Base
     {
-        if (string.IsNullOrEmpty(_name))                                             //¸¸µé ¾ÆÀÌÅÛÀÇ ÀÌ¸§ÀÌ ¾øÀ» °æ¿ì
-            _name = typeof(T).Name;                                                  //Å¸ÀÔ, Å¬·¡½ºÀÇ ÀÌ¸§À¸·Î ¼³Á¤
+        if (string.IsNullOrEmpty(_name))                                             //ë§Œë“¤ ì•„ì´í…œì˜ ì´ë¦„ì´ ì—†ì„ ê²½ìš°
+            _name = typeof(T).Name;                                                  //íƒ€ì…, í´ë˜ìŠ¤ì˜ ì´ë¦„ìœ¼ë¡œ ì„¤ì •
 
-        GameObject go = GameManager.Resource.Instantiate($"UI/SubItem/{_name}");     //ÇØ´ç ÇÁ¸®ÆÕÀ» ºÒ·¯¿È
-        if (_parent != null)                                                        //ºÎ¸ğ¸¦ ÆÄ¶ó¹ÌÅÍ·Î ¹Ş¾ÒÀ» °æ¿ì
-            go.transform.SetParent(_parent);                                        //ºÎ¸ğ·Î ¼³Á¤
+        GameObject go = GameManager.Resource.Instantiate($"UI/SubItem/{_name}");     //í•´ë‹¹ í”„ë¦¬íŒ¹ì„ ë¶ˆëŸ¬ì˜´
+        if (_parent != null)                                                        //ë¶€ëª¨ë¥¼ íŒŒë¼ë¯¸í„°ë¡œ ë°›ì•˜ì„ ê²½ìš°
+            go.transform.SetParent(_parent);                                        //ë¶€ëª¨ë¡œ ì„¤ì •
 
-        return Util.GetOrAddComponent<T>(go);                                       //ÇÁ¸®ÆÕ¿¡¼­ ÄÄÆ÷³ÍÆ®¸¦ °¡Á®¿Í ¸®ÅÏ
+        return Util.GetOrAddComponent<T>(go);                                       //í”„ë¦¬íŒ¹ì—ì„œ ì»´í¬ë„ŒíŠ¸ë¥¼ ê°€ì ¸ì™€ ë¦¬í„´
     }
 
     /// <summary>
-    /// Scene UI¸¦ º¸¿©ÁÖ±â À§ÇÑ ¸Ş¼Òµå
+    /// Scene UIë¥¼ ë³´ì—¬ì£¼ê¸° ìœ„í•œ ë©”ì†Œë“œ
     /// </summary>
     /// <typeparam name="T"></typeparam>
     /// <param name="_name"></param>
     /// <returns></returns>
     public T ShowSceneUI<T> (string _name = null) where T : UI_Scene
     {
-        if (string.IsNullOrEmpty(_name))                                            //ÀÌ¸§À» ¼³Á¤ÇÏÁö ¾Ê¾ÒÀ» °æ¿ì
-            _name = typeof(T).Name;                                                 //Á¦³×¸¯ Å¸ÀÔÀ¸·Î ÀÌ¸§ ¼³Á¤
+        if (string.IsNullOrEmpty(_name))                                            //ì´ë¦„ì„ ì„¤ì •í•˜ì§€ ì•Šì•˜ì„ ê²½ìš°
+            _name = typeof(T).Name;                                                 //ì œë„¤ë¦­ íƒ€ì…ìœ¼ë¡œ ì´ë¦„ ì„¤ì •
 
-        GameObject go = GameManager.Resource.Instantiate($"UI/Scene/{_name}");      //ÀÌ¸§¿¡ ÇØ´çÇÏ´Â ÇÁ¸®ÆÕÀ» »ı¼º
-        T sceneUI = Util.GetOrAddComponent<T>(go);                                  //T ÄÄÆ÷³ÍÆ®¸¦ ºÒ·¯¿È
+        GameObject go = GameManager.Resource.Instantiate($"UI/Scene/{_name}");      //ì´ë¦„ì— í•´ë‹¹í•˜ëŠ” í”„ë¦¬íŒ¹ì„ ìƒì„±
+        T sceneUI = Util.GetOrAddComponent<T>(go);                                  //T ì»´í¬ë„ŒíŠ¸ë¥¼ ë¶ˆëŸ¬ì˜´
         m_sceneUI = sceneUI;
 
-        go.transform.SetParent(Root.transform);                                     //@UI_Root ÇÏÀ§¿¡ »ı¼º
+        go.transform.SetParent(Root.transform);                                     //@UI_Root í•˜ìœ„ì— ìƒì„±
 
-        return sceneUI;                                                             //ÄÄÆ÷³ÍÆ® ¸®ÅÏ
+        return sceneUI;                                                             //ì»´í¬ë„ŒíŠ¸ ë¦¬í„´
     }
 
     /// <summary>
-    /// ÀÏ¹İ ÆË¾÷À» º¸¿©ÁÖ±â À§ÇÑ ¸Ş¼Òµå
+    /// ì¼ë°˜ íŒì—…ì„ ë³´ì—¬ì£¼ê¸° ìœ„í•œ ë©”ì†Œë“œ
     /// </summary>
     /// <typeparam name="T"></typeparam>
     /// <param name="_name"></param>
@@ -113,7 +113,7 @@ public class UIManager
     }
 
     /// <summary>
-    /// ¿øÇÏ´Â ÆË¾÷À» ´İ±â À§ÇÑ ¸Ş¼Òµå
+    /// ì›í•˜ëŠ” íŒì—…ì„ ë‹«ê¸° ìœ„í•œ ë©”ì†Œë“œ
     /// </summary>
     /// <param name="_popup"></param>
     public void ClosePopUpUI(UI_PopUp _popup)
@@ -130,7 +130,7 @@ public class UIManager
     }
 
     /// <summary>
-    /// °¡Àå »óÀ§ ÆË¾÷À» ´İ±â À§ÇÑ ¸Ş¼Òµå
+    /// ê°€ì¥ ìƒìœ„ íŒì—…ì„ ë‹«ê¸° ìœ„í•œ ë©”ì†Œë“œ
     /// </summary>
     public void ClosePopUpUI()
     {
@@ -144,7 +144,7 @@ public class UIManager
     }
 
     /// <summary>
-    /// ¸ğµç ÆË¾÷À» ÇÑ¹ø¿¡ ´İ±â À§ÇÑ ¸Ş¼Òµå
+    /// ëª¨ë“  íŒì—…ì„ í•œë²ˆì— ë‹«ê¸° ìœ„í•œ ë©”ì†Œë“œ
     /// </summary>
     public void CloseAllPopUpUI()
     {
@@ -152,7 +152,7 @@ public class UIManager
     }
 
     /// <summary>
-    /// ÃÊ±âÈ­ ÇÏ±â À§ÇÑ ¸Ş¼Òµå
+    /// ì´ˆê¸°í™” í•˜ê¸° ìœ„í•œ ë©”ì†Œë“œ
     /// </summary>
     public void Clear()
     {
