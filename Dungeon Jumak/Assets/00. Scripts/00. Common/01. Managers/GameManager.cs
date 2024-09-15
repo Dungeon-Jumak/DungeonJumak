@@ -1,4 +1,5 @@
 ﻿// Engine
+using System.Resources;
 using UnityEngine;
 
 /// <summary>
@@ -33,4 +34,10 @@ public class GameManager : MonoBehaviour
             Destroy(gameObject);
         }
     }
+
+    UIManager m_ui = new UIManager(); //UIManager
+    ResourceManager m_resource = new ResourceManager();
+
+    public static UIManager UI { get { return Instance.m_ui; } }
+    public static ResourceManager Resource { get { return Instance.m_resource; } }
 }
