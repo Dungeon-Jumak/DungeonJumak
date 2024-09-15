@@ -1,22 +1,21 @@
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.AddressableAssets;
 using UnityEngine.ResourceManagement.AsyncOperations;
+
+using System.Collections.Generic;
 using System.Linq;
+
 using Cysharp.Threading.Tasks;
-using Unity.VisualScripting;
 
 public class SoundManager : MonoBehaviour
 {
-    private AudioClip[] m_bgmClips;
     private AudioSource[] m_audioSources;
 
     private List<AudioSource> m_audioSourcePool = new List<AudioSource>();
-
-    private Dictionary<string, AudioClip> m_audioClips = new Dictionary<string, AudioClip>();
+    private Dictionary<string, AudioClip> m_bgmClips = new Dictionary<string, AudioClip>();
+    private Dictionary<string, AudioClip[]> m_effectClips = new Dictionary<string, AudioClip[]>();
     private Dictionary<AudioSource, bool> m_audioSourceStates = new Dictionary<AudioSource, bool>();
-    private Dictionary<Define.SFX_Label, AudioClip[]> m_effectClips = new Dictionary<Define.SFX_Label, AudioClip[]>();
 
     private int m_poolSize = 10;
     private bool m_isPaused = false;
@@ -41,26 +40,22 @@ public class SoundManager : MonoBehaviour
     /// <summary>
     /// Bgm 재생.
     /// </summary>
-    /// <param name="_type"> 사운드 종류 (Bgm | Effect) </param>
-    /// <param name="_index"> 재생하려는 Bgm 이 'BGM' 폴더에서 몇 번째 순서인지 _ 0번부터 시작) </param>
+    /// <param name="_name"> Bgm 이름 </param>
     /// <param name="_loop"> 반복 유무 </param>
-    public void Play(Define.Sound _type, int _index, bool _loop = false)
+    public void Play(string _name, bool _loop = false)
     {
-        if (_type == Define.Sound.Bgm)
-        {
-            PlayBgm(_index, _loop);
-        }
+        PlayBgm(_name, _loop);
     }
 
     /// <summary>
     /// Sfx 재생.
     /// </summary>
-    /// <param name="_labelEnum"> 라벨 종류 (Main | Dungeon | ETC) </param>
-    /// <param name="_index"> 재생하려는 Sfx 가 'SFX' 폴더에서 몇 번째 순서인지 _ 0번부터 시작) </param>
+    /// <param name="_labelEnum"> 라벨 종류 (Main_SFX | Dungeon_SFX | ETC_SFX) </param>
+    /// <param name="_name"> Sfx 이름 </param>
     /// <param name="_loop"> 반복 유무 </param>
-    public void Play(Define.SFX_Label _labelEnum, int _index, bool _loop = false)
+    public void Play(Define.SFX_Label _labelEnum, string _name, bool _loop = false)
     {
-        PlaySfx(_labelEnum, _index, _loop);
+        PlaySfx(_labelEnum, _name, _loop);
     }
 
     /// <summary>
@@ -100,28 +95,20 @@ public class SoundManager : MonoBehaviour
     /// <summary>
     /// 특정 Bgm 소리 중지 및 제거.
     /// </summary>
-    /// <param name="_type"> 사운드 종류 (Bgm | Effect) </param>
-    /// <param name="_index"> 중지하려는 Bgm 이 'BGM' 폴더에서 몇 번째 순서인지 _ 0번부터 시작) </param>
-    public void Clear(Define.Sound _type, int _index)
+    /// <param name="_name"> Bgm 이름 </param>
+    public void Clear(string _name)
     {
-        if (_type == Define.Sound.Bgm)
-        {
-            ClearBgm(_index);
-        }
-        else
-        {
-            return;
-        }
+        ClearBgm(_name);
     }
 
     /// <summary>
     /// 특정 Sfx 소리 중지 및 제거.
     /// </summary>
-    /// <param name="_label"> 라벨 종류 (Main | Dungeon | ETC) </param>
-    /// <param name="_index"> 중지하려는 Sfx 가 'SFX' 폴더에서 몇 번째 순서인지 _ 0번부터 시작) </param>
-    public void Clear(Define.SFX_Label _label, int _index)
+    /// <param name="_label"> 라벨 종류 (Main_SFX | Dungeon_SFX | ETC_SFX) </param>
+    /// <param name="_name"> Sfx 이름 </param>
+    public void Clear(Define.SFX_Label _label, string _name)
     {
-        ClearSfx(_label, _index);
+        ClearSfx(_label, _name);
     }
 
     /// <summary>
@@ -174,7 +161,7 @@ public class SoundManager : MonoBehaviour
 
         if (handle.Status == AsyncOperationStatus.Succeeded)
         {
-            m_bgmClips = handle.Result.ToArray();
+            m_bgmClips = handle.Result.ToDictionary(clip => clip.name, clip => clip);
         }
     }
 
@@ -188,20 +175,19 @@ public class SoundManager : MonoBehaviour
 
             if (handle.Status == AsyncOperationStatus.Succeeded)
             {
-                m_effectClips[labelEnum] = handle.Result.ToArray();
+                m_effectClips[label] = handle.Result.ToArray();
             }
         }
     }
     #endregion
 
     #region Sound Play Manager
-    private void PlayBgm(int _index, bool _loop)
+    private void PlayBgm(string _name, bool _loop)
     {
-        if (m_bgmClips != null && m_bgmClips.Length > _index)
+        if (m_bgmClips.TryGetValue(_name, out AudioClip clip))
         {
-            AudioClip selectedClip = m_bgmClips[_index];
             AudioSource audioSource = m_audioSources[(int)Define.Sound.Bgm];
-            audioSource.clip = selectedClip;
+            audioSource.clip = clip;
             audioSource.loop = _loop;
 
             GetAudioMixerByLabel("BGM_Mixer", audioMixer =>
@@ -216,29 +202,32 @@ public class SoundManager : MonoBehaviour
         }
     }
 
-    private void PlaySfx(Define.SFX_Label _labelEnum, int _index, bool _loop)
+    private void PlaySfx(Define.SFX_Label _labelEnum, string _name, bool _loop)
     {
-        if (m_effectClips.TryGetValue(_labelEnum, out AudioClip[] clips) && clips.Length > _index)
+        string label = _labelEnum.ToString();
+        if (m_effectClips.TryGetValue(label, out AudioClip[] clips))
         {
-            AudioClip selectedClip = clips[_index];
-            AudioSource audioSource = GetPooledAudioSource();
-            audioSource.clip = selectedClip;
-
-            GetAudioMixerByLabel("SFX_Mixer", audioMixer =>
+            AudioClip clip = clips.FirstOrDefault(c => c.name == _name);
+            if (clip != null)
             {
-                if (audioMixer != null)
-                {
-                    AudioMixerGroup[] mixerGroups = audioMixer.FindMatchingGroups("SFX_Mixer");
-                    audioSource.outputAudioMixerGroup = mixerGroups.FirstOrDefault();
-                    audioSource.loop = _loop;
-                    audioSource.Play();
+                AudioSource audioSource = GetPooledAudioSource();
+                audioSource.clip = clip;
 
-                    if (!_loop)
+                GetAudioMixerByLabel("SFX_Mixer", audioMixer =>
+                {
+                    if (audioMixer != null)
                     {
-                        DisableAudioSourceAsync(audioSource, selectedClip.length).Forget();
+                        AudioMixerGroup[] mixerGroups = audioMixer.FindMatchingGroups("SFX_Mixer");
+                        audioSource.outputAudioMixerGroup = mixerGroups.FirstOrDefault();
+                        audioSource.loop = _loop;
+                        audioSource.Play();
+                        if (!_loop)
+                        {
+                            DisableAudioSourceAsync(audioSource, clip.length).Forget();
+                        }
                     }
-                }
-            });
+                });
+            }
         }
     }
     #endregion
@@ -266,6 +255,7 @@ public class SoundManager : MonoBehaviour
 
         if (_audioSource != null)
         {
+            _audioSource.Stop();
             _audioSource.gameObject.SetActive(false);
         }
     }
@@ -295,13 +285,13 @@ public class SoundManager : MonoBehaviour
     #endregion
 
     #region Clear Manager
-    private void ClearBgm(int _index)
+    private void ClearBgm(string _name)
     {
-        if (m_bgmClips != null && m_bgmClips.Length > _index)
+        if (m_bgmClips.TryGetValue(_name, out AudioClip clip))
         {
             AudioSource bgmSource = m_audioSources[(int)Define.Sound.Bgm];
 
-            if (bgmSource.clip == m_bgmClips[_index])
+            if (bgmSource.clip == clip)
             {
                 bgmSource.Stop();
                 bgmSource.clip = null;
@@ -309,18 +299,23 @@ public class SoundManager : MonoBehaviour
         }
     }
 
-    private void ClearSfx(Define.SFX_Label _label, int _index)
+    private void ClearSfx(Define.SFX_Label _label, string _name)
     {
-        if (m_effectClips.TryGetValue(_label, out AudioClip[] clips) && clips.Length > _index)
-        {
-            AudioClip targetClip = clips[_index];
+        string label = _label.ToString(); 
 
-            foreach (var audioSource in m_audioSourcePool)
+        if (m_effectClips.TryGetValue(label, out AudioClip[] clips))
+        {
+            AudioClip clip = clips.FirstOrDefault(c => c.name == _name);
+
+            if (clip != null)
             {
-                if (audioSource.clip == targetClip)
+                foreach (var audioSource in m_audioSourcePool)
                 {
-                    audioSource.Stop();
-                    audioSource.gameObject.SetActive(false);
+                    if (audioSource.clip == clip)
+                    {
+                        audioSource.Stop();
+                        audioSource.gameObject.SetActive(false);
+                    }
                 }
             }
         }
@@ -342,7 +337,6 @@ public class SoundManager : MonoBehaviour
             if (handle.Status == AsyncOperationStatus.Succeeded)
             {
                 AudioMixer audioMixer = handle.Result.FirstOrDefault(mixer => mixer.FindMatchingGroups(_mixerGroup).Length > 0);
-
                 if (audioMixer != null)
                 {
                     _onComplete?.Invoke(audioMixer);

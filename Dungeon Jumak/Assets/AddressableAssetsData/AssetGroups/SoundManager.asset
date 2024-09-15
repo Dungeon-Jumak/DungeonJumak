@@ -123,7 +123,7 @@ MonoBehaviour:
     m_SerializedLabels:
     - BGM
   - m_GUID: 3b961586bd2977c4c877065884e8cedc
-    m_Address: Assets/01. Resources/Audio/BGM/Map Front.wav
+    m_Address: udio/BGM/Map Front.wavudio/BGM/Map Front.wav
     m_ReadOnly: 0
     m_SerializedLabels:
     - BGM
