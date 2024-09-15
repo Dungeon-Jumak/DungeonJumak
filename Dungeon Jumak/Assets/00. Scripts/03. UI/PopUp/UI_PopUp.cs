@@ -5,9 +5,6 @@ using System.Collections.Generic;
 //Unity
 using UnityEngine;
 
-/// <summary>
-/// 캔버스를 초기화하기 위한 클래스
-/// </summary>
 public class UI_PopUp : UI_Base
 {
     public virtual void Init()

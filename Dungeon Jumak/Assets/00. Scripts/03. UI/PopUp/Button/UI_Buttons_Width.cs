@@ -36,7 +36,7 @@ public class UI_Buttons_Width : UI_PopUp
         GetButton((int)Buttons.Market).gameObject.BindEvent(OpenDefaultPopUp);
     }
 
-    public void OpenDefaultPopUp(PointerEventData data)
+    public void OpenDefaultPopUp(PointerEventData _data)
     {
         GameManager.UI.ShowPopupUI<UI_PopUp>("DefaultPopUp");
     }
