@@ -14,5 +14,23 @@ namespace Utils.EnumTypes {
         Fail, Success, None
     }
     */
+
+    /// <summary>
+    /// SoundManager SFX_Label
+    /// </summary>
+    public enum SFX_Label
+    {
+        Main_SFX,
+        Dungeon_SFX,
+        ETC_SFX,
+    }
+
+    public enum SoundType
+    {
+        Bgm,
+        Sfx,
+        MaxCount,
+    }
+
 }
 
