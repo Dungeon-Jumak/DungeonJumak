@@ -1,9 +1,10 @@
-﻿//Engine
+//Engine
 using UnityEngine;
 
 //Interface
 using Interfaces;
 
-public class Customer : ITurnable, IMovable
+public class Customer : MonoBehaviour, ITurnable, IMovable
 {
+
 }

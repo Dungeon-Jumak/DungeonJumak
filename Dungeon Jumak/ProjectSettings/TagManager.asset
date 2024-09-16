@@ -47,3 +47,15 @@ TagManager:
   - name: w Layer 2 2
     uniqueID: 3754796007
     locked: 0
+  - name: aboveUI
+    uniqueID: 3720044787
+    locked: 0
+  - name: Customer
+    uniqueID: 4026200113
+    locked: 0
+  - name: Player
+    uniqueID: 4165987127
+    locked: 0
+  - name: New Layer 6
+    uniqueID: 1761362451
+    locked: 0
