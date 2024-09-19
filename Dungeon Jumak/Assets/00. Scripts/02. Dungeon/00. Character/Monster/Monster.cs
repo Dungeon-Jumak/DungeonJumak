@@ -1,4 +1,4 @@
-﻿//Engine
+//Engine
 using UnityEngine;
 
 //Interface
@@ -9,7 +9,7 @@ using Data.Character;
 
 public class Monster : IDamageable, ITurnable, IMovable
 {
-    [SerializeField] private MonsterData_Base m_monsterData;
+    [SerializeField] private MonsterData_Base data;
 
-    public MonsterData_Base MonsterData { set { MonsterData = value; } }
+    public MonsterData_Base MonsterData { set { data = value; } }
 }

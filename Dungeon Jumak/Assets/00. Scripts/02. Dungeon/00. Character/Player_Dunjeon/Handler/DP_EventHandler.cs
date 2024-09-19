@@ -1,18 +1,11 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+// Engine
 using UnityEngine;
 
 public class DP_EventHandler : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
-        
+        //EventManager.Instance.AddListener();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }
