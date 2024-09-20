@@ -23,6 +23,12 @@ namespace Utils.EnumTypes
         private int m_poolSize = 10;
         private bool m_isPaused = false;
 
+        private GlobalData data;
+        private void Awake()
+        {
+            data = DataManager.Instance.data;
+        }
+
         // ==================================== //
 
         /// <summary>
@@ -47,6 +53,8 @@ namespace Utils.EnumTypes
         /// <param name="_loop"> 반복 유무 </param>
         public void Play(string _name, bool _loop = false)
         {
+            if (!data.g_onBgm) return;
+
             PlayBgm(_name, _loop);
         }
 

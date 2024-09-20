@@ -16,8 +16,11 @@ public class UI_PopUp_Setting : UI_PopUp
         BgmOff
     }
 
-    private bool m_bgOn;
-    private bool m_bgOff;
+    private GlobalData data;
+    private void Awake()
+    {
+        data = DataManager.Instance.data;
+    }
 
     private void Start()
     {
@@ -30,19 +33,19 @@ public class UI_PopUp_Setting : UI_PopUp
 
         Bind<Button>(typeof(Buttons));
 
-        GetButton((int)Buttons.BgmOn).gameObject.BindEvent(BgmOn);
-        GetButton((int)Buttons.BgmOff).gameObject.BindEvent(BgmOff);
+        GetButton((int)Buttons.BgmOn).gameObject.BindEvent(BgmOff);
+        GetButton((int)Buttons.BgmOff).gameObject.BindEvent(BgmOn);
     }
 
     private void BgmOn(PointerEventData _data)
     {
-        m_bgOn = true;
-        m_bgOff = false;
+        data.g_onBgm = true;
+        DataManager.Instance.SaveGameData();
     }
 
     private void BgmOff(PointerEventData _data)
     {
-        m_bgOff= true;
-        m_bgOn = false;
+        data.g_onBgm = false;
+        DataManager.Instance.SaveGameData();
     }
 }
