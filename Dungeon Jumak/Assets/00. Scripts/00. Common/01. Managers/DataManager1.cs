@@ -1,0 +1,4 @@
+﻿// System
+internal class DataManager
+{
+}

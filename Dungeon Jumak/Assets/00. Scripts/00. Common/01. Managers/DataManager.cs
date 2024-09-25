@@ -1,4 +1,4 @@
-﻿// System
+// System
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -6,10 +6,45 @@ using System.IO;
 // Engine
 using UnityEngine;
 
-public class DataManager<T>
+/// <summary>
+/// 데이터를 관리하는 스크립트입니다. 런타임 중 데이터 값을 변경할 때에는 DataManager<PlayerData>.Instance.Data.CurPlayerLV++; 이렇게 사용하면 됩니다.
+/// </summary>
+/// <typeparam name="T"></typeparam>
+public class DataManager<T> where T : new()
 {
+    #region Singleton
+
+    private static DataManager<T> instance;
+    public static DataManager<T> Instance
+    {
+        get
+        {
+            if (instance == null)
+            {
+                instance = new DataManager<T>();
+            }
+            return instance;
+        }
+    }
+
+    protected DataManager()
+    {
+        data = new T(); // 제네릭 데이터 초기화
+    }
+
+    #endregion
+
     // 파일 경로
     private static string dataFilePath = Application.persistentDataPath + "/GameData.json";
+
+    // 데이터 인스턴스
+    private T data;
+
+    public T Data
+    {
+        get { return data; }
+        set { data = value; }
+    }
 
     [Serializable]
     public class SerializableData

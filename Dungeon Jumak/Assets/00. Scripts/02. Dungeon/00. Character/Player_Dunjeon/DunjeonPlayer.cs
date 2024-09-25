@@ -9,46 +9,25 @@ using Data.Character;
 
 public class DunjeonPlayer : MonoBehaviour, IDamageable, ITurnable, IMovable
 {
-    // DPlayer Data Scriptable
+    // 던전 플레이어 스크립터블 데이터
     [SerializeField] private DunjeonPlayerData_Base data;
 
-    // Dependency Injection
+    // 스캐너
+    [SerializeField] private Scanner scanner;
+
+    // 핸들러 스크립트들
     private DP_AnimationHandler animationHandler;
-    private DP_AudioHandler audioHandler;
     private DP_MoveHandler moveHandler;
-    private DP_EventHandler eventHandler;
 
-    // Animator
     private Animator animator;
-
-    // SpriteRenderer
     private SpriteRenderer spriteRenderer;
 
-    // Speed
-    private float speed;
-
-    // Hp
-    private float hp;
-
-    private void OnEnable()
+    private void Awake()
     {
-        // Get Component
         animator = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
 
-        // .
-        animationHandler = new DP_AnimationHandler();
-        audioHandler = new DP_AudioHandler();
-        moveHandler = new DP_MoveHandler();
-        eventHandler = new DP_EventHandler();
-
-        // Set variable value with scriptable
-        speed = data.Speed;
-        hp = data.Hp;
-    }
-
-    private void Update()
-    {
-        
+        animationHandler = new DP_AnimationHandler(spriteRenderer, animator);
+        moveHandler = new DP_MoveHandler(transform, data.Speed, scanner);
     }
 }
