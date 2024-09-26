@@ -4455,6 +4455,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DPlayer
       objectReference: {fileID: 0}
+    - target: {fileID: 5446336613583259303, guid: ac7ee2120cf05414d882bccde7b22887, type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     - target: {fileID: 7453470322143723547, guid: ac7ee2120cf05414d882bccde7b22887, type: 3}
       propertyPath: m_RootOrder
       value: 6
@@ -4681,6 +4685,10 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 112907668741932482, guid: 924e351731037e642b112c069ec57923, type: 3}
       propertyPath: m_Name
+      value: Monster
+      objectReference: {fileID: 0}
+    - target: {fileID: 112907668741932482, guid: 924e351731037e642b112c069ec57923, type: 3}
+      propertyPath: m_TagString
       value: Monster
       objectReference: {fileID: 0}
     - target: {fileID: 8173501230344802657, guid: 924e351731037e642b112c069ec57923, type: 3}
