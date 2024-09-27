@@ -15,4 +15,5 @@ public class GlobalData
     /// 사운드 관련
     /// </summary>
     public bool g_onBgm;
+    public bool g_onSfx;
 }
