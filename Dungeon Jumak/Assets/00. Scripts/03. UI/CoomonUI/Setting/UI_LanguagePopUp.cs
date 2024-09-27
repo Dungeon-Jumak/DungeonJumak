@@ -48,12 +48,12 @@ public class UI_LanguagePopUp : UI_PopUp
 
     public void SetLanguageKr(PointerEventData _data)
     {
-
+        GameManager.UI.ClosePopUpUI();
     }
 
     private void SetLanguageEn(PointerEventData _data)
     {
-
+        GameManager.UI.ClosePopUpUI();
     }
 
 }
