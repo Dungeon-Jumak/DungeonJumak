@@ -12,11 +12,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
   m_Name: Dunjeon
   m_EditorClassIdentifier: 
-  m_GroupName: Packed Assets
+  m_GroupName: Dunjeon
   m_Data:
     m_SerializedData: []
   m_GUID: 970b721f70a175e4ca57cc0d3debeffa
-  m_SerializeEntries: []
+  m_SerializeEntries:
+  - m_GUID: 924e351731037e642b112c069ec57923
+    m_Address: Assets/04. Prefabs/Dungeon/Characters/Monster.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: ac7ee2120cf05414d882bccde7b22887
+    m_Address: Assets/04. Prefabs/Dungeon/Characters/DPlayer.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 979ede1356bc65a4090c27709eca3218, type: 2}
   m_SchemaSet:
