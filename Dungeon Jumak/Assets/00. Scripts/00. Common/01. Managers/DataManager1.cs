@@ -1,4 +1,0 @@
-﻿// System
-internal class DataManager
-{
-}
