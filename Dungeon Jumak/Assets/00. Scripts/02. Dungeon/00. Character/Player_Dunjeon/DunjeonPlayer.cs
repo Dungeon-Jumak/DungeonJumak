@@ -9,13 +9,12 @@ using Data.Character;
 
 public class DunjeonPlayer : MonoBehaviour, IDamageable, ITurnable, IMovable
 {
-    // 던전 플레이어 스크립터블 데이터
-    [SerializeField] private DunjeonPlayerData_Base data;
+    // 던전 플레이어 데이터
+    public DunjeonPlayerData_Base data;
 
     // 스캐너
     [SerializeField] private Scanner scanner;
 
-    // 핸들러 스크립트들
     private DP_AnimationHandler animationHandler;
     private DP_MoveHandler moveHandler;
 

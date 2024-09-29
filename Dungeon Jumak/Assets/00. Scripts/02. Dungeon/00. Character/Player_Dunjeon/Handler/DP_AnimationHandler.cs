@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DP_AnimationHandler : MonoBehaviour
+public class DP_AnimationHandler
 {
     private SpriteRenderer spriteRenderer;
     private Animator animator;

@@ -9,7 +9,7 @@ public class DP_MoveHandler
     // 이동 속도
     [SerializeField] private float speed;
 
-    // 플레이어 트랜스폼
+    // 트랜스폼
     private Transform playerTransform;
 
     // 스캐너
@@ -24,24 +24,20 @@ public class DP_MoveHandler
 
     private void Update() {
 
-        if( isMoving )
-        {
-            // 스캔 범위 내에 타겟이 있는지 확인
-            if (scanner.nearestTarget != null)
-            {
-                // 타겟 존재
-                MoveAwayFromTarget(scanner.nearestTarget);
-            }
-            else
-            {
-                // 타겟 존재하지 않음
-                StopMoving();
-            }
-        }
+        Moving();
     }
 
     public void Moving()
     {
+        // 스캔 범위 내에 타겟이 있는지 확인
+        if (scanner.nearestTarget != null)
+        {
+            MoveAwayFromTarget(scanner.nearestTarget);
+        }
+        else
+        {
+            StopMoving();
+        }
     }
 
     private void StopMoving()
@@ -53,10 +49,10 @@ public class DP_MoveHandler
     {
         if (target != null)
         {
-            // 타겟과 반대 방향을 계산
+            // 반대 방향 계산
             Vector3 directionAwayFromTarget = (playerTransform.position - target.position).normalized;
 
-            // 플레이어 이동
+            // 이동
             playerTransform.Translate(directionAwayFromTarget * speed * Time.deltaTime);
         }
     }
