@@ -1,18 +1,15 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DP_AnimationHandler : MonoBehaviour
+public class DP_AnimationHandler
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    private SpriteRenderer spriteRenderer;
+    private Animator animator;
 
-    // Update is called once per frame
-    void Update()
+    public DP_AnimationHandler(SpriteRenderer spriteRenderer = null, Animator animator = null)
     {
-        
+        this.spriteRenderer = spriteRenderer;
+        this.animator = animator;
     }
 }
