@@ -1,18 +1,15 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Mo_AnimationHandler : MonoBehaviour
+public class Mo_AnimationHandler
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    private SpriteRenderer spriteRenderer;
+    private Animator animator;
 
-    // Update is called once per frame
-    void Update()
+    public Mo_AnimationHandler(SpriteRenderer spriteRenderer = null, Animator animator = null)
     {
-        
+        this.spriteRenderer = spriteRenderer;
+        this.animator = animator;
     }
 }
