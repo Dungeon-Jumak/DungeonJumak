@@ -17,12 +17,6 @@ public class UI_LanguagePopUp : UI_PopUp
         English,
     }
 
-    private GlobalData data;
-    private void Awake()
-    {
-        data = DataManager.Instance.data;
-    }
-
     private void Start()
     {
         Init();

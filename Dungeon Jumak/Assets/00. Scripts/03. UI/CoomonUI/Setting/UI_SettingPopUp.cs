@@ -24,10 +24,13 @@ public class UI_SettingPopUp: UI_PopUp
         Language,
     }
 
-    private GlobalData data;
+    private DataManager<AudioData> audioData;
+    private DataManager<SettingData> settingData;
+
     private void Awake()
     {
-        data = DataManager.Instance.data;
+        audioData = DataManager<AudioData>.Instance;
+        settingData = DataManager<SettingData>.Instance;
     }
 
     private void Start()
@@ -65,42 +68,42 @@ public class UI_SettingPopUp: UI_PopUp
 
     private void BgmOn(PointerEventData _data)
     {   
-        //data.g_onBgm = true;
+        audioData.Data.IsPlayBGM = true;
     }
 
     private void BgmOff(PointerEventData _data)
     {
-        //data.g_onBgm = false;
+        audioData.Data.IsPlayBGM = false;
     }
 
     private void SfxOn(PointerEventData _data)
     {
-        //data.g_onSfx = true;
+        audioData.Data.IsPlaySFX = true;
     }
 
     private void SfxOff(PointerEventData _data)
     {
-        //data.g_onSfx = false;
+        audioData.Data.IsPlaySFX = false;
     }
 
     private void PushOn(PointerEventData _data)
     {
-        //data.g_onSfx = true;
+        settingData.Data.IsPushEnable = true;
     }
 
     private void PushOff(PointerEventData _data)
     {
-        //data.g_onSfx = false;
+        settingData.Data.IsPushEnable = false;
     }
 
     private void N_PushOn(PointerEventData _data)
     {
-        //data.g_onSfx = true;
+        settingData.Data.IsNightPushEnable = true;
     }
 
     private void N_PushOff(PointerEventData _data)
     {
-        //data.g_onSfx = false;
+        settingData.Data.IsNightPushEnable = false;
     }
 
     private void SetLanguage(PointerEventData _data)

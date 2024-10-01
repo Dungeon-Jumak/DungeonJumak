@@ -1791,17 +1791,23 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3383550925921203966}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cbbc0a24b3ecb0b488e69491974f960d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BgmBtn:
+  m_bgmButtons:
   - {fileID: 797074580324905768}
   - {fileID: 780428880842746138}
-  SfxBtn:
+  m_sfxButtons:
   - {fileID: 5966670614321550415}
   - {fileID: 2386406545241487277}
+  m_pushButtons:
+  - {fileID: 1337720011849266546}
+  - {fileID: 1120050969705143012}
+  m_nightPushButtons:
+  - {fileID: 2142129556499475677}
+  - {fileID: 6879221569391934262}
 --- !u!1 &3632893852074000264
 GameObject:
   m_ObjectHideFlags: 0

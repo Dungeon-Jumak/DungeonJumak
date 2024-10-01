@@ -5,45 +5,62 @@ using UnityEngine;
 
 public class StBtnSet : MonoBehaviour
 {
-    [SerializeField] private GameObject[] BgmBtn;
-    [SerializeField] private GameObject[] SfxBtn;
+    [SerializeField] private GameObject[] m_bgmButtons;
+    [SerializeField] private GameObject[] m_sfxButtons;
+    [SerializeField] private GameObject[] m_pushButtons;
+    [SerializeField] private GameObject[] m_nightPushButtons;
 
+    private DataManager<AudioData> g_audioData;
+    private DataManager<SettingData> g_settingData;
 
-    private GlobalData data;
     private void Awake()
     {
-        data = DataManager.Instance.data;
+        g_audioData = DataManager<AudioData>.Instance;
+        g_settingData = DataManager<SettingData>.Instance;
     }
 
     private async void OnEnable()
     {
         await UniTask.Delay(1);
-
-        SetBgmBtn();
-        SetSfxBtn();
+        SetBgmButton();
+        SetSfxButton();
+        SetPushButton();
+        SetNightPushButton();
     }
 
-    private void SetBgmBtn()
+    /// <summary>
+    /// BGM 버튼 상태를 설정합니다.
+    /// </summary>
+    private void SetBgmButton()
     {
-        //if (data.g_onBgm)
-        //{
-        //    BgmBtn[1].SetActive(false);
-        //}
-        //else
-        //{
-        //    BgmBtn[0].SetActive(false);
-        //}
+        bool isPlayBGM = g_audioData.Data.IsPlayBGM;
+        m_bgmButtons[isPlayBGM ? 1 : 0].SetActive(false);
     }
 
-    private void SetSfxBtn()
+    /// <summary>
+    /// SFX 버튼 상태를 설정합니다.
+    /// </summary>
+    private void SetSfxButton()
     {
-        //if (data.g_onSfx)
-        //{
-        //    SfxBtn[1].SetActive(false);
-        //}
-        //else
-        //{
-        //    SfxBtn[0].SetActive(false);
-        //}
+        bool isPlaySFX = g_audioData.Data.IsPlaySFX;
+        m_sfxButtons[isPlaySFX ? 1 : 0].SetActive(false);
+    }
+
+    /// <summary>
+    /// Push Message 버튼 상태를 설정합니다.
+    /// </summary>
+    private void SetPushButton()
+    {
+        bool isPushEnable = g_settingData.Data.IsPushEnable;
+        m_pushButtons[isPushEnable ? 1 : 0].SetActive(false);
+    }
+
+    /// <summary>
+    /// 야간 Push Message 버튼 상태를 설정합니다.
+    /// </summary>
+    private void SetNightPushButton()
+    {
+        bool isNightPushEnable = g_settingData.Data.IsNightPushEnable;
+        m_nightPushButtons[isNightPushEnable ? 1 : 0].SetActive(false);
     }
 }

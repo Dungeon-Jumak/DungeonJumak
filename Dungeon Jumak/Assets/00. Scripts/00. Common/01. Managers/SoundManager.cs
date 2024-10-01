@@ -23,10 +23,10 @@ namespace Utils.EnumTypes
         private int m_poolSize = 10;
         private bool m_isPaused = false;
 
-        private GlobalData data;
+        private DataManager<AudioData> audioData;
         private void Awake()
         {
-            data = DataManager.Instance.data;
+            audioData = DataManager<AudioData>.Instance;
         }
 
         // ==================================== //
@@ -53,7 +53,7 @@ namespace Utils.EnumTypes
         /// <param name="_loop"> 반복 유무 </param>
         public void Play(string _name, bool _loop = false)
         {
-            //if (!data.g_onBgm) return;
+            if (!audioData.Data.IsPlayBGM) return;
 
             PlayBgm(_name, _loop);
         }
@@ -66,7 +66,7 @@ namespace Utils.EnumTypes
         /// <param name="_loop"> 반복 유무 </param>
         public void Play(SFX_Label _labelEnum, string _name, bool _loop = false)
         {
-            //if (!data.g_onSfx) return;
+            if (!audioData.Data.IsPlaySFX) return;
 
             PlaySfx(_labelEnum, _name, _loop);
         }
