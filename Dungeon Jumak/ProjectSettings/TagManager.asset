@@ -3,7 +3,13 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Customer
+  - Terminal Point
+  - Waiting Point
+  - Seat Point_Left
+  - Seat Point_Right
+  - Seat Point
   layers:
   - Default
   - TransparentFX
@@ -44,11 +50,14 @@ TagManager:
   - name: UI
     uniqueID: 1790994761
     locked: 0
-  - name: w Layer 2 2
+  - name: Temp Layer 1
     uniqueID: 3754796007
     locked: 0
-  - name: aboveUI
+  - name: Temp Layer 2
     uniqueID: 3720044787
+    locked: 0
+  - name: Environment
+    uniqueID: 1106231271
     locked: 0
   - name: Customer
     uniqueID: 4026200113
@@ -56,6 +65,6 @@ TagManager:
   - name: Player
     uniqueID: 4165987127
     locked: 0
-  - name: New Layer 6
+  - name: 
     uniqueID: 1761362451
     locked: 0

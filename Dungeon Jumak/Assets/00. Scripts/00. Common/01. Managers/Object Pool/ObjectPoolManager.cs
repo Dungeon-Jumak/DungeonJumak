@@ -7,6 +7,8 @@ public class ObjectPoolManager : MonoBehaviour
     [SerializeField] private int m_defaultCapacity = 10;
     [SerializeField] private int m_maxPoolSize = 15;
 
+    [SerializeField] private GameObject m_parent;
+
     [SerializeField] private GameObject m_prefab;        //프리팹
 
     public IObjectPool<GameObject> Pool { get; private set; }   //유니티 내장 오브젝트 풀 프로퍼티
@@ -25,6 +27,9 @@ public class ObjectPoolManager : MonoBehaviour
     {
         GameObject poolGameObject = Instantiate(m_prefab);
         poolGameObject.GetComponent<Pool>().ObjectPool = this.Pool;
+
+        if(m_parent != null) poolGameObject.transform.SetParent(this.transform);
+
         return poolGameObject;
     }
 
