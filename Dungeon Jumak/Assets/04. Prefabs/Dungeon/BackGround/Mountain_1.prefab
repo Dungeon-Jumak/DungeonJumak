@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2361416728090153410}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Mountain_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -43,7 +43,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4608809109850455622}
   - component: {fileID: 4608809109850455623}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: '[Sprite] Mountain_1'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -128,13 +128,13 @@ GameObject:
   - component: {fileID: 1672001910441788229}
   - component: {fileID: 7661310503028030560}
   - component: {fileID: 1211854753099584590}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: '[Sprite] Shadow'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1672001910441788229
 Transform:
   m_ObjectHideFlags: 0

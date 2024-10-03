@@ -18,15 +18,22 @@ public class DunjeonPlayer : MonoBehaviour, IDamageable, ITurnable, IMovable
     private DP_AnimationHandler animationHandler;
     private DP_MoveHandler moveHandler;
 
+    private Rigidbody2D rigidbody;
     private Animator animator;
     private SpriteRenderer spriteRenderer;
 
     private void Awake()
     {
+        rigidbody = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
 
         animationHandler = new DP_AnimationHandler(spriteRenderer, animator);
-        moveHandler = new DP_MoveHandler(transform, data.Speed, scanner);
+        moveHandler = new DP_MoveHandler(rigidbody, data.Speed, scanner);
+    }
+
+    private void Update()
+    {
+        moveHandler.Update();
     }
 }

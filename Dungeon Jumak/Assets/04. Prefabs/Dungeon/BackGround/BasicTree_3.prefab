@@ -11,13 +11,13 @@ GameObject:
   - component: {fileID: 5873735560355354642}
   - component: {fileID: 9164986816136076429}
   - component: {fileID: 3907015359334502425}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: '[Sprite] Shadow'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &5873735560355354642
 Transform:
   m_ObjectHideFlags: 0
@@ -107,7 +107,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4519257270102465958}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: BasicTree_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -142,7 +142,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4519257270553671551}
   - component: {fileID: 4519257270553671550}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: '[Sprite] Tree_3_Up'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -227,7 +227,7 @@ GameObject:
   - component: {fileID: 4519257271991490765}
   - component: {fileID: 4519257271991490803}
   - component: {fileID: 4519257271991490764}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: '[Sprite] Tree_3_Down'
   m_TagString: Untagged
   m_Icon: {fileID: 0}

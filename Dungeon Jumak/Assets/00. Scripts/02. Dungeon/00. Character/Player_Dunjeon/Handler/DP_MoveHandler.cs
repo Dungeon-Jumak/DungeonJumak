@@ -1,6 +1,5 @@
 // Engine
 using UnityEngine;
-using UnityEngine.EventSystems;
 
 public class DP_MoveHandler
 {
@@ -9,32 +8,79 @@ public class DP_MoveHandler
     // 이동 속도
     [SerializeField] private float speed;
 
-    // 트랜스폼
-    private Transform playerTransform;
+    // 플레이어 트랜스폼
+    private Rigidbody2D playerRigidbody; // Rigidbody2D 사용
 
     // 스캐너
     private Scanner scanner;
 
-    public DP_MoveHandler(Transform _playerTransform = null, float _speed = 0f, Scanner _scanner = null)
+    // 스캔 범위
+    private float scanRange;
+
+    // 목표 지점
+    private Vector2 targetPosition;
+
+    public DP_MoveHandler(Rigidbody2D _playerRigidbody, float _speed, Scanner _scanner)
     {
-        this.playerTransform = _playerTransform;
+        if (_playerRigidbody == null || _scanner == null)
+        {
+            Debug.LogError("playerRigidbody 또는 scanner가 null입니다. 초기화 확인 필요.");
+            return;
+        }
+
+        this.playerRigidbody = _playerRigidbody;
         this.speed = _speed;
         this.scanner = _scanner;
+        this.scanRange = _scanner.scanRange; // 스캔 범위 초기화
     }
 
-    private void Update() {
-
-        Moving();
-    }
-
-    public void Moving()
+    public void Update()
     {
-        // 스캔 범위 내에 타겟이 있는지 확인
-        if (scanner.nearestTarget != null)
+        if (isMoving)
         {
-            MoveAwayFromTarget(scanner.nearestTarget);
+            MoveTowardsTarget(); // 목표 지점으로 이동 중
         }
-        else
+        else if (scanner.nearestTarget != null)
+        {
+            // 새로운 몬스터를 스캔했을 때만 실행
+            SetTargetPosition(scanner.nearestTarget);
+        }
+    }
+
+    private void SetTargetPosition(Transform target)
+    {
+        if (target == null)
+        {
+            Debug.LogError("Target is null. Unable to set target position.");
+            return;
+        }
+
+        isMoving = true; // 이동 시작
+
+        // 타겟으로부터 반대 방향 계산
+        Vector2 directionAwayFromTarget = (playerRigidbody.position - (Vector2)target.position).normalized;
+
+        // 목표 위치: 플레이어 위치에서 스캔 범위만큼 반대 방향으로 설정
+        targetPosition = playerRigidbody.position + directionAwayFromTarget * scanRange;
+
+        // 스캔을 잠시 중지
+        scanner.enabled = false;
+    }
+
+    private void MoveTowardsTarget()
+    {
+        // 목표 지점으로 부드럽게 이동 (Rigidbody2D 사용)
+        Vector2 newPosition = Vector2.MoveTowards(
+            playerRigidbody.position,  // 현재 위치
+            targetPosition,            // 목표 위치 (스캔 범위만큼 반대 방향)
+            speed * Time.fixedDeltaTime // 속도
+        );
+
+        // Rigidbody2D를 통해 이동
+        playerRigidbody.MovePosition(newPosition);
+
+        // 목표 지점에 도착했는지 확인
+        if (Vector2.Distance(playerRigidbody.position, targetPosition) < 0.1f)
         {
             StopMoving();
         }
@@ -42,18 +88,9 @@ public class DP_MoveHandler
 
     private void StopMoving()
     {
-        // 멈추기
-    }
+        isMoving = false; // 이동 종료
 
-    private void MoveAwayFromTarget(Transform target)
-    {
-        if (target != null)
-        {
-            // 반대 방향 계산
-            Vector3 directionAwayFromTarget = (playerTransform.position - target.position).normalized;
-
-            // 이동
-            playerTransform.Translate(directionAwayFromTarget * speed * Time.deltaTime);
-        }
+        // 스캐너 다시 활성화
+        scanner.enabled = true;
     }
 }

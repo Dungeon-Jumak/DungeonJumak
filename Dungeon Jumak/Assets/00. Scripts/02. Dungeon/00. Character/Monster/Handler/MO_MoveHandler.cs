@@ -1,39 +1,44 @@
 // Engine
 using UnityEngine;
-using UnityEngine.EventSystems;
 
 public class Mo_MoveHandler
 {
-    // 이동 속도
-    [SerializeField] private float speed;
+    private float speed; 
+    private Transform monsterTransform; 
+    private Transform playerTransform;  
 
-    // 트랜스폼
-    private Transform playerTransform;
-
-    public Mo_MoveHandler(Transform _playerTransform = null, float _speed = 0f)
+    public Mo_MoveHandler(Transform _monsterTransform, Transform _playerTransform, float _speed)
     {
+        this.monsterTransform = _monsterTransform;
         this.playerTransform = _playerTransform;
         this.speed = _speed;
     }
 
-    private void Update()
+    public void Update()
     {
         Moving();
     }
 
     public void Moving()
     {
-        //이동 로직
-        //스캔 범위 내에 플레이어 있으면 따라가고 벗어나면 멈추기
+        if (playerTransform != null)
+        {
+            // 몬스터가 플레이어의 위치로 이동하도록 함
+            monsterTransform.position = Vector3.MoveTowards(
+                monsterTransform.position,              // 몬스터의 현재 위치
+                playerTransform.position,               // 플레이어의 위치
+                speed * Time.deltaTime                  // 속도
+            );
+        }
     }
 
-    private void StopMoving()
+    public void StopMoving()
     {
-        // 멈추기
+        // 원하는 경우, 몬스터의 이동을 멈추는 로직
     }
 
-    private void MoveTowardToPlayer(Transform target)
+    public void MoveTowardToPlayer(Transform target)
     {
-        // 플레이어 따라가기
+        playerTransform = target;
     }
 }

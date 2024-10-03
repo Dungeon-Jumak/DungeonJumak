@@ -12,6 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c879e74f49db85549a9a4adacb8e76ef, type: 3}
   m_Name: 00. MonsterData_Base
   m_EditorClassIdentifier: 
-  m_monsterName: Monster_Base
-  m_Damage: 0
+  m_name: 
+  m_xp: 0
+  m_attackDamage: 0
   m_hp: 0
+  m_speed: 2

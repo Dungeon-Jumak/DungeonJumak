@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7960601108959001772}
   - component: {fileID: 7960601108959001774}
   - component: {fileID: 7960601108959001773}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: '[Sprite] House_Down'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -122,13 +122,13 @@ GameObject:
   - component: {fileID: 7960601109152397602}
   - component: {fileID: 7960601109152397532}
   - component: {fileID: 7960601109152397603}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: '[Sprite] Shadow'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &7960601109152397602
 Transform:
   m_ObjectHideFlags: 0
@@ -219,7 +219,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7960601109793608293}
   - component: {fileID: 7960601109793608294}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: '[Sprite] House_Up'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -302,7 +302,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7960601110297677856}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: House_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
