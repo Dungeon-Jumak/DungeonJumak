@@ -1,4 +1,4 @@
-﻿//System
+//System
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -26,7 +26,7 @@ public class UI_Buttons_Width : UI_PopUp
     {
         Bind<Button>(typeof(Buttons));
 
-        GetButton((int)Buttons.Profile).gameObject.BindEvent(OpenDefaultPopUp);
+        GetButton((int)Buttons.Profile).gameObject.BindEvent(OpenProfilePopUp);
         GetButton((int)Buttons.Yeouiju).gameObject.BindEvent(OpenDefaultPopUp);
         GetButton((int)Buttons.Money).gameObject.BindEvent(OpenDefaultPopUp);
         GetButton((int)Buttons.Equipment).gameObject.BindEvent(OpenDefaultPopUp);
@@ -38,6 +38,11 @@ public class UI_Buttons_Width : UI_PopUp
 
     public void OpenDefaultPopUp(PointerEventData _data)
     {
-        GameManager.UI.ShowPopupUI<UI_PopUp>("DefaultPopUp  ");
+        GameManager.UI.ShowPopupUI<UI_PopUp>("DefaultPopUp");
+    }
+
+    private void OpenProfilePopUp(PointerEventData _data)
+    {
+        GameManager.UI.ShowPopupUI<UI_PopUp>("ProfilePopUp");
     }
 }
