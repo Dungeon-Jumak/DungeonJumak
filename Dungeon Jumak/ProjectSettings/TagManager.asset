@@ -4,6 +4,13 @@
 TagManager:
   serializedVersion: 2
   tags:
+  - Customer
+  - Terminal Point
+  - Waiting Point
+  - Seat Point_Left
+  - Seat Point_Right
+  - Seat Point
+  - Customer_Exit
   - Monster
   layers:
   - Default
@@ -51,6 +58,21 @@ TagManager:
   - name: UI
     uniqueID: 1790994761
     locked: 0
-  - name: w Layer 2 2
+  - name: Temp Layer 1
     uniqueID: 3754796007
+    locked: 0
+  - name: Temp Layer 2
+    uniqueID: 3720044787
+    locked: 0
+  - name: Environment
+    uniqueID: 1106231271
+    locked: 0
+  - name: Customer
+    uniqueID: 4026200113
+    locked: 0
+  - name: Player
+    uniqueID: 4165987127
+    locked: 0
+  - name: 
+    uniqueID: 1761362451
     locked: 0
