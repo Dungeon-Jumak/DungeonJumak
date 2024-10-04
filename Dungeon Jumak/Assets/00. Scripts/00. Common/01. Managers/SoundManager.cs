@@ -23,6 +23,12 @@ namespace Utils.EnumTypes
         private int m_poolSize = 10;
         private bool m_isPaused = false;
 
+        private DataManager<AudioData> audioData;
+        private void Awake()
+        {
+            audioData = DataManager<AudioData>.Instance;
+        }
+
         // ==================================== //
 
         /// <summary>
@@ -41,28 +47,32 @@ namespace Utils.EnumTypes
         }
 
         /// <summary>
-        /// Bgm 재생.
+        /// Bgm을 재생합니다.
         /// </summary>
         /// <param name="_name"> Bgm 이름 </param>
         /// <param name="_loop"> 반복 유무 </param>
         public void Play(string _name, bool _loop = false)
         {
+            if (!audioData.Data.IsPlayBGM) return;
+
             PlayBgm(_name, _loop);
         }
 
         /// <summary>
-        /// Sfx 재생.
+        /// Sfx를 재생합니다.
         /// </summary>
         /// <param name="_labelEnum"> 라벨 종류 (Main_SFX | Dungeon_SFX | ETC_SFX) </param>
         /// <param name="_name"> Sfx 이름 </param>
         /// <param name="_loop"> 반복 유무 </param>
         public void Play(SFX_Label _labelEnum, string _name, bool _loop = false)
         {
+            if (!audioData.Data.IsPlaySFX) return;
+
             PlaySfx(_labelEnum, _name, _loop);
         }
 
         /// <summary>
-        /// 재생 중인 모든 사운드를 일시 정지.
+        /// 재생 중인 모든 사운드를 일시 정지합니다.
         /// </summary>
         public void Pause()
         {
@@ -79,7 +89,7 @@ namespace Utils.EnumTypes
         }
 
         /// <summary>
-        /// 일시 정지된 모든 사운드를 다시 시작.
+        /// 일시 정지된 모든 사운드를 다시 시작합니다.
         /// </summary>
         public void Resume()
         {
@@ -96,7 +106,7 @@ namespace Utils.EnumTypes
         }
 
         /// <summary>
-        /// 특정 Bgm 소리 중지 및 제거.
+        /// 특정 Bgm 소리를 중지 및 제거합니다.
         /// </summary>
         /// <param name="_name"> Bgm 이름 </param>
         public void Clear(string _name)
@@ -105,7 +115,7 @@ namespace Utils.EnumTypes
         }
 
         /// <summary>
-        /// 특정 Sfx 소리 중지 및 제거.
+        /// 특정 Sfx 소리를 중지 및 제거합니다.
         /// </summary>
         /// <param name="_label"> 라벨 종류 (Main_SFX | Dungeon_SFX | ETC_SFX) </param>
         /// <param name="_name"> Sfx 이름 </param>
@@ -115,7 +125,7 @@ namespace Utils.EnumTypes
         }
 
         /// <summary>
-        /// 모든 소리 제거.
+        /// 모든 소리를 제거합니다.
         /// </summary>
         public void Clear()
         {
