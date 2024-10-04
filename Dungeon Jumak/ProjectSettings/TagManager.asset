@@ -11,6 +11,7 @@ TagManager:
   - Seat Point_Right
   - Seat Point
   - Customer_Exit
+  - Monster
   layers:
   - Default
   - TransparentFX
@@ -20,9 +21,9 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
-  - 
+  - Monster
+  - Player
+  - Item
   - 
   - 
   - 
@@ -47,6 +48,12 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Background
+    uniqueID: 133659583
+    locked: 0
+  - name: Character
+    uniqueID: 23946075
     locked: 0
   - name: UI
     uniqueID: 1790994761

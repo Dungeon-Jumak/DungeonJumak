@@ -1,4 +1,4 @@
-﻿// Engine
+// Engine
 using System.Resources;
 using UnityEngine;
 
@@ -35,7 +35,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    UIManager m_ui = new UIManager(); //UIManager
+    UIManager m_ui = new UIManager();
     ResourceManager m_resource = new ResourceManager();
 
     public static UIManager UI { get { return Instance.m_ui; } }
