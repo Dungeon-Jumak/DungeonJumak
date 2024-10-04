@@ -1,6 +1,4 @@
 //Engine
-using System.Data.Common;
-using TMPro;
 using UnityEngine;
 
 public class CU_MoveHandler

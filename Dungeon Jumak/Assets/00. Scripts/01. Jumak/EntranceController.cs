@@ -6,6 +6,18 @@ using UnityEngine;
 
 public class EntranceController : MonoBehaviour
 {
+    [Header("왼쪽 포인트")]
+    public Transform leftPoint;
+
+    [Header("오른쪽 포인트")]
+    public Transform rightPoint;
+
+    [Header("주막 입구 포인트")]
+    public Transform entrancePoint;
+
+    [Header("주막에서 밖으로 나갈 때 지점")]
+    public Transform exitPoint;
+
     [Header("손님 스폰을 관리하는 CustomerSpawner 스크립트")]
     [SerializeField] private CustomerSpawner m_customerSpawner;
 
@@ -21,12 +33,14 @@ public class EntranceController : MonoBehaviour
     [Header("손님이 주막에 있는동안 갖고 있을 부모 오브젝트")]
     [SerializeField] private Transform m_tempParent;
 
+    private CustomerSpawner customerSpawner;
+
     private Queue<Customer> m_waitingQueue;
 
     [Header("기다리는 포인트들의 Transform 배열")]
     [SerializeField] private Transform[] m_waitingTransform;
 
-    private int m_currentWaitingCount;
+    [SerializeField] private int m_currentWaitingCount;
 
     //Temp
     JumakData jumakData;
@@ -39,6 +53,8 @@ public class EntranceController : MonoBehaviour
 
         //Temp
         jumakData = new JumakData();
+
+        customerSpawner = FindObjectOfType<CustomerSpawner>();
     }
 
     private void Update()
@@ -58,21 +74,73 @@ public class EntranceController : MonoBehaviour
 
         if (m_jumakController.CheckEmptySeat()) return;
 
-        customer.destination = m_waitingTransform[m_currentWaitingCount];
+        //자리가 안비어있다면 대기 설정
+        WaitingInQueue(customer);
+    }
+
+    private void WaitingInQueue(Customer _customer)
+    {
+        _customer.destination = m_waitingTransform[m_currentWaitingCount];
         IncreaseWaitingCount();
-        m_waitingQueue.Enqueue(customer);
+        m_waitingQueue.Enqueue(_customer);
     }
 
     /// <summary>
-    /// 입구에서 주막으로 이동하기 위한 메소드
+    /// 마을에서 주막으로 이동하기 위한 메소드
     /// </summary>
     /// <param name="_customer"></param>
-    public void EntranceToJumak(Customer _customer)
+    public void VillageToJumak(Customer _customer)
     {
         _customer.transform.SetParent(m_tempParent);
         _customer.transform.position = ConvertRectTransfromToTransform(m_entrancePoint);
 
         SetDestinatonToEmpty(_customer);
+    }
+
+    /// <summary>
+    /// 주막에서 마을로 이동하기 위한 메소드
+    /// </summary>
+    /// <param name="_customer"></param>
+    public void JumakToVillage(Customer _customer)
+    {
+        _customer.transform.SetParent(customerSpawner.transform);
+        _customer.transform.position = entrancePoint.position;
+
+        SetDestinationToRandomTerminal(_customer);
+    }
+
+    /// <summary>
+    /// 대기 중 자리가 생겼을 때 주막으로 이동하기 위한 메소드
+    /// </summary>
+    public void EntranceJumakInWatingQueue(int _tableNumber)
+    {
+        //큐가 비어 있다면 리턴
+        if (m_waitingQueue.Count == 0) return;
+
+        Customer customer = m_waitingQueue.Dequeue();
+
+        m_jumakController.allocatedSeats[_tableNumber] = false;
+
+        customer.EntranceJumak();
+
+        ReadjustWaitingQueue();
+    }
+
+    /// <summary>
+    /// 줄을 앞으로 당기기 위한 메소드
+    /// </summary>
+    private void ReadjustWaitingQueue()
+    {
+        Customer[] customers = m_waitingQueue.ToArray();
+
+        int currentQueueCount = m_waitingQueue.Count;
+
+        for (int i = 0; i < currentQueueCount; i++)
+        {
+            customers[i].GoForwardInWaitingQueue(m_waitingTransform[i]);
+        }
+
+        DecreaseWaitingCount();
     }
 
 
@@ -82,7 +150,28 @@ public class EntranceController : MonoBehaviour
     /// <param name="_customer"></param>
     private void SetDestinatonToEmpty(Customer _customer)
     {
-        _customer.destination = m_jumakController.GetEmptySeat();
+        Seat seat = m_jumakController.GetEmptySeat();
+
+        if (seat == null) WaitingInQueue(_customer);
+        else
+        {
+            _customer.destination = seat.transform;
+            _customer.cuurentSeatNubmer = seat.GetSeatNubmer();
+        }
+    }
+
+    /// <summary>
+    /// Customer가 주막에서 나온 후 랜덤으로 터미널 포인트를 결정하기 위한 함수
+    /// </summary>
+    /// <param name="_customer"></param>
+    private void SetDestinationToRandomTerminal(Customer _customer)
+    {
+        int random = Random.Range(0, 2);
+
+        if (random == 0)
+            _customer.destination = leftPoint;
+        else
+            _customer.destination = rightPoint;
     }
 
     /// <summary>

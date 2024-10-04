@@ -27,6 +27,9 @@ public class MenuData : ScriptableObject
     [Header("Menu Sprite")]
     public Sprite sprite;
 
+    [Header("Empty Bowl Sprite")]
+    public Sprite emptySprite;
+
     //재료 배열 추가
     //public IngredientData[] ingredients
 }

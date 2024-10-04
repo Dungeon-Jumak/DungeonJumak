@@ -19,7 +19,7 @@ public class Food : MonoBehaviour
 
     private void Serving()
     {
-        servingTable.ServingFood(this);
+        servingTable.ServingFood(this, menuData);
     }
 
 

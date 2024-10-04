@@ -12,18 +12,13 @@ public class CustomerSpawner : MonoBehaviour
     [Header("X 시작 좌표 절댓값")]
     [SerializeField] private int m_absX;
 
-    [Header("왼쪽 포인트")]
-    [SerializeField] private Transform m_leftPoint;
-    [Header("오른쪽 포인트")]
-    [SerializeField] private Transform m_rightPoint;
-    [Header("주막 입구 포인트")]
-    [SerializeField] private Transform m_entrancePoint;
-
     [Header("주막에 방문할 확률")]
     [SerializeField] private int visitChance;
 
     [Header("해당하는 오브젝트 풀 매니저 컴포넌트")]
     [SerializeField] private ObjectPoolManager objectPoolManager;
+
+    private EntranceController entranceController;
 
     private float m_timeToNextSpawn;
 
@@ -39,6 +34,8 @@ public class CustomerSpawner : MonoBehaviour
 
     private void Init()
     {
+        entranceController = FindObjectOfType<EntranceController>();
+
         canSpawn = true;
         m_timeToNextSpawn = GetRandomTime();
     }
@@ -88,15 +85,12 @@ public class CustomerSpawner : MonoBehaviour
         var random = Random.Range(1, 101);
 
         if (random < visitChance)                                       //주막을 방문할 확률에 해당된다면,
-        {
-            _customer.GetComponent<Customer>().willVisit = true;        //주막을 방문하고 싶어하는 손님의 bool 변수 변경
-            return m_entrancePoint;
-        }
+            return entranceController.entrancePoint;
 
         if (_customer.transform.localPosition.x < 0)
-            return m_rightPoint;
+            return entranceController.rightPoint;
 
-        return m_leftPoint;
+        return entranceController.leftPoint;
     }
 
     /// <summary>

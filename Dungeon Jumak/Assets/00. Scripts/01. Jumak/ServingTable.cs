@@ -7,11 +7,11 @@ public class ServingTable : MonoBehaviour
     [SerializeField] private Food[] foods;
 
     [Header("테이블 위에 있는 음식 이미지를 저장할 배열")]
-    [SerializeField] private Image[] foodsOnTable;
+    [SerializeField] private FoodOnTable[] foodsOnTable;
 
     private const int START_INDEX = 0;
 
-    public void ServingFood(Food _food)
+    public void ServingFood(Food _food, MenuData _menuData)
     {
         for (int i = START_INDEX; i < foods.Length; i++)
         {
@@ -20,7 +20,7 @@ public class ServingTable : MonoBehaviour
                 foods[i].gameObject.SetActive(false);
 
                 foodsOnTable[_food.seatNumber].gameObject.SetActive(true);
-                foodsOnTable[_food.seatNumber].sprite = _food.menuData.sprite;
+                foodsOnTable[_food.seatNumber].Init(_menuData);
             }
 
         }

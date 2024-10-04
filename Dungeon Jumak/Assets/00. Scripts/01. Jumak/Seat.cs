@@ -52,4 +52,9 @@ public class Seat : MonoBehaviour
 
         return null;
     }
+
+    public int GetSeatNubmer()
+    {
+        return seatNumber;
+    }
 }
