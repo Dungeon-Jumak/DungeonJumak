@@ -7,7 +7,6 @@ using System;
 [Serializable]
 public class SettingData
 {
-    // 재생 여부
     private bool isPushEnabled = true;
     private bool isNightPushEnabled = true;
 

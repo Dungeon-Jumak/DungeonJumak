@@ -14,14 +14,8 @@ public class UI_ProfilePopup : UI_PopUp
     enum Buttons
     {
         Dim,
-        PreviousPage,
-        NextPage,
         Reinforce,
     }
-
-    [SerializeField] private GameObject[] ratingIcon;
-
-    private int page = 0;
 
     private void Start()
     {
@@ -38,8 +32,6 @@ public class UI_ProfilePopup : UI_PopUp
 
         //이벤트 바인딩
         GetButton((int)Buttons.Dim).gameObject.BindEvent(ClosePopUp);
-        GetButton((int)Buttons.PreviousPage).gameObject.BindEvent(ToPreviousPage);
-        GetButton((int)Buttons.NextPage).gameObject.BindEvent(ToNextPage);
         GetButton((int)Buttons.Reinforce).gameObject.BindEvent(OpenJumakManagePopup);
     }
 
@@ -52,31 +44,5 @@ public class UI_ProfilePopup : UI_PopUp
     {
         GameManager.UI.ClosePopUpUI();
         GameManager.UI.ShowPopupUI<UI_PopUp>("JumakManagePopup");
-    }
-
-    private void ToPreviousPage(PointerEventData _data)
-    {
-        if (page <= 0) return;
-        page--;
-        AdjustmentPage();
-    }
-    private void ToNextPage(PointerEventData _data)
-    {
-        if (page >= ratingIcon.Length - 1) return;
-        page++;
-        AdjustmentPage();
-    }
-
-    private void AdjustmentPage()
-    {
-        foreach (var icon in ratingIcon)
-        {
-            icon.SetActive(false);
-        }
-
-        if (page >= 0 && page < ratingIcon.Length)
-        {
-            ratingIcon[page].SetActive(true);
-        }
     }
 }
