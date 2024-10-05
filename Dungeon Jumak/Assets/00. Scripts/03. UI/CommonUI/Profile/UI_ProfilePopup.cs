@@ -40,11 +40,18 @@ public class UI_ProfilePopup : UI_PopUp
         GetButton((int)Buttons.Dim).gameObject.BindEvent(ClosePopUp);
         GetButton((int)Buttons.PreviousPage).gameObject.BindEvent(ToPreviousPage);
         GetButton((int)Buttons.NextPage).gameObject.BindEvent(ToNextPage);
+        GetButton((int)Buttons.Reinforce).gameObject.BindEvent(OpenJumakManagePopup);
     }
 
     public void ClosePopUp(PointerEventData _data)
     {
         GameManager.UI.ClosePopUpUI();
+    }
+
+    private void OpenJumakManagePopup(PointerEventData _data)
+    {
+        GameManager.UI.ClosePopUpUI();
+        GameManager.UI.ShowPopupUI<UI_PopUp>("JumakManagePopup");
     }
 
     private void ToPreviousPage(PointerEventData _data)
