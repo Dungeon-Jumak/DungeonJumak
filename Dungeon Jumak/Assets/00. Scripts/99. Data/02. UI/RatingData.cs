@@ -9,10 +9,33 @@ public class RatingData
 {
     private int rating;
     private int interiorScore;
-    private bool isPushEnabled = true;
-    private bool isNightPushEnabled = true;
+    private float bonusRevenue;
+    private float maxOfflineDuration;
 
     #region Property - Get / Set
+    public int Rating
+    {
+        get { return rating; }
+        set { rating = value; }
+    }
+
+    public int InteriorScore
+    {
+        get { return interiorScore; }
+        set { interiorScore = value; }
+    }
+
+    public float BonusRevenue
+    {
+        get { return bonusRevenue; }
+        set { bonusRevenue = value; }
+    }
+
+    public float MaxOfflineDuration
+    { 
+        get { return maxOfflineDuration; } 
+        set { maxOfflineDuration = value; } 
+    }
 
     #endregion
 }
