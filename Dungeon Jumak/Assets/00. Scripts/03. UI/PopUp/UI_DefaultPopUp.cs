@@ -30,6 +30,7 @@ public class UI_DefaultPopUp : UI_PopUp
 
         //이벤트 바인딩
         GetButton((int)Buttons.Dim).gameObject.BindEvent(ClosePopUp);
+        GetText((int)Buttons.Dim).gameObject.BindEvent(ClosePopUp);
     }
 
     public void ClosePopUp(PointerEventData _data)
