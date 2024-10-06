@@ -111,7 +111,7 @@ GameObject:
   - component: {fileID: 1329345391849611111}
   m_Layer: 3
   m_Name: '[Sprite] Tree_2_Down'
-  m_TagString: Untagged
+  m_TagString: Background_Obj
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -129,7 +129,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1329345392634019856}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1329345391849611108
 SpriteRenderer:
@@ -238,8 +238,8 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1329345391355437336}
-  - {fileID: 1329345391849611110}
   - {fileID: 1329345392730662598}
+  - {fileID: 1329345391849611110}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -273,7 +273,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1329345392634019856}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1329345392730662599
 SpriteRenderer:
@@ -313,9 +313,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 133659583
-  m_SortingLayer: 1
-  m_SortingOrder: 2
+  m_SortingLayerID: 1121850397
+  m_SortingLayer: 4
+  m_SortingOrder: 1
   m_Sprite: {fileID: -1789615230, guid: 6bb808b66d319914f9e5ebc61cfb4a35, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

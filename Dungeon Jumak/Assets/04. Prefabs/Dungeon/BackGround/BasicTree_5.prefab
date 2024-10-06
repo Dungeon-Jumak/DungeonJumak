@@ -145,7 +145,7 @@ GameObject:
   - component: {fileID: 9023224785297359474}
   m_Layer: 3
   m_Name: '[Sprite] Tree_5_Down'
-  m_TagString: Untagged
+  m_TagString: Background_Obj
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -313,8 +313,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 133659583
-  m_SortingLayer: 1
+  m_SortingLayerID: 1121850397
+  m_SortingLayer: 4
   m_SortingOrder: 2
   m_Sprite: {fileID: -422526943, guid: b1fb6c171c0b7ef4eb14fda268ba7547, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

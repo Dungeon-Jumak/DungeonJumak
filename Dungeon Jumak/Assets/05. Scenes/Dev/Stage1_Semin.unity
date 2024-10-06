@@ -133,7 +133,7 @@ GameObject:
   m_Component:
   - component: {fileID: 10953937}
   - component: {fileID: 10953938}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: '[Sprite] River_1'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1728,9 +1728,9 @@ GameObject:
   m_Component:
   - component: {fileID: 687174861}
   - component: {fileID: 687174862}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Collider_Left
-  m_TagString: wall
+  m_TagString: Background_Obj
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2209,9 +2209,9 @@ GameObject:
   m_Component:
   - component: {fileID: 783738760}
   - component: {fileID: 783738761}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Collider_Down
-  m_TagString: wall
+  m_TagString: Background_Obj
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3558,9 +3558,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1433389129}
   - component: {fileID: 1433389130}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Collider_Right
-  m_TagString: wall
+  m_TagString: Background_Obj
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3667,11 +3667,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2361416728090153410, guid: 5485fdeb7d75bfd48bba3804d0cfec0f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 12.77
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 2361416728090153410, guid: 5485fdeb7d75bfd48bba3804d0cfec0f, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -34.68
+      value: -18.4
       objectReference: {fileID: 0}
     - target: {fileID: 2361416728090153410, guid: 5485fdeb7d75bfd48bba3804d0cfec0f, type: 3}
       propertyPath: m_LocalPosition.z
@@ -4190,11 +4190,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2361416728090153410, guid: 5485fdeb7d75bfd48bba3804d0cfec0f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 30.95
+      value: -13.76
       objectReference: {fileID: 0}
     - target: {fileID: 2361416728090153410, guid: 5485fdeb7d75bfd48bba3804d0cfec0f, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -16.15
+      value: 17.59
       objectReference: {fileID: 0}
     - target: {fileID: 2361416728090153410, guid: 5485fdeb7d75bfd48bba3804d0cfec0f, type: 3}
       propertyPath: m_LocalPosition.z
@@ -4431,7 +4431,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2007661410}
   - component: {fileID: 2007661411}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: '[Sprite] River_2'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4656,9 +4656,9 @@ GameObject:
   m_Component:
   - component: {fileID: 2017211606}
   - component: {fileID: 2017211607}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Collider_Up
-  m_TagString: wall
+  m_TagString: Background_Obj
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4986,7 +4986,7 @@ PrefabInstance:
       objectReference: {fileID: 11400000, guid: 02a6935dbfe08404f8d3e2c4cc7d10a2, type: 2}
     - target: {fileID: 3453147071512783517, guid: ac7ee2120cf05414d882bccde7b22887, type: 3}
       propertyPath: m_Radius
-      value: 4
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 3453147071512783517, guid: ac7ee2120cf05414d882bccde7b22887, type: 3}
       propertyPath: m_Offset.x
@@ -4998,7 +4998,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5253071294531475889, guid: ac7ee2120cf05414d882bccde7b22887, type: 3}
       propertyPath: scanRange
-      value: 4
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 5253071294531475889, guid: ac7ee2120cf05414d882bccde7b22887, type: 3}
       propertyPath: targetLayer.m_Bits
@@ -5193,7 +5193,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2361416728090153410, guid: 5485fdeb7d75bfd48bba3804d0cfec0f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 18.27
       objectReference: {fileID: 0}
     - target: {fileID: 2361416728090153410, guid: 5485fdeb7d75bfd48bba3804d0cfec0f, type: 3}
       propertyPath: m_LocalPosition.y

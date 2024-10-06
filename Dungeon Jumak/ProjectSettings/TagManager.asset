@@ -5,7 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - Monster
-  - wall
+  - Background_Obj
   layers:
   - Default
   - TransparentFX
@@ -43,7 +43,7 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: Background
+  - name: Background_Down
     uniqueID: 133659583
     locked: 0
   - name: Player
@@ -51,6 +51,9 @@ TagManager:
     locked: 0
   - name: Monster
     uniqueID: 3705093947
+    locked: 0
+  - name: Background_Up
+    uniqueID: 1121850397
     locked: 0
   - name: UI
     uniqueID: 1790994761
