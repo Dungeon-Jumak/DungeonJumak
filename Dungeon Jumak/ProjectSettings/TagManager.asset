@@ -12,11 +12,12 @@ TagManager:
   - Seat Point
   - Customer_Exit
   - Monster
+  - Background_Obj
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Environment
   - Water
   - UI
   - 
@@ -49,11 +50,17 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: Background
+  - name: Background_Down
     uniqueID: 133659583
     locked: 0
-  - name: Character
+  - name: Player
     uniqueID: 23946075
+    locked: 0
+  - name: Monster
+    uniqueID: 3705093947
+    locked: 0
+  - name: Background_Up
+    uniqueID: 1121850397
     locked: 0
   - name: UI
     uniqueID: 1790994761

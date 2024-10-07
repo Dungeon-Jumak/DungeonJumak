@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4972652238114888069}
   - component: {fileID: 4308480279216797111}
   - component: {fileID: 108895931599851165}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Monster
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -148,6 +148,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   data: {fileID: 11400000, guid: bf51713bcc96b2c4f8b70074dbab6525, type: 2}
+  playerTransform: {fileID: 7453470322143723547, guid: ac7ee2120cf05414d882bccde7b22887, type: 3}
 --- !u!1 &4786450529513104668
 GameObject:
   m_ObjectHideFlags: 0

@@ -1,59 +1,60 @@
 // Engine
 using UnityEngine;
-using UnityEngine.EventSystems;
 
 public class DP_MoveHandler
 {
-    public bool isMoving = false;
+    public bool isMoving = false; // 초기 상태는 멈춘 상태
 
-    // 이동 속도
-    [SerializeField] private float speed;
+    private float speed; // 이동 속도
+    private float knockbackForce = 10.0f; // 넉백 힘
+    private const float MIN_SAFE_DISTANCE = 5.0f; // 최소 이동 거리
 
-    // 트랜스폼
-    private Transform playerTransform;
-
-    // 스캐너
+    private Rigidbody2D rigidbody;
     private Scanner scanner;
 
-    public DP_MoveHandler(Transform _playerTransform = null, float _speed = 0f, Scanner _scanner = null)
+    private Vector2 targetPosition; // 이동 목표 지점
+
+    public DP_MoveHandler(Transform _transform, Rigidbody2D _rigidbody, float _speed, Scanner _scanner)
     {
-        this.playerTransform = _playerTransform;
+        this.rigidbody = _rigidbody;
         this.speed = _speed;
         this.scanner = _scanner;
     }
 
-    private void Update() {
-
-        Moving();
-    }
-
-    public void Moving()
+    public void FixedUpdate()
     {
-        // 스캔 범위 내에 타겟이 있는지 확인
-        if (scanner.nearestTarget != null)
+        if (!isMoving && scanner.nearestTarget != null)
         {
-            MoveAwayFromTarget(scanner.nearestTarget);
+            SetTargetPosition(scanner.nearestTarget);
+            isMoving = true; // 이동 시작
         }
-        else
+
+        if (isMoving)
         {
-            StopMoving();
+            MoveTowardsTarget();
         }
     }
 
-    private void StopMoving()
+    //--- 목표 지점 계산 ---//
+    private void SetTargetPosition(Transform target)
     {
-        // 멈추기
+        Vector2 directionAwayFromTarget = (rigidbody.position - (Vector2)target.position).normalized;
+
+        // 최소 안전 거리를 보장하여 목표 지점 설정
+        targetPosition = rigidbody.position + directionAwayFromTarget * MIN_SAFE_DISTANCE;
     }
 
-    private void MoveAwayFromTarget(Transform target)
+    //--- 목표 지점으로의 이동 로직 ---//
+    private void MoveTowardsTarget()
     {
-        if (target != null)
-        {
-            // 반대 방향 계산
-            Vector3 directionAwayFromTarget = (playerTransform.position - target.position).normalized;
+        Vector2 newPosition = Vector2.MoveTowards(rigidbody.position, targetPosition, speed * Time.fixedDeltaTime);
+        rigidbody.MovePosition(newPosition);
 
-            // 이동
-            playerTransform.Translate(directionAwayFromTarget * speed * Time.deltaTime);
+        // 목표 지점에 도달하면 이동을 멈추고, 다시 스캔 시작
+        if (Vector2.Distance(rigidbody.position, targetPosition) < 0.1f)
+        {
+            isMoving = false;
+            scanner.enabled = true;
         }
     }
 }
