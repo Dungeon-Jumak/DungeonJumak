@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
 [CreateAssetMenu(fileName = "Menu Data", menuName = "Scriptable/Menu Data", order = int.MaxValue)]
 public class MenuData : ScriptableObject
@@ -30,6 +29,6 @@ public class MenuData : ScriptableObject
     [Header("Empty Bowl Sprite")]
     public Sprite emptySprite;
 
-    //재료 배열 추가
-    //public IngredientData[] ingredients
+    [Header("Ingredient Data")]
+    public IngredientData[] ingredients;
 }

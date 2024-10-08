@@ -24,3 +24,7 @@ MonoBehaviour:
   - 0
   - 0
   sprite: {fileID: 0}
+  emptySprite: {fileID: 0}
+  ingredients:
+  - {fileID: 11400000, guid: 34bec4c6bd3f1f8438c737d93aac0e21, type: 2}
+  - {fileID: 11400000, guid: d59bdebcfb272d9469ec4fd86e253153, type: 2}
