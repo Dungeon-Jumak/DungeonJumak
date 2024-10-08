@@ -5,6 +5,7 @@ public class CSVLoaderEditor : EditorWindow
 {
     private string m_filePath;
     private CSVLoader.ObjectType m_objectType;
+    private CSVLoader.SaveType m_saveType;
 
     [MenuItem("Tools/CSV Loader")]
     public static void ShowWindow()
@@ -18,6 +19,7 @@ public class CSVLoaderEditor : EditorWindow
 
         m_filePath = EditorGUILayout.TextField("CSV File Path", m_filePath);
         m_objectType = (CSVLoader.ObjectType)EditorGUILayout.EnumPopup("Object Type", m_objectType);
+        m_saveType = (CSVLoader.SaveType)EditorGUILayout.EnumPopup("Save Type", m_saveType);
 
         if (GUILayout.Button("Load CSV"))
         {
@@ -39,7 +41,8 @@ public class CSVLoaderEditor : EditorWindow
         var loader = new CSVLoader
         {
             m_filePath = m_filePath,
-            m_objectType = m_objectType
+            m_objectType = m_objectType,
+            m_saveType = m_saveType
         };
 
         loader.LoadDataFromCSV();

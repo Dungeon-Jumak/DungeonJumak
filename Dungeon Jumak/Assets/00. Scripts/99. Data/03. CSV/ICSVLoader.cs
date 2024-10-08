@@ -8,4 +8,5 @@ public interface ICSVLoader
     /// </summary>
     /// <param name="_filePath">CSV 파일 경로</param>
     void LoadFromCSV(string _filePath);
+    void LoadFromCSVToList(string _filePath);
 }

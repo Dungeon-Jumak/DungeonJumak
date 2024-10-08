@@ -1,9 +1,16 @@
+using JetBrains.Annotations;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "NewCharacter", menuName = "Scriptable/testMonster", order = int.MaxValue)]
-public class TestMonster : ScriptableObject
+[System.Serializable]
+public class MonsterData
 {
     public string MonsterName;
     public int MonsterID;
     public float MonsterHealth;
+}
+
+[CreateAssetMenu(fileName = "NewCharacter", menuName = "Scriptable/testMonster", order = int.MaxValue)]
+public class TestMonster : ScriptableObject
+{
+    public MonsterData data;
 }

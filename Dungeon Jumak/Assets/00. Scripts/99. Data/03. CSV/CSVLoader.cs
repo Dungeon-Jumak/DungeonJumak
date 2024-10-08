@@ -4,35 +4,51 @@ public class CSVLoader : MonoBehaviour
 {
     [Header("CSV 파일 경로")]
     public string m_filePath;
-    public enum ObjectType 
-    { 
-        Test, 
+    public enum ObjectType
+    {
+        Test,
         Monster
     }
 
+    public enum SaveType
+    {
+        Individual,
+        List
+    }
+
     public ObjectType m_objectType;
+    public SaveType m_saveType;
 
     /// <summary>
     /// CSV 데이터를 로드합니다.
     /// </summary>
     public void LoadDataFromCSV()
     {
-        ICSVLoader loader = null;
-
-        switch (m_objectType)
-        {
-            case ObjectType.Test:
-                loader = new TestCSVLoader();
-                break;
-            case ObjectType.Monster:
-                loader = new TestMonsterCSVLoader();
-                break;
-        }
+        ICSVLoader loader = CreateLoader();
 
         if (loader != null)
         {
-            loader.LoadFromCSV(m_filePath);
+            if (m_saveType == SaveType.Individual)
+            {
+                loader.LoadFromCSV(m_filePath);
+            }
+            else
+            {
+                loader.LoadFromCSVToList(m_filePath);
+            }
             Debug.Log("CSV Loading Complete!");
+        }
+    }
+
+    private ICSVLoader CreateLoader()
+    {
+        switch (m_objectType)
+        {
+            case ObjectType.Test:
+                return new RatingCSVLoader();
+            case ObjectType.Monster:
+                return new TestMonsterCSVLoader();
+            default: return null;
         }
     }
 }

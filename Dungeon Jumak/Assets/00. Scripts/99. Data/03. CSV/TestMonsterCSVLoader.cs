@@ -3,22 +3,46 @@ using System.IO;
 using UnityEngine;
 using UnityEditor;
 
-public class TestMonsterCSVLoader : BaseCSVLoader<TestMonster>
+public class TestMonsterCSVLoader : BaseCSVLoader
 {
     protected override string GetFolderName(string filePath)
     {
         return Path.GetFileNameWithoutExtension(filePath);
     }
 
-    protected override string GetAssetPath(TestMonster newAsset, string folderPath)
+    protected override string GetAssetPath(ScriptableObject newAsset, string folderPath)
     {
-        return $"{folderPath}/{newAsset.MonsterName}.asset";
+        TestMonster testAsset = newAsset as TestMonster;
+        return $"{folderPath}/{testAsset.data.MonsterID}.asset";
     }
 
-    protected override void PopulateData(TestMonster asset, string[] fields)
+    protected override void PopulateData(ScriptableObject asset, string[] fields)
     {
-        asset.MonsterName = fields[0];
-        asset.MonsterID = int.Parse(fields[1]);
-        asset.MonsterHealth = float.Parse(fields[2]);
+        TestMonster testAsset = asset as TestMonster;
+        testAsset.data = new MonsterData
+        {
+            MonsterName = fields[0],
+            MonsterID = int.Parse(fields[1]),
+            MonsterHealth = float.Parse(fields[2])
+        };
+    }
+
+    protected override ScriptableObject CreateScriptableObject()
+    {
+        return ScriptableObject.CreateInstance<TestMonster>();
+    }
+
+    protected override DataList CreateDataList()
+    {
+        return null;
+    }
+
+    protected override void AddDataToList(DataList dataList, string[] fields)
+    {
+    }
+
+    protected override string GetDataListName()
+    {
+        return null;
     }
 }
