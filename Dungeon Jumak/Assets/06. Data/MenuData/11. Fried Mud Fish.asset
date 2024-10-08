@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: 11. Fried Mud Fish
   m_EditorClassIdentifier: 
   id: 11
-  _name: Fried Mud Fish
+  _name: "\uBBF8\uAFB8\uB77C\uC9C0 \uD280\uAE40"
   category: 1
   level: 1
   prices: 0000000000000000000000000000000000000000
@@ -24,3 +24,7 @@ MonoBehaviour:
   - 0
   - 0
   sprite: {fileID: 0}
+  emptySprite: {fileID: 0}
+  ingredients:
+  - {fileID: 11400000, guid: 60fd54769d2223a46ad9a3498fc1e592, type: 2}
+  count: 1

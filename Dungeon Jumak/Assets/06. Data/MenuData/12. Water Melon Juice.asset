@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: 12. Water Melon Juice
   m_EditorClassIdentifier: 
   id: 12
-  _name: Water Melon Juice
+  _name: "\uC218\uBC15 \uC8FC\uC2A4"
   category: 2
   level: 1
   prices: 0000000000000000000000000000000000000000
@@ -24,3 +24,7 @@ MonoBehaviour:
   - 0
   - 0
   sprite: {fileID: 0}
+  emptySprite: {fileID: 0}
+  ingredients:
+  - {fileID: 11400000, guid: 53e92ced02597da499508288fe69506a, type: 2}
+  count: 1

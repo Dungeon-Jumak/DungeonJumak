@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: 24. Fish Pancake
   m_EditorClassIdentifier: 
   id: 24
-  _name: Fish Pancake
+  _name: "\uB3D9\uD0DC\uC804"
   category: 1
   level: 1
   prices: 0000000000000000000000000000000000000000
@@ -24,3 +24,7 @@ MonoBehaviour:
   - 0
   - 0
   sprite: {fileID: 0}
+  emptySprite: {fileID: 0}
+  ingredients:
+  - {fileID: 11400000, guid: 50e4560057d28d9438bd1f0b69c49ea8, type: 2}
+  count: 1

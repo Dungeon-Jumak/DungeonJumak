@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: 16. Chicken Skewers
   m_EditorClassIdentifier: 
   id: 16
-  _name: Chicken Skewers
+  _name: "\uB2ED\uAF2C\uCE58"
   category: 1
   level: 1
   prices: 0000000000000000000000000000000000000000
@@ -24,3 +24,7 @@ MonoBehaviour:
   - 0
   - 0
   sprite: {fileID: 0}
+  emptySprite: {fileID: 0}
+  ingredients:
+  - {fileID: 11400000, guid: 04e211253b6ebaa41b8148a36d67d1e9, type: 2}
+  count: 1

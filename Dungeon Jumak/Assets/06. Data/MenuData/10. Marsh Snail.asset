@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: 10. Marsh Snail
   m_EditorClassIdentifier: 
   id: 10
-  _name: Marsh Snail
+  _name: "\uB2E4\uC2AC\uAE30"
   category: 1
   level: 1
   prices: 0000000000000000000000000000000000000000
@@ -24,3 +24,7 @@ MonoBehaviour:
   - 0
   - 0
   sprite: {fileID: 0}
+  emptySprite: {fileID: 0}
+  ingredients:
+  - {fileID: 11400000, guid: 3957e1c61fbfb8348a319e67c3d1d935, type: 2}
+  count: 1

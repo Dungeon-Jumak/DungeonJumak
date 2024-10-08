@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: 17. Mushroom Pancake
   m_EditorClassIdentifier: 
   id: 17
-  _name: Mushroom Pancake
+  _name: "\uBC84\uC12F\uC804"
   category: 1
   level: 1
   prices: 0000000000000000000000000000000000000000
@@ -24,3 +24,7 @@ MonoBehaviour:
   - 0
   - 0
   sprite: {fileID: 0}
+  emptySprite: {fileID: 0}
+  ingredients:
+  - {fileID: 11400000, guid: 2f308449b847a3c428e906715c9030ea, type: 2}
+  count: 1

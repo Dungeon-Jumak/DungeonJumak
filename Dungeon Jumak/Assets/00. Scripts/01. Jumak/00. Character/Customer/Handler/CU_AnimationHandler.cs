@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class CU_AnimationHandler
@@ -23,6 +24,16 @@ public class CU_AnimationHandler
             m_animator.SetBool("isSit", true);
         else
             m_animator.SetBool("isSit", false);
+    }
+
+    public void PlayEatAnimation()
+    {
+        m_animator.SetBool("isEat", true);
+    }
+
+    public void FinishEatAnimation()
+    {
+        m_animator.SetBool("isEat", false);
     }
 }
 

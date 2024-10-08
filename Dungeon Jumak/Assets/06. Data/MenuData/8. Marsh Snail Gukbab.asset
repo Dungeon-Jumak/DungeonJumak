@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: 8. Marsh Snail Gukbab
   m_EditorClassIdentifier: 
   id: 8
-  _name: Marsh Snail Gukbab
+  _name: "\uB2E4\uC2AC\uAE30 \uAD6D\uBC25"
   category: 0
   level: 1
   prices: 0000000000000000000000000000000000000000
@@ -24,3 +24,8 @@ MonoBehaviour:
   - 0
   - 0
   sprite: {fileID: 0}
+  emptySprite: {fileID: 0}
+  ingredients:
+  - {fileID: 11400000, guid: 34bec4c6bd3f1f8438c737d93aac0e21, type: 2}
+  - {fileID: 11400000, guid: 3957e1c61fbfb8348a319e67c3d1d935, type: 2}
+  count: 1

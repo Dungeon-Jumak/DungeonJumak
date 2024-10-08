@@ -12,6 +12,8 @@ public class Monster : MonoBehaviour, IDamageable, ITurnable, IMovable
     // 몬스터 데이터
     public MonsterData_Base data;
 
+    [SerializeField] private Transform playerTransform;
+
     private Mo_AnimationHandler animationHandler;
     private Mo_MoveHandler moveHandler;
 
@@ -24,6 +26,11 @@ public class Monster : MonoBehaviour, IDamageable, ITurnable, IMovable
         spriteRenderer = GetComponent<SpriteRenderer>();
 
         animationHandler = new Mo_AnimationHandler(spriteRenderer, animator);
-        moveHandler = new Mo_MoveHandler(transform, data.Speed);
+        moveHandler = new Mo_MoveHandler(transform, playerTransform, data.Speed);
+    }
+
+    private void Update()
+    {
+        moveHandler.Update();
     }
 }

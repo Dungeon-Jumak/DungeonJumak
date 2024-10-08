@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: 18. Beaf Pancake
   m_EditorClassIdentifier: 
   id: 18
-  _name: Beaf Pancake
+  _name: "\uC721\uC804"
   category: 1
   level: 1
   prices: 0000000000000000000000000000000000000000
@@ -24,3 +24,7 @@ MonoBehaviour:
   - 0
   - 0
   sprite: {fileID: 0}
+  emptySprite: {fileID: 0}
+  ingredients:
+  - {fileID: 11400000, guid: d59bdebcfb272d9469ec4fd86e253153, type: 2}
+  count: 1

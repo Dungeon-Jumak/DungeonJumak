@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: 20. Oyster Gukbab
   m_EditorClassIdentifier: 
   id: 20
-  _name: Oyster Gukbab
+  _name: "\uAD74 \uAD6D\uBC25"
   category: 0
   level: 1
   prices: 0000000000000000000000000000000000000000
@@ -24,3 +24,8 @@ MonoBehaviour:
   - 0
   - 0
   sprite: {fileID: 0}
+  emptySprite: {fileID: 0}
+  ingredients:
+  - {fileID: 11400000, guid: 34bec4c6bd3f1f8438c737d93aac0e21, type: 2}
+  - {fileID: 11400000, guid: f9b2726955b7ce64cb62e98454f7bf36, type: 2}
+  count: 1

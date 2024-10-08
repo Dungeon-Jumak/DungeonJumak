@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: 23. Oyster Pancake
   m_EditorClassIdentifier: 
   id: 23
-  _name: Oyster Pancake
+  _name: "\uAD74\uC804"
   category: 1
   level: 1
   prices: 0000000000000000000000000000000000000000
@@ -24,3 +24,7 @@ MonoBehaviour:
   - 0
   - 0
   sprite: {fileID: 0}
+  emptySprite: {fileID: 0}
+  ingredients:
+  - {fileID: 11400000, guid: f9b2726955b7ce64cb62e98454f7bf36, type: 2}
+  count: 1
