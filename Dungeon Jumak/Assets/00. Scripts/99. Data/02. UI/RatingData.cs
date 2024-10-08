@@ -7,35 +7,20 @@ using System;
 [Serializable]
 public class RatingData
 {
-    private int rating;
-    private int interiorScore;
-    private float bonusRevenue;
-    private float maxOfflineDuration;
+    private int currentRating;
+    private int currentInteriorScore;
 
     #region Property - Get / Set
-    public int Rating
+    public int CurrentRating
     {
-        get { return rating; }
-        set { rating = value; }
+        get { return currentRating; }
+        set { currentRating = value; }
     }
 
-    public int InteriorScore
+    public int CurrentInteriorScore
     {
-        get { return interiorScore; }
-        set { interiorScore = value; }
+        get { return currentInteriorScore; }
+        set { currentInteriorScore = value; }
     }
-
-    public float BonusRevenue
-    {
-        get { return bonusRevenue; }
-        set { bonusRevenue = value; }
-    }
-
-    public float MaxOfflineDuration
-    { 
-        get { return maxOfflineDuration; } 
-        set { maxOfflineDuration = value; } 
-    }
-
     #endregion
 }
