@@ -37,7 +37,7 @@ public class OrderManager : MonoBehaviour
         var random = Random.Range(0, menuList.Count);
 
         //Debug
-        Debug.Log(menuList[random].name + " 하나 주세요~");
+        Debug.Log(menuList[random]._name + " 하나 주세요~");
 
         //해당 메뉴 데이터에 해당하는 재료를 모두 1만큼 감소
         for (int i = 0; i < menuList[random].ingredients.Length; i++)

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: 4. Meat Ball
   m_EditorClassIdentifier: 
   id: 4
-  _name: Meat Ball
+  _name: "\uB3D9\uADF8\uB791\uB561"
   category: 1
   level: 1
   prices: 0000000000000000000000000000000000000000
@@ -27,3 +27,4 @@ MonoBehaviour:
   emptySprite: {fileID: 0}
   ingredients:
   - {fileID: 11400000, guid: f4c2cf06871c4db49bf2d3530112f822, type: 2}
+  count: 1

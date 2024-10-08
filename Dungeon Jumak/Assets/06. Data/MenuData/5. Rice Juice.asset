@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: 5. Rice Juice
   m_EditorClassIdentifier: 
   id: 5
-  _name: Rice Juice
+  _name: "\uC2DD\uD61C"
   category: 2
   level: 1
   prices: 0000000000000000000000000000000000000000
@@ -27,3 +27,4 @@ MonoBehaviour:
   emptySprite: {fileID: 0}
   ingredients:
   - {fileID: 11400000, guid: 58cf1508c844bb34db91557f704ad201, type: 2}
+  count: 1

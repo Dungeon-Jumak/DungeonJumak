@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: 25. Seasoned Seaweed
   m_EditorClassIdentifier: 
   id: 25
-  _name: Seasoned Seaweed
+  _name: "\uBBF8\uC5ED\uBB34\uCE68"
   category: 1
   level: 1
   prices: 0000000000000000000000000000000000000000
@@ -27,3 +27,4 @@ MonoBehaviour:
   emptySprite: {fileID: 0}
   ingredients:
   - {fileID: 11400000, guid: 2de6166cd0d6efd4ea611464c3de6740, type: 2}
+  count: 1

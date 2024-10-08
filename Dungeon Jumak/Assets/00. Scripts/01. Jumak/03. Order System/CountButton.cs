@@ -13,7 +13,7 @@ public class CountButton : MonoBehaviour
     private void Awake()
     {
         button = GetComponent<Button>();
-        button.onClick.AddListener(Count);
+        button.onClick.AddListener(ShowCountPopup);
     }
 
     public void Init(MenuData _menuData, FoodOnTable _foodOnTable, Customer _customer)
@@ -23,15 +23,22 @@ public class CountButton : MonoBehaviour
         customer = _customer;
     }
 
-    private void Count()
+    private void ShowCountPopup()
     {
         //Debug
         Debug.Log("결제 금액 : " + menuData.prices[menuData.level - 1]);
 
-        //아래 돈 증가 코드 추가
+        //계산 전표 출력
+        Sales_Slip slip = GameManager.UI.ShowPopupUI<Sales_Slip>("Sales_Slip");
+        slip.InitSlip(menuData, this);
 
-        //손님 퇴장 코드 추가
+    }
+
+    public void Count(bool _double = false)
+    {
         customer.ExitJumak();
+
+        //아래 돈 증가 코드 추가
 
         foodOnTable.ActivateCleaningButton();
         gameObject.SetActive(false);
