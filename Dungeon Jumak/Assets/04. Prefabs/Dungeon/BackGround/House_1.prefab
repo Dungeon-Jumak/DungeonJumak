@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 7960601108959001772}
   - component: {fileID: 7960601108959001774}
   - component: {fileID: 7960601108959001773}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: '[Sprite] House_Down'
-  m_TagString: Untagged
+  m_TagString: Background_Obj
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -122,13 +122,13 @@ GameObject:
   - component: {fileID: 7960601109152397602}
   - component: {fileID: 7960601109152397532}
   - component: {fileID: 7960601109152397603}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: '[Sprite] Shadow'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &7960601109152397602
 Transform:
   m_ObjectHideFlags: 0
@@ -219,7 +219,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7960601109793608293}
   - component: {fileID: 7960601109793608294}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: '[Sprite] House_Up'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -279,9 +279,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 133659583
-  m_SortingLayer: 1
-  m_SortingOrder: 2
+  m_SortingLayerID: 1121850397
+  m_SortingLayer: 4
+  m_SortingOrder: 1
   m_Sprite: {fileID: -675972995, guid: d029e3b72282ad747878058703356c77, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -302,7 +302,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7960601110297677856}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: House_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
