@@ -6,7 +6,7 @@ public class CSVLoader : MonoBehaviour
     public string m_filePath;
     public enum ObjectType
     {
-        Test,
+        Rating,
         Monster
     }
 
@@ -44,10 +44,10 @@ public class CSVLoader : MonoBehaviour
     {
         switch (m_objectType)
         {
-            case ObjectType.Test:
+            case ObjectType.Rating:
                 return new RatingCSVLoader();
             case ObjectType.Monster:
-                return new TestMonsterCSVLoader();
+                return new TestCSVLoader();
             default: return null;
         }
     }

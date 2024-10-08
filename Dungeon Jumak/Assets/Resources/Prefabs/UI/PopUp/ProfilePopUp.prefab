@@ -1961,12 +1961,12 @@ GameObject:
   - component: {fileID: 3117638908395441308}
   - component: {fileID: 3622313405270725682}
   m_Layer: 5
-  m_Name: Button (Legacy)
+  m_Name: Test Btn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &8057880225446259255
 RectTransform:
   m_ObjectHideFlags: 0

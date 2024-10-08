@@ -3,7 +3,7 @@ using System.IO;
 using UnityEngine;
 using UnityEditor;
 
-public class TestMonsterCSVLoader : BaseCSVLoader
+public class TestCSVLoader : BaseCSVLoader
 {
     protected override string GetFolderName(string filePath)
     {
