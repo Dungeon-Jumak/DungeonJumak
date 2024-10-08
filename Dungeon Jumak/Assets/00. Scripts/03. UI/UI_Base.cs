@@ -1,4 +1,4 @@
-﻿//System
+//System
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
+using TMPro;
 
 //모든 UI들의 조상 클래스
 public class UI_Base : MonoBehaviour
@@ -57,6 +58,9 @@ public class UI_Base : MonoBehaviour
 
     protected GameObject GetObject (int idx) { return Get<GameObject>(idx); }
     protected Text GetText(int idx) { return Get<Text>(idx); }
+
+    protected TextMeshProUGUI GetTMP(int idx) { return Get<TextMeshProUGUI>(idx); }
+
     protected Button GetButton(int idx) { return Get<Button>(idx); }
     protected Image GetImage(int idx) { return Get<Image>(idx); }
 

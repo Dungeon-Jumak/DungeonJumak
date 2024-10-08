@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: 22. Seaweed Gukbab
   m_EditorClassIdentifier: 
   id: 22
-  _name: Seaweed Gukbab
+  _name: "\uBBF8\uC5ED \uAD6D\uBC25"
   category: 0
   level: 1
   prices: 0000000000000000000000000000000000000000
@@ -28,3 +28,4 @@ MonoBehaviour:
   ingredients:
   - {fileID: 11400000, guid: 34bec4c6bd3f1f8438c737d93aac0e21, type: 2}
   - {fileID: 11400000, guid: 2de6166cd0d6efd4ea611464c3de6740, type: 2}
+  count: 1

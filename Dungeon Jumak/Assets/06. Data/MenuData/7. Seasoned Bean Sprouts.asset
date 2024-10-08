@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: 7. Seasoned Bean Sprouts
   m_EditorClassIdentifier: 
   id: 7
-  _name: Seasoned Bean Sprouts
+  _name: "\uCF69\uB098\uBB3C \uBB34\uCE68"
   category: 1
   level: 1
   prices: 0000000000000000000000000000000000000000
@@ -27,3 +27,4 @@ MonoBehaviour:
   emptySprite: {fileID: 0}
   ingredients:
   - {fileID: 11400000, guid: 14f1f193cdc7f1e47925e065a9692872, type: 2}
+  count: 1

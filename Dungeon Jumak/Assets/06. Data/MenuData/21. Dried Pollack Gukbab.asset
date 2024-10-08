@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: 21. Dried Pollack Gukbab
   m_EditorClassIdentifier: 
   id: 21
-  _name: Dried Pollack Gukbab
+  _name: "\uD669\uD0DC \uAD6D\uBC25"
   category: 0
   level: 1
   prices: 0000000000000000000000000000000000000000
@@ -28,3 +28,4 @@ MonoBehaviour:
   ingredients:
   - {fileID: 11400000, guid: 34bec4c6bd3f1f8438c737d93aac0e21, type: 2}
   - {fileID: 11400000, guid: 50e4560057d28d9438bd1f0b69c49ea8, type: 2}
+  count: 1

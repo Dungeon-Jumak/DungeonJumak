@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: 19. Omija Tea
   m_EditorClassIdentifier: 
   id: 19
-  _name: Omija Tea
+  _name: "\uC624\uBBF8\uC790 \uCC28"
   category: 2
   level: 1
   prices: 0000000000000000000000000000000000000000
@@ -27,3 +27,4 @@ MonoBehaviour:
   emptySprite: {fileID: 0}
   ingredients:
   - {fileID: 11400000, guid: e135c077d76579541ae8713afe8e5396, type: 2}
+  count: 1

@@ -1,8 +1,12 @@
 //Engine
 using UnityEngine;
 
+//System
+using System.Collections;
+
 //Interface
 using Interfaces;
+using System.Security.Cryptography;
 
 public class Customer : MonoBehaviour, ITurnable, IMovable
 {
@@ -113,6 +117,16 @@ public class Customer : MonoBehaviour, ITurnable, IMovable
     {
         canMove = true;
         destination = _forwardTransform;
+    }
+
+    public void StartEat()
+    {
+        animationHandler.PlayEatAnimation();
+    }
+
+    public void FinishEat()
+    {
+        animationHandler.FinishEatAnimation();
     }
 }
     

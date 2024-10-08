@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: 14. Hot Pot Bulgogi
   m_EditorClassIdentifier: 
   id: 14
-  _name: Hot Pot Bulgogi
+  _name: "\uB69D\uBC30\uAE30 \uBD88\uACE0\uAE30"
   category: 0
   level: 1
   prices: 0000000000000000000000000000000000000000
@@ -28,3 +28,4 @@ MonoBehaviour:
   ingredients:
   - {fileID: 11400000, guid: 34bec4c6bd3f1f8438c737d93aac0e21, type: 2}
   - {fileID: 11400000, guid: 2f308449b847a3c428e906715c9030ea, type: 2}
+  count: 1
