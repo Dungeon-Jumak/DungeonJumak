@@ -25,6 +25,8 @@ public class FoodOnTable : MonoBehaviour
 
     private Transform customerTempParent;
 
+    private Customer customer;
+
     private void Awake()
     {
         startEat = false;
@@ -37,6 +39,10 @@ public class FoodOnTable : MonoBehaviour
     {
         startEat = true;
         startEatingTime = Time.time;
+
+        customer = FindCustomer();
+
+        customer.StartEat();
     }
 
     private void Update()
@@ -58,6 +64,8 @@ public class FoodOnTable : MonoBehaviour
             {
                 startEat = false;
                 image.sprite = menuData.emptySprite;
+
+                customer.FinishEat();
 
                 ActivateCountButton();
             }
@@ -87,8 +95,6 @@ public class FoodOnTable : MonoBehaviour
     private void ActivateCountButton()
     {
         countButton.gameObject.SetActive(true);
-
-        Customer customer = FindCustomer();
 
         countButton.Init(menuData, this, customer);
     }

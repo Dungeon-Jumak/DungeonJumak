@@ -32,5 +32,6 @@ public class MenuData : ScriptableObject
     [Header("Ingredient Data")]
     public IngredientData[] ingredients;
 
+    [Header("Menu Count")]
     public int count;
 }
