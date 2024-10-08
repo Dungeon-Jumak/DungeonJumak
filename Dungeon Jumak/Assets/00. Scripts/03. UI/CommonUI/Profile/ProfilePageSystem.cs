@@ -60,7 +60,25 @@ public class ProfilePageSystem : BaseProfileHandler
         if (!m_upgradeCompleteObj.activeSelf)
         {
             GetTMP((int)Texts.BonusRevenue).text = $"결제 수익 : +{_bonusRevenue * 100}%";
-            GetTMP((int)Texts.MaxOfflineDuration).text = $"오프라인 최대 적용 시간 : {Mathf.RoundToInt(_maxOfflineDuration / 60)}분";
+
+            int totalMinutes = Mathf.FloorToInt(_maxOfflineDuration);
+            string displayTime = TimeCalculation(totalMinutes);
+
+            GetTMP((int)Texts.MaxOfflineDuration).text = $"오프라인 최대 적용 시간 : {displayTime}";
+        }
+    }
+
+    private string TimeCalculation(int totalMinutes)
+    {
+        if (totalMinutes >= 60)
+        {
+            int hours = totalMinutes / 60;
+            int minutes = totalMinutes % 60;
+            return $"{hours}시간 {minutes}분";
+        }
+        else
+        {
+            return $"{totalMinutes}분";
         }
     }
 }
