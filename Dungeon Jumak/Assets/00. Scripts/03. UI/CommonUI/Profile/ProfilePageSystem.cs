@@ -1,114 +1,66 @@
-//System
-using CartoonFX;
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Reflection;
-using TMPro;
-using Unity.VisualScripting;
-using UnityEditor.TerrainTools;
-
 //Unity
+using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class ProfilePageSystem : UI_PopUp
+public class ProfilePageSystem : BaseProfileHandler
 {
-    enum Buttons
-    {
-        PreviousPage,
-        NextPage,
-    }
+    enum Buttons { PreviousPage, NextPage }
+    enum Texts { BonusRevenue, MaxOfflineDuration, InteriorScore }
+    enum Sliders { ScoreSlider }
 
-    enum Texts
-    {
-        BonusRevenue,
-        MaxOfflineDuration,
-    }
+    [SerializeField] private GameObject[] m_ratingIcons;
+    [SerializeField] private GameObject m_upgradeCompleteObj;
 
-    [SerializeField] private GameObject[] ratingIcons;
-    [SerializeField] private RatingDataList ratingDataList;
-
-    private int page = 0;
-
-    private DataManager<RatingData> g_ratingData;
-
-    private void Awake()
-    {
-        g_ratingData = DataManager<RatingData>.Instance;
-    }
+    private int m_page = 0;
 
     private void Start()
     {
         Init();
-
-        Mathf.Clamp(g_ratingData.Data.CurrentRating, 0, ratingIcons.Length - 1);
-
-        AdjustmentPage(g_ratingData.Data.CurrentRating);
-        page = g_ratingData.Data.CurrentRating;
-
-        var ratingData = ratingDataList.Data[page];
-        SetBenefitsText(ratingData.bonusRevenue, ratingData.maxOfflineDuration);
+        g_ratingData.Data.CurrentRating = Mathf.Clamp(g_ratingData.Data.CurrentRating, 0, m_ratingIcons.Length - 1);
+        UpdatePage(g_ratingData.Data.CurrentRating);
     }
 
     public override void Init()
     {
         base.Init();
-
         Bind<Button>(typeof(Buttons));
-        Bind<Text>(typeof(Texts));
+        Bind<TextMeshProUGUI>(typeof(Texts));
+        Bind<Slider>(typeof(Sliders));
 
         GetButton((int)Buttons.PreviousPage).gameObject.BindEvent(ToPreviousPage);
         GetButton((int)Buttons.NextPage).gameObject.BindEvent(ToNextPage);
     }
 
-    private void ToPreviousPage(PointerEventData _data)
+    private void ToPreviousPage(PointerEventData _data) => UpdatePage(m_page - 1);
+    private void ToNextPage(PointerEventData _data) => UpdatePage(m_page + 1);
+
+    private void UpdatePage(int _newPage)
     {
-        if (page > 0)
-        {
-            page--;
-            AdjustmentPage(page);
-        }
+        m_page = Mathf.Clamp(_newPage, 0, m_ratingIcons.Length - 1);
+        UpdateUI();
     }
 
-    private void ToNextPage(PointerEventData _data)
+    private void UpdateUI()
     {
-        if (page < ratingIcons.Length - 1)
-        {
-            page++;
-            AdjustmentPage(page);
-        }
+        foreach (var icon in m_ratingIcons) icon.SetActive(false);
+        var ratingData = RatingDataListHandler.Instance.GetRatingDataList().Data[m_page];
+
+        SetBenefitsText(ratingData.bonusRevenue, ratingData.maxOfflineDuration);
+        UpdateScoreText(g_ratingData.Data.CurrentInteriorScore, ratingData.goalInterirorScore, GetTMP((int)Texts.InteriorScore));
+        UpdateSlider(GetSlider((int)Sliders.ScoreSlider), g_ratingData.Data.CurrentInteriorScore, ratingData.goalInterirorScore);
+
+        m_ratingIcons[m_page].SetActive(true);
     }
 
-    private void AdjustmentPage(int CurrentPage)
+    private void SetBenefitsText(float _bonusRevenue, float _maxOfflineDuration)
     {
-        CurrentPage = Mathf.Clamp(CurrentPage, 0, ratingIcons.Length - 1);
-
-        foreach (var icon in ratingIcons)
+        m_upgradeCompleteObj.SetActive(m_page < g_ratingData.Data.CurrentRating);
+        if (!m_upgradeCompleteObj.activeSelf)
         {
-            icon.SetActive(false);
-        }
-
-        ratingIcons[CurrentPage].SetActive(true);
-    }
-
-    private void SetBenefitsText(float BonusRevenue, float MaxOfflineDuration)
-    {
-        if (page < g_ratingData.Data.CurrentRating)
-        {
-            // To do : 업그레이드 완료 텍스트로 표시하기
-            GetText((int)Texts.BonusRevenue).text = "";
-            GetText((int)Texts.MaxOfflineDuration).text = "";
-        }
-        else 
-        {
-            GetText((int)Texts.BonusRevenue).text = $"결제 수익 : +{BonusRevenue * 100}%";
-
-            float maxDuration = MaxOfflineDuration;
-            int minutes = Mathf.RoundToInt(maxDuration / 60);
-
-            GetText((int)Texts.MaxOfflineDuration).text = $"오프라인 최대 적용 시간 : {minutes}분";
+            GetTMP((int)Texts.BonusRevenue).text = $"결제 수익 : +{_bonusRevenue * 100}%";
+            GetTMP((int)Texts.MaxOfflineDuration).text = $"오프라인 최대 적용 시간 : {Mathf.RoundToInt(_maxOfflineDuration / 60)}분";
         }
     }
 }

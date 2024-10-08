@@ -64,6 +64,8 @@ public class UI_Base : MonoBehaviour
     protected Button GetButton(int idx) { return Get<Button>(idx); }
     protected Image GetImage(int idx) { return Get<Image>(idx); }
 
+    protected Slider GetSlider(int idx) { return Get<Slider>(idx); }
+
     public static void BindEvent (GameObject _go, Action<PointerEventData> _action, Define.UIEvent _type = Define.UIEvent.Click)
     {
         UI_EventHandler evt = Util.GetOrAddComponent<UI_EventHandler>(_go);

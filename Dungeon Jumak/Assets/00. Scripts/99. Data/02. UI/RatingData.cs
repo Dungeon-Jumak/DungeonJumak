@@ -7,8 +7,8 @@ using System;
 [Serializable]
 public class RatingData
 {
-    private int currentRating;
-    private int currentInteriorScore;
+    private int currentRating = 0;
+    private int currentInteriorScore = 0;
 
     #region Property - Get / Set
     public int CurrentRating
