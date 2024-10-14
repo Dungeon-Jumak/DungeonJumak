@@ -58,12 +58,8 @@ public class OrderManager : MonoBehaviour
         menuList.Clear();
 
         //리스트 초기화 - 모든 메뉴를 갖고 있도록
-        for (int i = 0; i < allMenuDatas.Length; i++)
-        {
-            Debug.Log("반복");
-            menuList.Add(allMenuDatas[i]);
-        }
-        
+        for (int i = 0; i < allMenuDatas.Length; i++) menuList.Add(allMenuDatas[i]);
+
         //현재 재료 상태를 불러올 딕셔너리
         Dictionary<IngredientData, int> dictionary = ingredientManager.GetIngredientDictionary();
 
@@ -82,6 +78,7 @@ public class OrderManager : MonoBehaviour
 
     public void Order(GameObject _gameObject, MenuData menuData, int _seatNumber)
     {
+        //가득 차 있을 경우 Alert 출력
         if (!furnaces[menuData.category].CanCooking())
         {
             GameManager.UI.CloseAllPopUpUI();
