@@ -1,3 +1,4 @@
+#if UNITY_EDITOR
 using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
@@ -48,6 +49,7 @@ public abstract class BaseCSVLoader : ICSVLoader
         AssetDatabase.SaveAssets();
     }
 
+
     private string[] ParseCSVLine(string line)
     {
         return line.Split(',');
@@ -81,3 +83,4 @@ public abstract class BaseCSVLoader : ICSVLoader
         }
     }
 }
+#endif

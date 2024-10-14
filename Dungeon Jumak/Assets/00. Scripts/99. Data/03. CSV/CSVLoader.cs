@@ -1,3 +1,4 @@
+#if UNITY_EDITOR
 using UnityEngine;
 
 public class CSVLoader : MonoBehaviour
@@ -52,3 +53,4 @@ public class CSVLoader : MonoBehaviour
         }
     }
 }
+#endif
