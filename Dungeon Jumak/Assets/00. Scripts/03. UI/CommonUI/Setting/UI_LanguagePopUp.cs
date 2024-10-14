@@ -6,6 +6,8 @@ using System.Collections.Generic;
 //Unity
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.Localization.Settings;
+using UnityEngine.Localization;
 using UnityEngine.UI;
 
 public class UI_LanguagePopUp : UI_PopUp
@@ -42,12 +44,22 @@ public class UI_LanguagePopUp : UI_PopUp
 
     public void SetLanguageKr(PointerEventData _data)
     {
+        ChangeLanguage("ko-KR");
         GameManager.UI.ClosePopUpUI();
     }
 
     private void SetLanguageEn(PointerEventData _data)
     {
+        ChangeLanguage("en-US");
         GameManager.UI.ClosePopUpUI();
     }
 
+    public void ChangeLanguage(string languageCode)
+    {
+        Locale newLocale = LocalizationSettings.AvailableLocales.GetLocale(languageCode);
+        if (newLocale != null)
+        {
+            LocalizationSettings.SelectedLocale = newLocale;
+        }
+    }
 }

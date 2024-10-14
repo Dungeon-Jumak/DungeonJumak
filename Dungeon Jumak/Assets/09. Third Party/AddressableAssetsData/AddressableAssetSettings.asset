@@ -45,6 +45,14 @@ MonoBehaviour:
   - {fileID: 11400000, guid: db32fa990280fb64cbb2386f946ac782, type: 2}
   - {fileID: 11400000, guid: 0e15cfea52747334c875bb3521b600b0, type: 2}
   - {fileID: 11400000, guid: 0087b5d04a8261649b37119869c38bae, type: 2}
+  - {fileID: 11400000, guid: 70ae56159c9d3f1479f94a8aea5fa5e1, type: 2}
+  - {fileID: 11400000, guid: afb9fe2128c0fe342ac046deeb1f149e, type: 2}
+  - {fileID: 11400000, guid: 730e8ff2e9a8fc4449ffc52a7a40dec9, type: 2}
+  - {fileID: 11400000, guid: 75a527c03b76eac4a8737596c69b5070, type: 2}
+  - {fileID: 11400000, guid: 36ba896e651ea17448c3bed955ec17f0, type: 2}
+  - {fileID: 11400000, guid: a71240788c5cf244cb74e7c5a090a9c6, type: 2}
+  - {fileID: 11400000, guid: 85b51c1c9ef1fef45accf9304dcfdeef, type: 2}
+  - {fileID: 11400000, guid: c0693444362047343a475cfd9d7fb158, type: 2}
   m_BuildSettings:
     m_CompileScriptsInVirtualMode: 0
     m_CleanupStreamingAssetsAfterBuilds: 1
@@ -92,6 +100,12 @@ MonoBehaviour:
     - Dungeon_SFX
     - Mixer
     - BGM
+    - Locale
+    - Locale-en-US
+    - Preload
+    - Locale-ko-KR
+    - Locale-en
+    - Locale-es
   m_SchemaTemplates: []
   m_GroupTemplateObjects:
   - {fileID: 11400000, guid: b8aa0f327408e444e99fd8241803b23c, type: 2}
