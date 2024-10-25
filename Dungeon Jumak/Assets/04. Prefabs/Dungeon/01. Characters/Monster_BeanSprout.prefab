@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 108895931599851165}
   - component: {fileID: 7316347388520493763}
   m_Layer: 8
-  m_Name: Monster
+  m_Name: Monster_BeanSprout
   m_TagString: Monster
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -148,7 +148,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd004ab5324238a4598939f5e581cc95, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  data: {fileID: 11400000, guid: bf51713bcc96b2c4f8b70074dbab6525, type: 2}
+  data: {fileID: 11400000, guid: 73e951e46563ad9468ccfa15cc450ffc, type: 2}
 --- !u!114 &7316347388520493763
 MonoBehaviour:
   m_ObjectHideFlags: 0

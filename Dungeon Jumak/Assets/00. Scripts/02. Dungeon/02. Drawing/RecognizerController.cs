@@ -95,6 +95,7 @@ namespace UnistrokeGestureRecognition.Example
 
                 switch (recognizedPattern.Name)
                 {
+                    // 스킬 01. 불꽃 고리
                     case "FireRing":
                         fireRing.FireRing();
                         break;

@@ -10,16 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 922c31fafef32464db6d3b96ce12d8cc, type: 3}
-  m_Name: 00. FireBall
+  m_Name: 02. FireRingSO
   m_EditorClassIdentifier: 
-  name: FireBall
-  skillId: 0
+  name: FireRing
+  skillId: 1
   prefabId: 0
-  coolTime: 0
-  damage: 1
-  count: 1
-  per: 1
-  knockBack: 10
-  speed: 1
-  waitingTime: 0
-  duration: 0
+  coolTime: 5
+  damage: 0.5
+  count: 3
+  per: -1
+  knockBack: 20
+  speed: 150
+  waitingTime: 3.8709116
+  duration: 5

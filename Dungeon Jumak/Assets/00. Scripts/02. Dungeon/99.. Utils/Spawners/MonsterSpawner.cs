@@ -1,69 +1,82 @@
-// System
 using UnityEngine;
 using System.Collections.Generic;
 
+[System.Serializable]
+public class SpawnData
+{
+    public float spawnTime;         // 시간 (초 단위)
+    public Monster monsterPrefab;   // 스폰할 몬스터 프리팹
+    public int spawnCount;          // 스폰 수
+}
+
 public class MonsterSpawner : MonoBehaviour
 {
-    [Header("스폰할 프리팹")]
-    [SerializeField] private Monster prefab;
+    [Header("스폰 데이터 목록")]
+    [SerializeField] private List<SpawnData> spawnDataList = new List<SpawnData>();
 
-    [Header("스폰 딜레이 (초 단위)")]
-    [SerializeField] private float spawnDelay = 1.0f;
+    [Header("플레이어 트랜스폼")]
+    [SerializeField] private Transform playerTransform;
 
-    [Header("풀 생성 개수")]
-    [SerializeField] private int maxSpawnCount = 5;
-
-    [Header("스폰 포인트")]
-    [SerializeField] private Transform[] spawnPoints;
+    [Header("랜덤 스폰 범위")]
+    [SerializeField] private Vector2 randomSpawnRange = new Vector2(50f, 50f);
 
     private PoolManager<Monster> poolManager;
     private float timer;
 
-    // 스폰되지 않은 스폰 포인트 목록
-    private List<Transform> availableSpawnPoints;
+    private List<SpawnData> processedSpawns = new List<SpawnData>();
 
     private void Start()
     {
         // 풀 매니저 초기화
         poolManager = new PoolManager<Monster>(transform);
-        poolManager.CreatePool(prefab, maxSpawnCount);
 
-        // 스폰 포인트 초기화
-        availableSpawnPoints = new List<Transform>(spawnPoints);
+        // 각 몬스터에 대한 풀 생성
+        foreach (var spawnData in spawnDataList)
+        {
+            poolManager.CreatePool(spawnData.monsterPrefab, spawnData.spawnCount);
+        }
     }
 
     private void Update()
     {
         timer += Time.deltaTime;
 
-        if (timer >= spawnDelay)
+        // Check each SpawnData
+        foreach (var spawnData in spawnDataList)
         {
-            Spawn();
-            timer = 0f;
+            // If it's time to spawn this data
+            if (timer >= spawnData.spawnTime && !processedSpawns.Contains(spawnData))
+            {
+                SpawnMonsters(spawnData);
+                processedSpawns.Add(spawnData); // Mark as processed
+            }
         }
     }
 
-    private void Spawn()
+    private void SpawnMonsters(SpawnData spawnData)
     {
-        // 스폰할 수 있는 포인트가 없다면 더 이상 스폰하지 않음
-        if (availableSpawnPoints.Count == 0)
+        for (int i = 0; i < spawnData.spawnCount; i++)
         {
-            Debug.Log("모든 스폰 포인트가 사용되었습니다.");
-            this.enabled = false; // 스크립트 비활성화
-            return;
+            // 풀에서 몬스터 가져오기
+            Monster monster = poolManager.GetFromPool(spawnData.monsterPrefab);
+
+            // 스폰 위치 설정 (플레이어 근처 랜덤 위치 또는 고정 위치)
+            Vector3 spawnPosition = GetRandomSpawnPosition();
+            monster.transform.position = spawnPosition;
+        }
+    }
+
+    private Vector3 GetRandomSpawnPosition()
+    {
+        // 플레이어 근처에서 랜덤 위치 계산
+        if (playerTransform != null)
+        {
+            float randomX = Random.Range(-randomSpawnRange.x, randomSpawnRange.x);
+            float randomY = Random.Range(-randomSpawnRange.y, randomSpawnRange.y);
+            return playerTransform.position + new Vector3(randomX, randomY, 0f);
         }
 
-        // 랜덤으로 스폰 포인트 선택
-        int spawnIndex = Random.Range(0, availableSpawnPoints.Count);
-        Transform spawnPoint = availableSpawnPoints[spawnIndex];
-
-        // 풀에서 몬스터 가져오기
-        Monster monster = poolManager.GetFromPool(prefab);
-
-        // 몬스터 위치 설정
-        monster.transform.position = spawnPoint.position;
-
-        // 사용된 스폰 포인트 제거
-        availableSpawnPoints.RemoveAt(spawnIndex);
+        // 기본 위치 반환 (디버그 용도로 사용)
+        return Vector3.zero;
     }
 }

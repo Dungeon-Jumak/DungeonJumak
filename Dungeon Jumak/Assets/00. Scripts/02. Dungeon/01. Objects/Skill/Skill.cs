@@ -11,7 +11,10 @@ namespace Skill
         [Header("SO")]
         public SkillDataSO skillData;
 
+        [Header("RigidBody2D")]
         private Rigidbody2D rigid;
+
+        [Header("Per")]
         private float per;
 
         public void Awake()
@@ -29,25 +32,18 @@ namespace Skill
             }
         }
 
+        #region 몬스터 충돌 처리
+
         private void OnTriggerEnter2D(Collider2D collision)
         {
             if (!collision.CompareTag("Monster") || per == -1)
                 return;
 
-            Debug.Log("Hit Monster");
-
-            rigid.velocity = Vector2.zero;
-            gameObject.SetActive(false);
-
-            /*per--;
-
-            if (per == -1)
-            {
-                rigid.velocity = Vector2.zero;
-                gameObject.SetActive(false);
-            }*/
-
+            //rigid.velocity = Vector2.zero;
+            gameObject.SetActive(false); // 비활성화
         }
+
+        #endregion
     }
 
 }

@@ -9,7 +9,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ad89e55bbb20cf34c8162c63b5946cd5, type: 3}
-  m_Name: Drop Item Data
+  m_Script: {fileID: 11500000, guid: 922c31fafef32464db6d3b96ce12d8cc, type: 3}
+  m_Name: 01. FireBallSO
   m_EditorClassIdentifier: 
-  m_name: 
+  name: FireBall
+  skillId: 0
+  prefabId: 0
+  coolTime: 0
+  damage: 1
+  count: 1
+  per: 1
+  knockBack: 10
+  speed: 1
+  waitingTime: 0
+  duration: 0

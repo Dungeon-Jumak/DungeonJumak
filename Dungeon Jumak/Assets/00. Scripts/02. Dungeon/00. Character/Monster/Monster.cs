@@ -35,7 +35,7 @@ public class Monster : MonoBehaviour, IDamageable, ITurnable, IMovable
 
         //--- 핸들러 인스턴스 생성 ---//
         animationHandler = new Mo_AnimationHandler(spriteRenderer, animator);
-        moveHandler = new Mo_MoveHandler(transform, playerTransform, data.Speed);
+        moveHandler = new Mo_MoveHandler(transform, playerTransform, data.speed);
 
         playerTransform = GameObject.FindWithTag("Player").transform;
     }

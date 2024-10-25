@@ -9,9 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c879e74f49db85549a9a4adacb8e76ef, type: 3}
-  m_Name: 01. MonsterData_Buchu
+  m_Script: {fileID: 11500000, guid: 922c31fafef32464db6d3b96ce12d8cc, type: 3}
+  m_Name: 00. SkillDataSO_Base
   m_EditorClassIdentifier: 
-  m_monsterName: Monster_Buchu
-  m_Damage: 1
-  m_hp: 3
+  m_name: 
+  m_attackDamage: 0
