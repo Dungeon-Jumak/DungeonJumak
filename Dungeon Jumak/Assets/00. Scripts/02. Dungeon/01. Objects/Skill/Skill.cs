@@ -4,24 +4,46 @@ using UnityEngine;
 // Ect
 using Data.Object;
 
-public class Skill : MonoBehaviour
+namespace Skill
 {
-    [SerializeField]
-    private SkillData_Base m_data;
-
-    // 스킬 정보 확인
-    public void WatchSkillInfo()
+    public class Skill : MonoBehaviour
     {
-        Debug.Log("스킬 이름: " + m_data.Name);
-        Debug.Log("스킬 데미지: " + m_data.Damage);
-        Debug.Log("스킬 관통력: " + m_data.Per);
-        Debug.Log("스킬 넉백력: " + m_data.KnockBack);
+        [Header("SO")]
+        public SkillDataSO skillData;
+
+        [Header("RigidBody2D")]
+        private Rigidbody2D rigid;
+
+        [Header("Per")]
+        private float per;
+
+        public void Awake()
+        {
+            rigid = GetComponent<Rigidbody2D>();
+        }
+
+        public void Init(Vector3 direction)
+        {
+            this.per = skillData.per;
+
+            if (per > -1)
+            {
+                rigid.velocity = direction * 10f;
+            }
+        }
+
+        #region 몬스터 충돌 처리
+
+        private void OnTriggerEnter2D(Collider2D collision)
+        {
+            if (!collision.CompareTag("Monster") || per == -1)
+                return;
+
+            //rigid.velocity = Vector2.zero;
+            gameObject.SetActive(false); // 비활성화
+        }
+
+        #endregion
     }
 
-    // 몬스터와 스킬이 충돌했을 때
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (!collision.CompareTag("Monster"))
-            return;
-    }
 }

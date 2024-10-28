@@ -23,28 +23,29 @@ public class DP_MoveHandler
 
     public void FixedUpdate()
     {
+        // 이동 X, 이동할 위치 계산
         if (!isMoving && scanner.nearestTarget != null)
         {
             SetTargetPosition(scanner.nearestTarget);
-            isMoving = true; // 이동 시작
+            isMoving = true; 
         }
 
+        // 이동
         if (isMoving)
         {
             MoveTowardsTarget();
         }
     }
 
-    //--- 목표 지점 계산 ---//
+    //-- 이동할 위치 계산 --//
     private void SetTargetPosition(Transform target)
     {
         Vector2 directionAwayFromTarget = (rigidbody.position - (Vector2)target.position).normalized;
 
-        // 최소 안전 거리를 보장하여 목표 지점 설정
         targetPosition = rigidbody.position + directionAwayFromTarget * MIN_SAFE_DISTANCE;
     }
 
-    //--- 목표 지점으로의 이동 로직 ---//
+    //-- 목표 지점으로의 이동 --//
     private void MoveTowardsTarget()
     {
         Vector2 newPosition = Vector2.MoveTowards(rigidbody.position, targetPosition, speed * Time.fixedDeltaTime);
