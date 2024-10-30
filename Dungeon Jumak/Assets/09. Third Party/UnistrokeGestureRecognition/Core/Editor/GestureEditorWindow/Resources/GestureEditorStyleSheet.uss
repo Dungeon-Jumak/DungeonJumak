@@ -1,0 +1,29 @@
+#marker {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: rgba(62, 146, 204, 0.3);
+}
+
+.iconButton {
+    justify-content: center;
+    align-items: center;
+    padding-left: 3px;
+    padding-right: 3px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+}
+
+.iconButton .icon {
+    width: 15px;
+    height: 15px;
+}
+
+.point {
+    border-radius: 50%;
+    background-color: rgb(62, 146, 204);
+}
+
+.point:hover {
+    background-color: rgb(62, 52, 248);
+}

@@ -12,5 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f606eb935ebcf59408e8cdcc14d23179, type: 3}
   m_Name: DunjeonPlayerData_Stage1
   m_EditorClassIdentifier: 
-  m_speed: 8
+  m_speed: 4
+  knockBack: 5
   m_hp: 5

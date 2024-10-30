@@ -2,6 +2,7 @@
 using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.Localization.Settings;
 using UnityEngine.UI;
 
 public class ProfilePageSystem : BaseProfileHandler
@@ -59,12 +60,14 @@ public class ProfilePageSystem : BaseProfileHandler
         m_upgradeCompleteObj.SetActive(m_page < g_ratingData.Data.CurrentRating);
         if (!m_upgradeCompleteObj.activeSelf)
         {
-            GetTMP((int)Texts.BonusRevenue).text = $"결제 수익 : +{_bonusRevenue * 100}%";
+            GetTMP((int)Texts.BonusRevenue).text =
+                $"{LocalizationSettings.StringDatabase.GetLocalizedString("CommonUI_Profile", "Bonus Revenue")}: +{_bonusRevenue * 100}%";
 
             int totalMinutes = Mathf.FloorToInt(_maxOfflineDuration);
             string displayTime = TimeCalculation(totalMinutes);
 
-            GetTMP((int)Texts.MaxOfflineDuration).text = $"오프라인 최대 적용 시간 : {displayTime}";
+            GetTMP((int)Texts.MaxOfflineDuration).text =
+                $"{LocalizationSettings.StringDatabase.GetLocalizedString("CommonUI_Profile", "Max Offline Duration")}: {displayTime}";
         }
     }
 

@@ -16,7 +16,15 @@ MonoBehaviour:
   m_Data:
     m_SerializedData: []
   m_GUID: 043c7dfc77edabc4f9ae2f9e8dcb00ed
-  m_SerializeEntries: []
+  m_SerializeEntries:
+  - m_GUID: 3f020c50e820c4f488664681cea17728
+    m_Address: Assets/00. Scripts/99. Data/01. Objects/Skills/00. FireBall.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 10a26eec5987494458568a4403cff33f
+    m_Address: Assets/00. Scripts/99. Data/01. Objects/Skills/01. FireRing.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 979ede1356bc65a4090c27709eca3218, type: 2}
   m_SchemaSet:

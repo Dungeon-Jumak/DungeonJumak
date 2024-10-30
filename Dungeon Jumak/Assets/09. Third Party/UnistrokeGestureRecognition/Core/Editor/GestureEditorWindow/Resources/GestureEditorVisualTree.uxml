@@ -1,0 +1,13 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="True">
+    <ui:Label text="Snap settings:" display-tooltip-when-elided="true" style="-unity-font-style: bold; margin-top: 5px; padding-left: 0; margin-left: 10px; margin-bottom: 3px; font-size: 14px;" />
+    <ui:DropdownField label="Snap factor" index="1" choices="0" name="snapDropdown" tabindex="0" view-data-key="GestureEditorSnapFactorDropDown" style="margin-left: 10px; margin-right: 10px; margin-bottom: 0; margin-top: 0;" />
+    <ui:Toggle label="Snap to grid:" name="snapToggle" binding-path="_isSnap" view-data-key="GestureEditorSnapCheckBox" style="margin-left: 10px; margin-bottom: 0; margin-top: 3px;" />
+    <ui:Toggle label="Show direction:" value="false" name="directionToggle" view-data-key="GestureEditorDirectionCheckBox" style="-unity-font-style: bold; margin-left: 10px; padding-left: 0; font-size: 14px; margin-top: 5px; margin-bottom: 5px;" />
+    <ui:VisualElement style="flex-direction: row; justify-content: flex-start; align-items: center; margin-top: 0; padding-left: 0;">
+        <ui:Label text="Flip points:" display-tooltip-when-elided="true" style="-unity-font-style: bold; min-width: 150px; margin-left: 10px; font-size: 14px;" />
+        <ui:Button text="X" display-tooltip-when-elided="true" name="flipXButton" style="width: 50px;" />
+        <ui:Button text="Y" display-tooltip-when-elided="true" name="flipYButton" style="width: 50px;" />
+    </ui:VisualElement>
+    <ui:Button text="Reverse" display-tooltip-when-elided="true" name="reverseButton" style="margin-left: 10px; margin-right: 10px; margin-top: 5px;" />
+    <ui:VisualElement name="trackArea" class="grid" style="width: 400px; height: 400px; margin-left: auto; margin-right: auto; margin-top: 10px; visibility: visible; overflow: hidden; display: flex; opacity: 1; flex-grow: 0; flex-direction: column; flex-shrink: 1; flex-basis: auto; min-width: 400px; min-height: 400px; max-width: 400px; max-height: 400px; margin-bottom: 10px; padding-left: 0; padding-right: 0; padding-top: 0; padding-bottom: 0;" />
+</ui:UXML>

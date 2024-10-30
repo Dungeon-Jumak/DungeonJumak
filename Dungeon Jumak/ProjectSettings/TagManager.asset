@@ -13,6 +13,7 @@ TagManager:
   - Customer_Exit
   - Monster
   - Background_Obj
+  - Skill
   layers:
   - Default
   - TransparentFX
@@ -50,17 +51,29 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Environment
+    uniqueID: 1106231271
+    locked: 0
   - name: Background_Down
     uniqueID: 133659583
     locked: 0
+  - name: Object_Down
+    uniqueID: 2328274541
+    locked: 0
   - name: Player
     uniqueID: 23946075
+    locked: 0
+  - name: Customer
+    uniqueID: 4026200113
     locked: 0
   - name: Monster
     uniqueID: 3705093947
     locked: 0
   - name: Background_Up
     uniqueID: 1121850397
+    locked: 0
+  - name: Object_Up
+    uniqueID: 1761362451
     locked: 0
   - name: UI
     uniqueID: 1790994761
@@ -70,16 +83,4 @@ TagManager:
     locked: 0
   - name: Temp Layer 2
     uniqueID: 3720044787
-    locked: 0
-  - name: Environment
-    uniqueID: 1106231271
-    locked: 0
-  - name: Customer
-    uniqueID: 4026200113
-    locked: 0
-  - name: Player
-    uniqueID: 4165987127
-    locked: 0
-  - name: 
-    uniqueID: 1761362451
     locked: 0
