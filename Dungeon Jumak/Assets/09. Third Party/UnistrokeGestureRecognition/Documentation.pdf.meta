@@ -1,6 +1,11 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Dungeon Jumak/Assets/Resources/Prefabs/UI/PopUp/JumakManager_Employee.prefab.meta
+guid: fa9242c4a0b294b468327869dff9a435
+PrefabImporter:
+========
 guid: d6cc6ab4d15c9c34abf2f376379bd49a
 DefaultImporter:
+>>>>>>>> Develop:Dungeon Jumak/Assets/09. Third Party/UnistrokeGestureRecognition/Documentation.pdf.meta
   externalObjects: {}
   userData: 
   assetBundleName: 
