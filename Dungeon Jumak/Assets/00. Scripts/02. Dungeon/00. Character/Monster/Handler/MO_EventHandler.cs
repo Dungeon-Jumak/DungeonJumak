@@ -1,18 +1,29 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+// Engine
 using UnityEngine;
 
-public class Mo_EventHandler : MonoBehaviour
+// Ect
+using Utils.EnumTypes;
+
+public class MO_EventHandler : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    private MO_DamageHandler damageHandler;
+
+    private void Awake()
     {
-        
+        damageHandler = GetComponent<MO_DamageHandler>();
     }
 
-    // Update is called once per frame
-    void Update()
+    private void OnEnable()
     {
-        
+        EventManager<MonsterEventType>.Instance.AddListener(MonsterEventType.HitBySkill, OnHitBySkill);
+    }
+
+    private void OnHitBySkill(MonsterEventType eventType, Component sender, TransformEventArgs args)
+    {
+        if (sender is Monster)
+        {
+            float damage = args.m_Value.Length > 0 ? (float)args.m_Value[0] : 0;
+            damageHandler.TakeDamage(damage);
+        }
     }
 }

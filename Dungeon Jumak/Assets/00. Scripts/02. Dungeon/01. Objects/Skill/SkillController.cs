@@ -1,9 +1,12 @@
-//System
+// System
 using System.Collections;
+
+// Engine
 using UnityEngine;
 
 // Ect
 using Data.Object;
+using UnityEngine.UI;
 
 namespace Skill.Controller
 {
@@ -23,6 +26,9 @@ namespace Skill.Controller
 
         [Header("풀 생성 개수")]
         [SerializeField] private int maxSpawnCount = 5;
+
+        [Header("쿨타임용 비활성화 이미지")]
+        [SerializeField] private Image hideImage;
 
         private float currentDuration = 0f;
         private float timer = 0f;
@@ -44,15 +50,13 @@ namespace Skill.Controller
 
         private void Update()
         {
-            // CoolTime 관리
             CoolTime();
 
-            // 스킬 ID에 따라 각각의 처리
             switch (dataSO.skillId)
             {
-                case 0: // FireBall (자동 발사)
+                case 0: // FireBall (auto)
                     break;
-                case 1: // FireRing (플레이어 주변을 도는 불꽃 고리)
+                case 1: // FireRing
                     HandleFireRing();
                     break;
                 default:
@@ -64,12 +68,18 @@ namespace Skill.Controller
 
         private void CoolTime()
         {
-            if (!canSkill)
+            if (hideImage.gameObject.activeSelf)
+            {
+                hideImage.fillAmount = timer / dataSO.coolTime;
+            }
+
+            if (!canSkill && hideImage.gameObject.activeSelf)
             {
                 timer += Time.deltaTime;
                 if (timer > dataSO.coolTime)
                 {
                     canSkill = true;
+                    hideImage.gameObject.SetActive(false);
                     timer = 0f;
                 }
             }
@@ -93,6 +103,9 @@ namespace Skill.Controller
             if (!canSkill || !scanner.nearestTarget) return;
 
             canSkill = false;
+
+            // 쿨타임 비활성 이미지 활성화
+            hideImage.gameObject.SetActive(true);
 
             // 타겟 몬스터 위치
             Vector3 targetPos = scanner.nearestTarget.position;
@@ -143,6 +156,10 @@ namespace Skill.Controller
             if (!canSkill) return;
 
             canSkill = false;
+
+            // 쿨탙임 비활성 이미지 활성화
+            hideImage.gameObject.SetActive(true);
+
             Batch();
         }
 

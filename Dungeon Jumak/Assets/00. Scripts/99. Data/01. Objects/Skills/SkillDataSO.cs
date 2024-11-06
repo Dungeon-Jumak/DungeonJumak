@@ -18,7 +18,7 @@ namespace Data.Object
         [Space(10)]
         [Header("쿨타임 관련")]
         public float coolTime; // 쿨타임
-        public float waitingTime; // 대기 시간
+        //public float waitingTime; // 대기 시간
         public float duration; // 지속 시간
     }
 }
