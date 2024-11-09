@@ -4,6 +4,7 @@ using UnityEngine;
 //Ect
 using Data.Character;
 using Interfaces;
+using Utils.EnumTypes;
 
 public class Monster : MonoBehaviour, IDamageable, ITurnable, IMovable
 {

@@ -51,7 +51,8 @@ public class MO_HPController : MonoBehaviour
 
     private void OnHitBySkill(MonsterEventType eventType, Component sender, TransformEventArgs args)
     {
-        if (sender == this)
+        // 현재 객체의 Transform과 맞은 Transform 비교
+        if (args != null && args.m_Transform == transform)
         {
             TakeDamage(data.damage);
         }
@@ -62,7 +63,6 @@ public class MO_HPController : MonoBehaviour
     /// <summary>
     /// TakeDamage: 데미지로 인한 체력 감소 로직
     /// </summary>
-    /// <param name="damage"></param>
     public void TakeDamage(float damage)
     {
         currentHp -= damage;
