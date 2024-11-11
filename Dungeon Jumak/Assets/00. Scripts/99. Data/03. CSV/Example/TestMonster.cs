@@ -9,7 +9,7 @@ public class MonsterData
     public float MonsterHealth;
 }
 
-[CreateAssetMenu(fileName = "NewCharacter", menuName = "Scriptable/testMonster", order = int.MaxValue)]
+[CreateAssetMenu(fileName = "NewCharacter", menuName = "Scriptable/CSV/testMonster", order = int.MaxValue)]
 public class TestMonster : ScriptableObject
 {
     public MonsterData data;
