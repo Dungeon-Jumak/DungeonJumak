@@ -1,57 +1,59 @@
-// Unity
+// Engine
 using UnityEngine;
 
-[DisallowMultipleComponent]
+// System
+using System.Collections.Generic;
+
 public class Scanner : MonoBehaviour
 {
     [Header("스캔 범위")]
     public float scanRange;
 
+    public Transform nearestTarget;
+
     [Header("레이어 마스크")]
-    [SerializeField] private LayerMask targetLayers; // 여러 레이어를 인식할 수 있도록 변수명 변경
+    [SerializeField] private LayerMask targetLayers; // 스캔 가능한 모든 레이어
 
     [Header("레이 캐스트 힛 배열")]
-    [SerializeField] private RaycastHit2D[] targets;
+    private RaycastHit2D[] targets;
 
-    [Header("가장 가까운 타겟")]
-    public Transform nearestTarget;
+    [Header("탐지된 모든 타겟")]
+    private List<Transform> allTargets = new List<Transform>();
 
     private void FixedUpdate()
     {
         targets = Physics2D.CircleCastAll(transform.position, scanRange, Vector2.zero, 0, targetLayers);
+        allTargets.Clear();
 
-        nearestTarget = GetNearestTarget();
+        foreach (var hit in targets)
+        {
+            allTargets.Add(hit.transform);
+        }
+
+        nearestTarget = GetNearestTarget(targetLayers); // 기본 레이어 필터링
     }
 
-    private Transform GetNearestTarget()
+    /// <summary>
+    /// 특정 레이어에 맞는 가장 가까운 타겟 반환
+    /// </summary>
+    public Transform GetNearestTarget(LayerMask layerMask)
     {
         Transform result = null;
         float lastDistance = Mathf.Infinity;
 
-        foreach (RaycastHit2D target in targets)
+        foreach (Transform target in allTargets)
         {
-            Vector3 playerPos = transform.position;
-            Vector3 targetPos = target.transform.position;
-
-            float curDistance = Vector3.Distance(playerPos, targetPos);
-
-            if (curDistance < lastDistance)
+            if (((1 << target.gameObject.layer) & layerMask) != 0)
             {
-                lastDistance = curDistance;
-                result = target.transform;
+                float curDistance = Vector3.Distance(transform.position, target.position);
+                if (curDistance < lastDistance)
+                {
+                    lastDistance = curDistance;
+                    result = target;
+                }
             }
         }
 
         return result;
     }
-
-    #region gizmo
-
-    private void OnDrawGizmosSelected()
-    {
-        Gizmos.color = Color.black;
-        Gizmos.DrawWireSphere(transform.position, scanRange);
-    }
-
-    #endregion
 }

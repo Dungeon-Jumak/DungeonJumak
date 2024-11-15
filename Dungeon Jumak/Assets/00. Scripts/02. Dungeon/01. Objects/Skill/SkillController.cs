@@ -4,9 +4,11 @@ using System.Collections;
 // Engine
 using UnityEngine;
 
+// UI
+using UnityEngine.UI;
+
 // Ect
 using Data.Object;
-using UnityEngine.UI;
 
 namespace Skill.Controller
 {
@@ -35,11 +37,16 @@ namespace Skill.Controller
         private PoolManager<Skill> poolManager;
         private Coroutine autoFireBallCoroutine;
 
+        private LayerMask skillLayer; // 스킬 전용 타겟 레이어
+
         private void Start()
         {
             // 풀 매니저 초기화
             poolManager = new PoolManager<Skill>(transform);
             poolManager.CreatePool(prefab, maxSpawnCount);
+
+            // 특정 레이어 설정
+            skillLayer = LayerMask.GetMask("Monster");
 
             if (dataSO.skillId == 0) // 0번 스킬이 FireBall이라 가정
             {
@@ -100,29 +107,21 @@ namespace Skill.Controller
 
         public void FireBall()
         {
-            if (!canSkill || !scanner.nearestTarget) return;
+            // 스킬 전용 타겟 필터링
+            Transform target = scanner.GetNearestTarget(skillLayer);
+
+            if (!canSkill || target == null) return;
 
             canSkill = false;
-
-            // 쿨타임 비활성 이미지 활성화
             hideImage.gameObject.SetActive(true);
 
-            // 타겟 몬스터 위치
-            Vector3 targetPos = scanner.nearestTarget.position;
-
-            // 방향 벡터 계산
+            Vector3 targetPos = target.position;
             Vector3 direction = (targetPos - transform.position).normalized;
 
-            // 풀링
             Transform fireball = poolManager.GetFromPool(prefab).transform;
-
-            // position 설정
             fireball.position = transform.position;
-
-            // 회전
             fireball.rotation = Quaternion.FromToRotation(Vector3.up, direction);
 
-            // Skill.cs Init() 호출
             fireball.GetComponent<Skill>().Init(direction);
         }
 
