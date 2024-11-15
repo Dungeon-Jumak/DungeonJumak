@@ -1,14 +1,4 @@
-using System.Data.Common;
 using UnityEngine;
-
-public class JumakData
-{
-    public int currentLevel = 0;
-    public int maxLevel = 7;
-
-    public int maxWaitingCount = 5;
-    public int maxSeatCount = 2;
-}
 
 public class JumakController : MonoBehaviour
 {
@@ -22,8 +12,6 @@ public class JumakController : MonoBehaviour
 
     [Header("현재 할당되어 있는 자리 배열  : 자리가 할당되어 있다면 True")]
     public bool[] allocatedSeats;
-
-    private EntranceController entranceController;
 
     private void Start()
     {

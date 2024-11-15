@@ -1814,10 +1814,10 @@ RectTransform:
   m_Father: {fileID: 1819299877}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 148, y: -120}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 1, y: 1}
 --- !u!114 &100284357
 MonoBehaviour:
@@ -1946,7 +1946,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   seatNumber: 15
-  bubbleStartTime: 0
 --- !u!1 &115806399
 GameObject:
   m_ObjectHideFlags: 0
@@ -1982,10 +1981,10 @@ RectTransform:
   m_Father: {fileID: 2001863514}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 100, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 1, y: 1}
 --- !u!114 &115806401
 MonoBehaviour:
@@ -2228,7 +2227,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &126541404
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2495,10 +2494,10 @@ RectTransform:
   m_Father: {fileID: 1819299877}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 148, y: -240}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 1, y: 1}
 --- !u!114 &155305026
 MonoBehaviour:
@@ -4916,6 +4915,7 @@ GameObject:
   - component: {fileID: 385062422}
   - component: {fileID: 385062424}
   - component: {fileID: 385062423}
+  - component: {fileID: 385062425}
   m_Layer: 5
   m_Name: '[Image] Table 1'
   m_TagString: Untagged
@@ -4983,6 +4983,24 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 385062421}
   m_CullTransparentMesh: 1
+--- !u!114 &385062425
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 385062421}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d2a52475072575a4db38b9655799716b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tableID: T100
+  tableLevel: 1
+  dansangImage: {fileID: 0}
+  dansangSprites: []
+  tableImage: {fileID: 0}
+  tableSprites: []
 --- !u!1 &390279996
 GameObject:
   m_ObjectHideFlags: 0
@@ -6574,7 +6592,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   seatNumber: 10
-  bubbleStartTime: 0
 --- !u!1 &559553119
 GameObject:
   m_ObjectHideFlags: 0
@@ -6626,8 +6643,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07a7de836fadd034b8588ced76ea5dc1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  table: {fileID: 0}
   tableNumber: 9
-  eatingTime: 5
   countButton: {fileID: 137853010}
   cleaningButton: {fileID: 84338297}
 --- !u!114 &559553122
@@ -6888,7 +6905,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   seatNumber: 5
-  bubbleStartTime: 0
 --- !u!1 &629970921
 GameObject:
   m_ObjectHideFlags: 0
@@ -6940,8 +6956,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07a7de836fadd034b8588ced76ea5dc1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  table: {fileID: 0}
   tableNumber: 3
-  eatingTime: 5
   countButton: {fileID: 1810183615}
   cleaningButton: {fileID: 266824726}
 --- !u!114 &629970924
@@ -7128,6 +7144,7 @@ GameObject:
   - component: {fileID: 660460072}
   - component: {fileID: 660460074}
   - component: {fileID: 660460073}
+  - component: {fileID: 660460075}
   m_Layer: 5
   m_Name: '[Image] Table 2'
   m_TagString: Untagged
@@ -7195,6 +7212,24 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 660460071}
   m_CullTransparentMesh: 1
+--- !u!114 &660460075
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 660460071}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d2a52475072575a4db38b9655799716b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tableID: T100
+  tableLevel: 1
+  dansangImage: {fileID: 0}
+  dansangSprites: []
+  tableImage: {fileID: 0}
+  tableSprites: []
 --- !u!1 &662449988
 GameObject:
   m_ObjectHideFlags: 0
@@ -7230,10 +7265,10 @@ RectTransform:
   m_Father: {fileID: 34732143}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 280, y: -70}
-  m_SizeDelta: {x: 140, y: 140}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 1, y: 0}
 --- !u!114 &662449990
 MonoBehaviour:
@@ -7654,6 +7689,7 @@ GameObject:
   - component: {fileID: 694937537}
   - component: {fileID: 694937539}
   - component: {fileID: 694937538}
+  - component: {fileID: 694937540}
   m_Layer: 5
   m_Name: '[Image] Table 7'
   m_TagString: Untagged
@@ -7721,6 +7757,24 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 694937536}
   m_CullTransparentMesh: 1
+--- !u!114 &694937540
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 694937536}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d2a52475072575a4db38b9655799716b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tableID: T100
+  tableLevel: 1
+  dansangImage: {fileID: 0}
+  dansangSprites: []
+  tableImage: {fileID: 0}
+  tableSprites: []
 --- !u!1 &695203459
 GameObject:
   m_ObjectHideFlags: 0
@@ -7766,7 +7820,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   seatNumber: 14
-  bubbleStartTime: 0
 --- !u!1 &697158016
 GameObject:
   m_ObjectHideFlags: 0
@@ -8517,6 +8570,7 @@ GameObject:
   - component: {fileID: 736116729}
   - component: {fileID: 736116731}
   - component: {fileID: 736116730}
+  - component: {fileID: 736116732}
   m_Layer: 5
   m_Name: '[Image] Table 5'
   m_TagString: Untagged
@@ -8584,6 +8638,24 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 736116728}
   m_CullTransparentMesh: 1
+--- !u!114 &736116732
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 736116728}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d2a52475072575a4db38b9655799716b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tableID: T100
+  tableLevel: 1
+  dansangImage: {fileID: 0}
+  dansangSprites: []
+  tableImage: {fileID: 0}
+  tableSprites: []
 --- !u!1 &739797785
 GameObject:
   m_ObjectHideFlags: 0
@@ -9383,6 +9455,7 @@ GameObject:
   m_Component:
   - component: {fileID: 799569217}
   - component: {fileID: 799569218}
+  - component: {fileID: 799569219}
   m_Layer: 0
   m_Name: Jumak Manager
   m_TagString: Untagged
@@ -9444,6 +9517,18 @@ MonoBehaviour:
   - {fileID: 695203461}
   - {fileID: 104855493}
   allocatedSeats: 
+--- !u!114 &799569219
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 799569216}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aafb4ffd8dec5e54099c147932574812, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &802420745
 GameObject:
   m_ObjectHideFlags: 0
@@ -9495,8 +9580,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07a7de836fadd034b8588ced76ea5dc1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  table: {fileID: 0}
   tableNumber: 15
-  eatingTime: 5
   countButton: {fileID: 876198618}
   cleaningButton: {fileID: 382872173}
 --- !u!114 &802420748
@@ -9693,7 +9778,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   seatNumber: 11
-  bubbleStartTime: 0
 --- !u!1 &826609867
 GameObject:
   m_ObjectHideFlags: 0
@@ -9920,6 +10004,7 @@ GameObject:
   - component: {fileID: 839453116}
   - component: {fileID: 839453118}
   - component: {fileID: 839453117}
+  - component: {fileID: 839453119}
   m_Layer: 5
   m_Name: '[Image] Table 6'
   m_TagString: Untagged
@@ -9987,6 +10072,24 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 839453115}
   m_CullTransparentMesh: 1
+--- !u!114 &839453119
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 839453115}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d2a52475072575a4db38b9655799716b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tableID: T100
+  tableLevel: 1
+  dansangImage: {fileID: 0}
+  dansangSprites: []
+  tableImage: {fileID: 0}
+  tableSprites: []
 --- !u!1 &843545022
 GameObject:
   m_ObjectHideFlags: 0
@@ -10154,6 +10257,7 @@ GameObject:
   - component: {fileID: 862311494}
   - component: {fileID: 862311496}
   - component: {fileID: 862311495}
+  - component: {fileID: 862311497}
   m_Layer: 5
   m_Name: '[Image] Table 3'
   m_TagString: Untagged
@@ -10221,6 +10325,24 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 862311493}
   m_CullTransparentMesh: 1
+--- !u!114 &862311497
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 862311493}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d2a52475072575a4db38b9655799716b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tableID: T100
+  tableLevel: 1
+  dansangImage: {fileID: 0}
+  dansangSprites: []
+  tableImage: {fileID: 0}
+  tableSprites: []
 --- !u!1 &862799919
 GameObject:
   m_ObjectHideFlags: 0
@@ -10348,8 +10470,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07a7de836fadd034b8588ced76ea5dc1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  table: {fileID: 0}
   tableNumber: 14
-  eatingTime: 5
   countButton: {fileID: 1530593133}
   cleaningButton: {fileID: 756263318}
 --- !u!114 &869676945
@@ -11490,7 +11612,7 @@ RectTransform:
   m_AnchorMin: {x: 0.047185186, y: 1}
   m_AnchorMax: {x: 0.13625929, y: 1}
   m_AnchoredPosition: {x: -51.00049, y: 0}
-  m_SizeDelta: {x: -83.20003, y: 80}
+  m_SizeDelta: {x: 0, y: 80}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &977606136
 MonoBehaviour:
@@ -11559,7 +11681,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   seatNumber: 2
-  bubbleStartTime: 0
 --- !u!1 &997086872
 GameObject:
   m_ObjectHideFlags: 0
@@ -11728,8 +11849,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07a7de836fadd034b8588ced76ea5dc1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  table: {fileID: 0}
   tableNumber: 2
-  eatingTime: 5
   countButton: {fileID: 417847599}
   cleaningButton: {fileID: 1587802968}
 --- !u!114 &1017299291
@@ -11859,8 +11980,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07a7de836fadd034b8588ced76ea5dc1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  table: {fileID: 0}
   tableNumber: 1
-  eatingTime: 5
   countButton: {fileID: 1719828570}
   cleaningButton: {fileID: 343178086}
 --- !u!1 &1020602005
@@ -12015,10 +12136,10 @@ RectTransform:
   m_Father: {fileID: 1819299877}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 148, y: -360}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 1, y: 1}
 --- !u!114 &1023968180
 MonoBehaviour:
@@ -12362,7 +12483,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   seatNumber: 12
-  bubbleStartTime: 0
 --- !u!1 &1070312463
 GameObject:
   m_ObjectHideFlags: 0
@@ -12788,7 +12908,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   seatNumber: 0
-  bubbleStartTime: 0
 --- !u!1 &1097079991
 GameObject:
   m_ObjectHideFlags: 0
@@ -13188,8 +13307,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07a7de836fadd034b8588ced76ea5dc1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  table: {fileID: 0}
   tableNumber: 11
-  eatingTime: 5
   countButton: {fileID: 773293027}
   cleaningButton: {fileID: 1912454665}
 --- !u!114 &1116005318
@@ -13555,10 +13674,10 @@ RectTransform:
   m_Father: {fileID: 34732143}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 490, y: -70}
-  m_SizeDelta: {x: 140, y: 140}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 1, y: 0}
 --- !u!114 &1158586725
 MonoBehaviour:
@@ -13952,8 +14071,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07a7de836fadd034b8588ced76ea5dc1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  table: {fileID: 0}
   tableNumber: 5
-  eatingTime: 5
   countButton: {fileID: 2052130223}
   cleaningButton: {fileID: 1438159641}
 --- !u!114 &1178903055
@@ -14039,7 +14158,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   seatNumber: 6
-  bubbleStartTime: 0
 --- !u!1 &1198370836
 GameObject:
   m_ObjectHideFlags: 0
@@ -14794,7 +14912,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1300194428
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15204,10 +15322,10 @@ RectTransform:
   m_Father: {fileID: 2001863514}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 100, y: -120}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 1, y: 1}
 --- !u!114 &1326033802
 MonoBehaviour:
@@ -16519,10 +16637,10 @@ RectTransform:
   m_Father: {fileID: 34732143}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: -280, y: -70}
-  m_SizeDelta: {x: 140, y: 140}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
 --- !u!114 &1420508914
 MonoBehaviour:
@@ -16737,8 +16855,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07a7de836fadd034b8588ced76ea5dc1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  table: {fileID: 0}
   tableNumber: 8
-  eatingTime: 5
   countButton: {fileID: 2037956783}
   cleaningButton: {fileID: 1583608175}
 --- !u!114 &1431671783
@@ -17159,10 +17277,10 @@ RectTransform:
   m_Father: {fileID: 1819299877}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 148, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 1, y: 1}
 --- !u!114 &1460398963
 MonoBehaviour:
@@ -17323,7 +17441,7 @@ RectTransform:
   m_AnchorMin: {x: 0.86466676, y: 0.9947917}
   m_AnchorMax: {x: 0.9536668, y: 1}
   m_AnchoredPosition: {x: 50, y: 0}
-  m_SizeDelta: {x: -83.13086, y: 70}
+  m_SizeDelta: {x: 0, y: 70}
   m_Pivot: {x: 1, y: 1}
 --- !u!114 &1472309295
 MonoBehaviour:
@@ -17392,7 +17510,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   seatNumber: 8
-  bubbleStartTime: 0
 --- !u!1 &1482639587
 GameObject:
   m_ObjectHideFlags: 0
@@ -18181,8 +18298,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07a7de836fadd034b8588ced76ea5dc1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  table: {fileID: 0}
   tableNumber: 13
-  eatingTime: 5
   countButton: {fileID: 885900818}
   cleaningButton: {fileID: 9236940}
 --- !u!114 &1575016637
@@ -18696,7 +18813,7 @@ RectTransform:
   m_AnchorMin: {x: 0.048, y: 0.026}
   m_AnchorMax: {x: 0.954185, y: 0.07752084}
   m_AnchoredPosition: {x: -1, y: -50}
-  m_SizeDelta: {x: -978.6798, y: -20}
+  m_SizeDelta: {x: 0, y: -20}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!114 &1612472475
 MonoBehaviour:
@@ -18765,7 +18882,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   seatNumber: 9
-  bubbleStartTime: 0
 --- !u!1 &1634394650
 GameObject:
   m_ObjectHideFlags: 0
@@ -18886,8 +19002,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07a7de836fadd034b8588ced76ea5dc1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  table: {fileID: 0}
   tableNumber: 0
-  eatingTime: 5
   countButton: {fileID: 517001835}
   cleaningButton: {fileID: 964607073}
 --- !u!1 &1643260226
@@ -19253,7 +19369,7 @@ RectTransform:
   m_AnchorMin: {x: 0.56585187, y: 0.8880001}
   m_AnchorMax: {x: 0.954185, y: 0.9250001}
   m_AnchoredPosition: {x: -1, y: 0}
-  m_SizeDelta: {x: -419.39978, y: 8}
+  m_SizeDelta: {x: 0, y: 8}
   m_Pivot: {x: 1, y: 1}
 --- !u!114 &1667131556
 MonoBehaviour:
@@ -19322,7 +19438,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   seatNumber: 1
-  bubbleStartTime: 0
 --- !u!1 &1677150406
 GameObject:
   m_ObjectHideFlags: 0
@@ -19374,8 +19489,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07a7de836fadd034b8588ced76ea5dc1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  table: {fileID: 0}
   tableNumber: 12
-  eatingTime: 5
   countButton: {fileID: 1229502144}
   cleaningButton: {fileID: 162499405}
 --- !u!114 &1677150409
@@ -19853,6 +19968,7 @@ GameObject:
   - component: {fileID: 1708852378}
   - component: {fileID: 1708852380}
   - component: {fileID: 1708852379}
+  - component: {fileID: 1708852381}
   m_Layer: 5
   m_Name: '[Image] Table 8'
   m_TagString: Untagged
@@ -19920,6 +20036,24 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1708852377}
   m_CullTransparentMesh: 1
+--- !u!114 &1708852381
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1708852377}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d2a52475072575a4db38b9655799716b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tableID: T100
+  tableLevel: 1
+  dansangImage: {fileID: 0}
+  dansangSprites: []
+  tableImage: {fileID: 0}
+  tableSprites: []
 --- !u!1 &1713897243
 GameObject:
   m_ObjectHideFlags: 0
@@ -19965,7 +20099,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   seatNumber: 1
-  bubbleStartTime: 0
 --- !u!1 &1716574406
 GameObject:
   m_ObjectHideFlags: 0
@@ -20591,10 +20724,10 @@ RectTransform:
   m_Father: {fileID: 209604879}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 20, y: 0}
-  m_SizeDelta: {x: 200, y: 70}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1775778737
 MonoBehaviour:
@@ -21693,8 +21826,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07a7de836fadd034b8588ced76ea5dc1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  table: {fileID: 0}
   tableNumber: 6
-  eatingTime: 5
   countButton: {fileID: 432805210}
   cleaningButton: {fileID: 55847506}
 --- !u!114 &1826171005
@@ -22154,8 +22287,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07a7de836fadd034b8588ced76ea5dc1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  table: {fileID: 0}
   tableNumber: 4
-  eatingTime: 5
   countButton: {fileID: 708082676}
   cleaningButton: {fileID: 763263672}
 --- !u!114 &1887092029
@@ -22656,10 +22789,10 @@ RectTransform:
   m_Father: {fileID: 34732143}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: -490, y: -70}
-  m_SizeDelta: {x: 140, y: 140}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
 --- !u!114 &1940186068
 MonoBehaviour:
@@ -22794,8 +22927,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07a7de836fadd034b8588ced76ea5dc1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  table: {fileID: 0}
   tableNumber: 7
-  eatingTime: 5
   countButton: {fileID: 79618208}
   cleaningButton: {fileID: 2064568158}
 --- !u!114 &1940538626
@@ -23048,6 +23181,7 @@ GameObject:
   - component: {fileID: 1955239937}
   - component: {fileID: 1955239939}
   - component: {fileID: 1955239938}
+  - component: {fileID: 1955239940}
   m_Layer: 5
   m_Name: '[Image] Table 4'
   m_TagString: Untagged
@@ -23115,6 +23249,24 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1955239936}
   m_CullTransparentMesh: 1
+--- !u!114 &1955239940
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1955239936}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d2a52475072575a4db38b9655799716b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tableID: T100
+  tableLevel: 1
+  dansangImage: {fileID: 0}
+  dansangSprites: []
+  tableImage: {fileID: 0}
+  tableSprites: []
 --- !u!1 &1959195483
 GameObject:
   m_ObjectHideFlags: 0
@@ -23160,7 +23312,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   seatNumber: 4
-  bubbleStartTime: 0
 --- !u!1 &1960649021
 GameObject:
   m_ObjectHideFlags: 0
@@ -23262,10 +23413,10 @@ RectTransform:
   m_Father: {fileID: 1178158302}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: -199.99997, y: 0}
-  m_SizeDelta: {x: 200, y: 70}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1962558634
 MonoBehaviour:
@@ -23422,7 +23573,7 @@ RectTransform:
   m_AnchorMin: {x: 0.045222223, y: 0.8880001}
   m_AnchorMax: {x: 0.323, y: 0.92447925}
   m_AnchoredPosition: {x: 300, y: 6}
-  m_SizeDelta: {x: -300, y: 11.400024}
+  m_SizeDelta: {x: 0, y: 11.400024}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1972835751
 MonoBehaviour:
@@ -24149,7 +24300,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   seatNumber: 13
-  bubbleStartTime: 0
 --- !u!1 &2007487252
 GameObject:
   m_ObjectHideFlags: 0
@@ -24289,7 +24439,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   seatNumber: 3
-  bubbleStartTime: 0
 --- !u!1 &2031852705
 GameObject:
   m_ObjectHideFlags: 0
@@ -24659,10 +24808,10 @@ RectTransform:
   m_Father: {fileID: 34732143}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: -70, y: -70}
-  m_SizeDelta: {x: 140, y: 140}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
 --- !u!114 &2043405951
 MonoBehaviour:
@@ -25798,8 +25947,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07a7de836fadd034b8588ced76ea5dc1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  table: {fileID: 0}
   tableNumber: 10
-  eatingTime: 5
   countButton: {fileID: 1724804655}
   cleaningButton: {fileID: 1482639589}
 --- !u!114 &2114806388
@@ -25875,10 +26024,10 @@ RectTransform:
   m_Father: {fileID: 209604879}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: -200, y: 0}
-  m_SizeDelta: {x: 200, y: 70}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &2122635318
 MonoBehaviour:

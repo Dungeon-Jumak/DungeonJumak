@@ -6,9 +6,6 @@ public class Seat : MonoBehaviour
     [Header("자리 번호")]
     [SerializeField] private int seatNumber; 
 
-    [Header("주문 말풍선이 뜨는데 걸리는 시간")]
-    [SerializeField] private float bubbleStartTime = 0f; 
-
     private Button bubble;
     private OrderManager orderManager;
 
@@ -23,7 +20,7 @@ public class Seat : MonoBehaviour
     /// </summary>
     public void SelectMenu()
     {
-        Invoke("ActiveOrderBubble", bubbleStartTime);
+        Invoke("ActiveOrderBubble", DataManager<JumakData>.Instance.Data.orderSpeed);
     }
 
     /// <summary>

@@ -1,3 +1,5 @@
+using System.Timers;
+
 //Unity
 using UnityEngine;
 using UnityEngine.UI;
@@ -8,12 +10,8 @@ public class CleaningButton : MonoBehaviour
 
     private FoodOnTable foodOnTable;
 
-    private EntranceController entranceController;
-
     private void Awake()
     {
-        entranceController = FindObjectOfType<EntranceController>();
-
         button = GetComponent<Button>();
         button.onClick.AddListener(Cleaning);
     }
@@ -25,9 +23,10 @@ public class CleaningButton : MonoBehaviour
 
     private void Cleaning()
     {
+        //음식 비활성화
         foodOnTable.gameObject.SetActive(false);
 
-        entranceController.EntranceJumakInWatingQueue(foodOnTable.GetTableNumber());
+        foodOnTable.Clean();
 
         gameObject.SetActive(false);
     }

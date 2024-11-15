@@ -2,14 +2,15 @@
 using UnityEngine;
 using UnityEngine.UI;
 
+/// <summary>
+/// 식사, 계산, 청소의 전반적인 것들을 관리
+/// </summary>
 public class FoodOnTable : MonoBehaviour
 {
+    [SerializeField] private Table table;
+
     [Header("테이블 위 음식 자리 번호")]
     [SerializeField] private int tableNumber;
-
-    //후에 프로퍼티로 변경 - 테이블 단계에 맞게 변경되도록
-    [Header("음식 먹는데 걸리는 시간")]
-    public float eatingTime = 5f;
 
     [Header("계산 버튼")]
     [SerializeField] private CountButton countButton;
@@ -27,12 +28,20 @@ public class FoodOnTable : MonoBehaviour
 
     private Customer customer;
 
+    private EntranceController entranceController;
+
+    private JumakDataManager jumakDataManager;
+
     private void Awake()
     {
+        table = transform.parent.GetComponent<Table>();
+
         startEat = false;
         image = GetComponent<Image>();
 
         customerTempParent = GameObject.Find("Customer's Temp Parent").transform;
+        entranceController = FindObjectOfType<EntranceController>();
+        jumakDataManager = FindObjectOfType<JumakDataManager>();
     }
 
     private void OnEnable()
@@ -60,7 +69,7 @@ public class FoodOnTable : MonoBehaviour
     {
         if (startEat)
         {
-            if (startEatingTime + eatingTime < Time.time)
+            if (startEatingTime + jumakDataManager.GetEatingTime(table.tableID) < Time.time)
             {
                 startEat = false;
                 image.sprite = menuData.emptySprite;
@@ -107,6 +116,16 @@ public class FoodOnTable : MonoBehaviour
         cleaningButton.gameObject.SetActive(true);
 
         cleaningButton.Init(this);
+    }
+
+    public void Clean()
+    {
+        Invoke("FinishClean", DataManager<JumakData>.Instance.Data.cleaningTime);
+    }
+
+    public void FinishClean()
+    {
+        entranceController.EntranceJumakInWatingQueue(GetTableNumber());
     }
 
     public int GetTableNumber()
