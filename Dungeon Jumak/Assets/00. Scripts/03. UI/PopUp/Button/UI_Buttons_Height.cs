@@ -13,6 +13,7 @@ public class UI_Buttons_Height : UI_PopUp
     enum Buttons
     {
         Setting,
+        Encyclopedia,
     }
 
     private void Start()
@@ -20,10 +21,16 @@ public class UI_Buttons_Height : UI_PopUp
         Bind<Button>(typeof(Buttons));
 
         GetButton((int)Buttons.Setting).gameObject.BindEvent(OpenSettingPopUp);
+        GetButton((int)Buttons.Encyclopedia).gameObject.BindEvent(OpenEncyclopediaPopUp);
     }
 
     public void OpenSettingPopUp(PointerEventData _data)
     {
         GameManager.UI.ShowPopupUI<UI_PopUp>("SettingPopUp");
+    }
+
+    public void OpenEncyclopediaPopUp(PointerEventData _data)
+    {
+        GameManager.UI.ShowPopupUI<UI_PopUp>("EncyclopediaPopUp");
     }
 }
