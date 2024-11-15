@@ -39,7 +39,7 @@ namespace Skill
             if (!collision.CompareTag("Monster") || per == -1)
                 return;
 
-            //rigid.velocity = Vector2.zero;
+            rigid.velocity = Vector2.zero;
             gameObject.SetActive(false); // 비활성화
         }
 

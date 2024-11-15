@@ -8,13 +8,19 @@ public class MO_EventHandler : MonoBehaviour
 {
     private void OnTriggerEnter2D(Collider2D other)
     {
+        // 스킬과 충돌했을 경우
         if (other.CompareTag("Skill"))
         {
-            // HitBySkill 이벤트 발생
             EventManager<MonsterEventType>.Instance.PostNotification(MonsterEventType.HitBySkill, this, new TransformEventArgs(transform));
+        }
+    }
 
-            // 로그 찌금 ....
-            Debug.Log("스킬한테 맞았다 ㅡㅜㅜ 아 힘들어");
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        // 플레이어와 충돌한 경우
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            EventManager<MonsterEventType>.Instance.PostNotification(MonsterEventType.PlayerCollision, this, new TransformEventArgs(transform));
         }
     }
 }

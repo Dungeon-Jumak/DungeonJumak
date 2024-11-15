@@ -8,7 +8,7 @@ public class Scanner : MonoBehaviour
     public float scanRange;
 
     [Header("레이어 마스크")]
-    [SerializeField] private LayerMask targetLayer;
+    [SerializeField] private LayerMask targetLayers; // 여러 레이어를 인식할 수 있도록 변수명 변경
 
     [Header("레이 캐스트 힛 배열")]
     [SerializeField] private RaycastHit2D[] targets;
@@ -18,7 +18,7 @@ public class Scanner : MonoBehaviour
 
     private void FixedUpdate()
     {
-        targets = Physics2D.CircleCastAll(transform.position, scanRange, Vector2.zero, 0, targetLayer);
+        targets = Physics2D.CircleCastAll(transform.position, scanRange, Vector2.zero, 0, targetLayers);
 
         nearestTarget = GetNearestTarget();
     }
@@ -26,7 +26,7 @@ public class Scanner : MonoBehaviour
     private Transform GetNearestTarget()
     {
         Transform result = null;
-        float lastDistance = 100f;
+        float lastDistance = Mathf.Infinity;
 
         foreach (RaycastHit2D target in targets)
         {
@@ -45,13 +45,13 @@ public class Scanner : MonoBehaviour
         return result;
     }
 
-    // 스캔 범위를 씬 뷰에 시각화
+    #region gizmo
+
     private void OnDrawGizmosSelected()
     {
-        // Gizmos 색상 설정 (검은색)
         Gizmos.color = Color.black;
-
-        // 스캐너의 스캔 범위를 원으로 그림
         Gizmos.DrawWireSphere(transform.position, scanRange);
     }
+
+    #endregion
 }

@@ -38,6 +38,7 @@ namespace Utils.EnumTypes {
     public enum MonsterEventType
     {
         HitBySkill,
+        PlayerCollision,
     }
 }
 

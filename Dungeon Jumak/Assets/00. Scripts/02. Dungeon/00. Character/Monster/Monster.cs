@@ -4,10 +4,9 @@ using UnityEngine;
 //Ect
 using Data.Character;
 using Interfaces;
-using Utils.EnumTypes;
 
-public class Monster : MonoBehaviour, IDamageable, ITurnable, IMovable
-{
+public class Monster : MonoBehaviour
+{ 
     // SO
     public MonsterDataSO data;
 
@@ -19,7 +18,7 @@ public class Monster : MonoBehaviour, IDamageable, ITurnable, IMovable
 
     private void Awake()
     {
-        // MoveHanndler 초기화
+        // MoveHandler 초기화
         playerTransform = GameObject.FindWithTag("Player").transform;
         moveHandler = new Mo_MoveHandler(transform, playerTransform, data.speed);
     }
