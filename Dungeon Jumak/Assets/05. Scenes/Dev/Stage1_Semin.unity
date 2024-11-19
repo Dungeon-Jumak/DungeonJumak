@@ -3369,13 +3369,10 @@ MonoBehaviour:
   spawnDataList:
   - spawnTime: 0
     monsterPrefab: {fileID: 108895931599851165, guid: 924e351731037e642b112c069ec57923, type: 3}
-    spawnCount: 3
-  - spawnTime: 5
-    monsterPrefab: {fileID: 108895931599851165, guid: 5db7d2026ff9f994eab67e3f35363f49, type: 3}
-    spawnCount: 3
+    spawnCount: 8
   - spawnTime: 10
     monsterPrefab: {fileID: 108895931599851165, guid: 5db7d2026ff9f994eab67e3f35363f49, type: 3}
-    spawnCount: 3
+    spawnCount: 8
   playerTransform: {fileID: 193646109}
   randomSpawnRange: {x: 20, y: 20}
 --- !u!1001 &1134080370
@@ -5950,6 +5947,10 @@ PrefabInstance:
     - target: {fileID: 5615203713427383013, guid: ac7ee2120cf05414d882bccde7b22887, type: 3}
       propertyPath: knockbackSettingsList.Array.data[1].knockbackForce
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6123825225654508018, guid: ac7ee2120cf05414d882bccde7b22887, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7453470322143723547, guid: ac7ee2120cf05414d882bccde7b22887, type: 3}
       propertyPath: m_RootOrder

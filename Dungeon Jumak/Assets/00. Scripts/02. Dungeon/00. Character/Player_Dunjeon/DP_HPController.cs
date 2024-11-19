@@ -8,10 +8,10 @@ using UnityEngine.UI;
 using Data.Character;
 using Utils.EnumTypes;
 
-public class MO_HPController : MonoBehaviour
+public class DP_HPController : MonoBehaviour
 {
     // SO
-    public MonsterDataSO data;
+    public DunjeonPlayerDataSO data;
 
     [Header("HP바")]
     [SerializeField] private Slider hpBar;
@@ -35,7 +35,7 @@ public class MO_HPController : MonoBehaviour
         }
 
         // 리스너(스킬 데미지) 등록
-        EventManager<MonsterEventType>.Instance.AddListener(MonsterEventType.HitBySkill, OnHitBySkill);
+        EventManager<PlayerEventType>.Instance.AddListener(PlayerEventType.HitByMonster, OnHitMonster);
     }
 
     private void FixedUpdate()
@@ -49,11 +49,11 @@ public class MO_HPController : MonoBehaviour
 
     #region Listner
 
-    private void OnHitBySkill(MonsterEventType eventType, Component sender, TransformEventArgs args)
+    private void OnHitMonster(PlayerEventType eventType, Component sender, TransformEventArgs args)
     {
-        if ((args.m_Value[0] is float skillDamage) && (args.m_Transform == transform))
+        if (args.m_Value[0] is float monsterDamage)
         {
-            TakeDamage(skillDamage);
+            TakeDamage(monsterDamage);
         }
     }
 
@@ -80,7 +80,7 @@ public class MO_HPController : MonoBehaviour
     }
 
     /// <summary>
-    /// Die: 체력 0 -> 몬스터 비활성화
+    /// Die: 체력 0 -> 플레이어 사망
     /// </summary>
     private void Die()
     {

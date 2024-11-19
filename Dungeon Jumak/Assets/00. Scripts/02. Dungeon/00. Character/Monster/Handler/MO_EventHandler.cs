@@ -11,16 +11,12 @@ public class MO_EventHandler : MonoBehaviour
         // 스킬과 충돌했을 경우
         if (other.CompareTag("Skill"))
         {
-            EventManager<MonsterEventType>.Instance.PostNotification(MonsterEventType.HitBySkill, this, new TransformEventArgs(transform));
-        }
-    }
+            Skill skill = other.gameObject.GetComponent<Skill>();
 
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        // 플레이어와 충돌한 경우
-        if (collision.gameObject.CompareTag("Player"))
-        {
-            EventManager<MonsterEventType>.Instance.PostNotification(MonsterEventType.PlayerCollision, this, new TransformEventArgs(transform));
+            EventManager<MonsterEventType>.Instance.PostNotification(
+                MonsterEventType.HitBySkill, 
+                this, 
+                new TransformEventArgs(transform, skill.data.damage));
         }
     }
 }

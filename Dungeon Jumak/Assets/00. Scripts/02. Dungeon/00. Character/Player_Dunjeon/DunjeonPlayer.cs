@@ -28,7 +28,7 @@ public class DunjeonPlayer : MonoBehaviour, IDamageable, ITurnable, IMovable
         rigidbody = GetComponent<Rigidbody2D>();
 
         movementLayers = LayerMask.GetMask("Monster", "Environment"); // 이동에 사용할 레이어 초기화
-        moveHandler = new DP_MoveHandler(transform, rigidbody, data.Speed, scanner, movementLayers);
+        moveHandler = new DP_MoveHandler(transform, rigidbody, data.speed, scanner, movementLayers);
     }
 
     private void FixedUpdate()

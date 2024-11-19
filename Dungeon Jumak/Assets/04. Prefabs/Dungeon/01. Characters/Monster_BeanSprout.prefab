@@ -13,9 +13,9 @@ GameObject:
   - component: {fileID: 4972652238114888069}
   - component: {fileID: 4308480279216797111}
   - component: {fileID: 108895931599851165}
-  - component: {fileID: 7316347388520493763}
-  - component: {fileID: 3998006015146502863}
   - component: {fileID: 5758240092285398739}
+  - component: {fileID: 3998006015146502863}
+  - component: {fileID: 7316347388520493763}
   m_Layer: 8
   m_Name: Monster_BeanSprout
   m_TagString: Monster
@@ -153,7 +153,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   data: {fileID: 11400000, guid: 73e951e46563ad9468ccfa15cc450ffc, type: 2}
---- !u!114 &7316347388520493763
+--- !u!114 &5758240092285398739
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -162,15 +162,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 112907668741932482}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 06f42d488ede590408e0dd9cf829a9c2, type: 3}
+  m_Script: {fileID: 11500000, guid: 819827dbae5f9424eac04aa333e856be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  knockbackDuration: 0.5
-  knockbackSettingsList:
-  - targetTag: Player
-    knockbackForce: 5
-  - targetTag: Skill
-    knockbackForce: 15
 --- !u!114 &3998006015146502863
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -186,7 +180,7 @@ MonoBehaviour:
   data: {fileID: 11400000, guid: 73e951e46563ad9468ccfa15cc450ffc, type: 2}
   hpBar: {fileID: 5488689920697737936}
   hpBarPos: {fileID: 6460301659794620765}
---- !u!114 &5758240092285398739
+--- !u!114 &7316347388520493763
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -195,9 +189,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 112907668741932482}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 819827dbae5f9424eac04aa333e856be, type: 3}
+  m_Script: {fileID: 11500000, guid: 06f42d488ede590408e0dd9cf829a9c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  knockbackDuration: 3
+  knockbackSettingsList:
+  - targetTag: Player
+    knockbackForce: 5
+  - targetTag: Skill
+    knockbackForce: 15
 --- !u!1 &683295973160604591
 GameObject:
   m_ObjectHideFlags: 0

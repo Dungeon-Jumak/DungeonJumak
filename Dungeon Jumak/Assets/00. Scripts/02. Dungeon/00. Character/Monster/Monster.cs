@@ -3,7 +3,6 @@ using UnityEngine;
 
 //Ect
 using Data.Character;
-using Interfaces;
 
 public class Monster : MonoBehaviour
 { 
@@ -18,13 +17,16 @@ public class Monster : MonoBehaviour
 
     private void Awake()
     {
-        // MoveHandler 초기화
+        // 플레이어 transform 할당
         playerTransform = GameObject.FindWithTag("Player").transform;
+
+        // moveHandler 생성
         moveHandler = new Mo_MoveHandler(transform, playerTransform, data.speed);
     }
 
     private void Update()
     {
+        //-- moveHandler 설정 --//
         moveHandler.SetPlayerTransform(playerTransform);
         moveHandler.FixedUpdate();
     }

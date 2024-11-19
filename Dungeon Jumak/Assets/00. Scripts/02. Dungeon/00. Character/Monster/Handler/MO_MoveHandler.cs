@@ -26,9 +26,6 @@ public class Mo_MoveHandler
 
         // Rigidbody2D 컴포넌트를 가져옵니다.
         monsterRigidbody = _monsterTransform.GetComponent<Rigidbody2D>();
-
-        // 이벤트 리스너 등록
-        EventManager<MonsterEventType>.Instance.AddListener(MonsterEventType.PlayerCollision, OnPlayerCollision);
     }
 
     private void OnPlayerCollision(MonsterEventType eventType, Component sender, TransformEventArgs args)
