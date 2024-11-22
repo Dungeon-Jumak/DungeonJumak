@@ -49,7 +49,6 @@ public class SkillController : MonoBehaviour
 
         if (dataSO.skillId == 0) // 0번 스킬이 FireBall이라 가정
         {
-            // 자동 FireBall 발사 코루틴 시작
             autoFireBallCoroutine = StartCoroutine(AutoFireBall());
         }
     }
@@ -99,7 +98,7 @@ public class SkillController : MonoBehaviour
     {
         while (true)
         {
-            yield return new WaitForSeconds(2f);
+            yield return new WaitForSeconds(1f);
             FireBall();
         }
     }
@@ -109,7 +108,11 @@ public class SkillController : MonoBehaviour
         // 스킬 전용 타겟 필터링
         Transform target = scanner.GetNearestTarget(skillLayer);
 
+        Debug.Log("hihi");
+
         if (!canSkill || target == null) return;
+
+        Debug.Log("return?");
 
         canSkill = false;
         hideImage.gameObject.SetActive(true);

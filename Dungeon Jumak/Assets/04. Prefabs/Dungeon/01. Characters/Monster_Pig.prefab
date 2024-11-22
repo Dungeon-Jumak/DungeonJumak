@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 1875143139599178606}
   - component: {fileID: 6517894404030037544}
   - component: {fileID: 7316347388520493763}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: Monster_Pig
   m_TagString: Monster
   m_Icon: {fileID: 0}
@@ -207,7 +207,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2577380749835849431}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: HPSlider Position
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -238,7 +238,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4176745471661810220}
-  m_Layer: 5
+  m_Layer: 11
   m_Name: Fill Area
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -277,7 +277,7 @@ GameObject:
   - component: {fileID: 5283580582191389007}
   - component: {fileID: 4908446851033103088}
   - component: {fileID: 8921644576160371565}
-  m_Layer: 5
+  m_Layer: 11
   m_Name: Fill
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -352,7 +352,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8602799533343443022}
   - component: {fileID: 3965321316645541443}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: ScanRange
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -402,7 +402,7 @@ GameObject:
   - component: {fileID: 3577936123819453133}
   - component: {fileID: 293907967075939428}
   - component: {fileID: 3176631622661186412}
-  m_Layer: 5
+  m_Layer: 11
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -502,7 +502,7 @@ GameObject:
   - component: {fileID: 5805553649777904479}
   - component: {fileID: 4347131660451732735}
   - component: {fileID: 6204885119800566091}
-  m_Layer: 5
+  m_Layer: 11
   m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -578,7 +578,7 @@ GameObject:
   - component: {fileID: 7477673973565141515}
   - component: {fileID: 2802067028239484763}
   - component: {fileID: 2957462325411039236}
-  m_Layer: 5
+  m_Layer: 11
   m_Name: '[Slider] HP Slider'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
