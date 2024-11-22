@@ -79,7 +79,7 @@ public class EncyclopediaLoader : MonoBehaviour
         {
             foreach (Transform slot in contentTransform)
             {
-                var slotData = slot.GetComponent<SlotData>();
+                var slotData = slot.GetComponent<EncyclopediaSlotData>();
                 if (slotData != null && slotData.GetEntry() == _entry)
                 {
                     slotData.UpdateSlot(_entry.EntryName, _entry.Icon); 
