@@ -1353,17 +1353,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 726bb22cf01ad2b42817bcb673455278, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inventoryData:
-  - {fileID: 11400000, guid: 9c18f64533dc1b949b2fa99e5a1e9f16, type: 2}
-  - {fileID: 11400000, guid: 83b7cfab7a49c4949b2c79eeb9393b93, type: 2}
-  - {fileID: 11400000, guid: 25fa5ccde27897846ae7efecbd3b9332, type: 2}
-  - {fileID: 11400000, guid: f7826ba2285059641b9a837d84ee5d5b, type: 2}
-  - {fileID: 11400000, guid: 6f38467a00f07e94a938d7360c750d1b, type: 2}
-  - {fileID: 11400000, guid: c4ed88b546d9157418e0251569debb5e, type: 2}
-  - {fileID: 11400000, guid: f204f0b22e5e3d343b682216b4fb3291, type: 2}
-  - {fileID: 11400000, guid: 351d93844dcbe5046b37a7b8c6a9e83f, type: 2}
-  - {fileID: 11400000, guid: 3ef7bb7b313ed704face63c9ba64de89, type: 2}
-  - {fileID: 11400000, guid: 8dac794a9ca11c84d98b277de7bd878d, type: 2}
+  inventoryData: []
 --- !u!114 &313188684
 MonoBehaviour:
   m_ObjectHideFlags: 0
