@@ -25,6 +25,7 @@ public class DungeonPopupData
         set { sweepCount = value; }
 
     }
+
     public int CurrentStage
     {
         get { return currentStage; }

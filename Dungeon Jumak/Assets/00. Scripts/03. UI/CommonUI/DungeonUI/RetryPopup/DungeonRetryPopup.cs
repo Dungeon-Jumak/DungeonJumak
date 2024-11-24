@@ -41,14 +41,15 @@ public class DungeonRetryPopup : UI_PopUp
         {
             GameManager.UI.ClosePopUpUI();
             g_GoodsData.Data.Yeouiju -= 30;
-            // To DO : 던전 다시하기
+            // To DO : 던전 이어하기
         }
     }
 
     private void RetryWatchAD(PointerEventData _data)
     {
         GameManager.UI.ClosePopUpUI();
-        // To DO : 광고 재생 및 던전 다시하기
+        // To DO : 광고 재생
+        // To DO : 던전 이어하기
     }
 
 

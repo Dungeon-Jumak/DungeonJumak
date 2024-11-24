@@ -32,7 +32,6 @@ public class BaseDungeonListPopup : UI_PopUp
 
     private void Start()
     {
-        g_DungeonPopupData.Data.StageCleared[0] = true;
         HandleStageButtons();
     }
 
