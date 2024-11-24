@@ -11,6 +11,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/05. Scenes/Main.unity
     guid: d7b5a2d0d1b9c3f4d92064300851fe8d
+  - enabled: 1
+    path: Assets/05. Scenes/Dungeon/Stage1.unity
+    guid: 3fc8acdd13e6c734bafef6554d6fdbcd
   m_configObjects:
     com.unity.adaptiveperformance.loader_settings: {fileID: 11400000, guid: 0b953b4b4d561df45afe2c5d98a2ecbb, type: 2}
     com.unity.adaptiveperformance.simulator.provider_settings: {fileID: 11400000, guid: ac53c9246ae748443a67c66e02b79f55, type: 2}

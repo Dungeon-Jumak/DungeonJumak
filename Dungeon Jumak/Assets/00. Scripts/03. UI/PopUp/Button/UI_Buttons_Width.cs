@@ -30,7 +30,7 @@ public class UI_Buttons_Width : UI_PopUp
         GetButton((int)Buttons.Yeouiju).gameObject.BindEvent(OpenDefaultPopUp);
         GetButton((int)Buttons.Money).gameObject.BindEvent(OpenDefaultPopUp);
         GetButton((int)Buttons.Equipment).gameObject.BindEvent(OpenDefaultPopUp);
-        GetButton((int)Buttons.Dungeon).gameObject.BindEvent(OpenDefaultPopUp);
+        GetButton((int)Buttons.Dungeon).gameObject.BindEvent(OpenDungeonEntryPopUp);
         GetButton((int)Buttons.JumakManagement).gameObject.BindEvent(OpenJumakManagementPopUp);
         GetButton((int)Buttons.Storage).gameObject.BindEvent(OpenDefaultPopUp);
         GetButton((int)Buttons.Market).gameObject.BindEvent(OpenDefaultPopUp);
@@ -49,5 +49,10 @@ public class UI_Buttons_Width : UI_PopUp
     private void OpenJumakManagementPopUp(PointerEventData _data)
     {
         GameManager.UI.ShowPopupUI<UI_PopUp>("JumakManager_Village");
+    }
+
+    public void OpenDungeonEntryPopUp(PointerEventData _data)
+    {
+        GameManager.UI.ShowPopupUI<UI_PopUp>("DungeonListPopUp");
     }
 }
