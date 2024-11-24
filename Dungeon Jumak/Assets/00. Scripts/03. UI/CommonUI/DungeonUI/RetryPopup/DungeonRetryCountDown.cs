@@ -34,9 +34,9 @@ public class DungeonRetryCountDown : UI_PopUp
     }
 
 
-    private async UniTask StartCountdown(float time)
+    private async UniTask StartCountdown(float _time)
     {
-        float currentTime = time;
+        float currentTime = _time;
 
         while (currentTime > 0 && isEnable)
         {
