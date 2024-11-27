@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f606eb935ebcf59408e8cdcc14d23179, type: 3}
   m_Name: DunjeonPlayerData_Stage1
   m_EditorClassIdentifier: 
-  hp: 5
+  hp: 3
   speed: 5
   dropRate: 0
   damage: 1

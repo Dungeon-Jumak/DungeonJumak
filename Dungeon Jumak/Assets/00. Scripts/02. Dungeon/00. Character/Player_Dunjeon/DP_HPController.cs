@@ -86,5 +86,6 @@ public class DP_HPController : MonoBehaviour
     {
         Debug.Log($"{gameObject.name} is dead.");
         gameObject.SetActive(false);
+        //GameManager.UI.ShowPopupUI<UI_PopUp>("DungeonGameOverPopUp");
     }
 }

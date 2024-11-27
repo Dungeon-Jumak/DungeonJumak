@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: "\uCF69\uB098\uBB3C \uC694\uAD34"
   hp: 5
-  speed: 5
+  speed: 6
   dropRate: 60
   damage: 1

@@ -3382,7 +3382,7 @@ MonoBehaviour:
     monsterPrefab: {fileID: 108895931599851165, guid: 5db7d2026ff9f994eab67e3f35363f49, type: 3}
     spawnCount: 8
   playerTransform: {fileID: 193646109}
-  randomSpawnRange: {x: 20, y: 20}
+  randomSpawnRange: {x: 15, y: 15}
 --- !u!1001 &1134080370
 PrefabInstance:
   m_ObjectHideFlags: 0
