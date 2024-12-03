@@ -89,6 +89,7 @@ public class QuestManager : MonoBehaviour
         {
             _quest.Reset();
             _quest.UpdateNextResetTime(nowKst);
+            completedQuests = 0;
         }
     }
 

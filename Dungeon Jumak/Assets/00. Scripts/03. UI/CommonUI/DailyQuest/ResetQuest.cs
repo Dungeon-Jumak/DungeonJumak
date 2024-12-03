@@ -1,4 +1,5 @@
 using System;
+using UnityEngine;
 using TMPro;
 
 public class ResetQuest : UI_PopUp
@@ -29,8 +30,13 @@ public class ResetQuest : UI_PopUp
 
     private void UpdateResetTimeDisplay(DateTime currentTime)
     {
-        DateTime midnight = currentTime.Date.AddDays(1); 
+        DateTime midnight = currentTime.Date.AddDays(1);
         TimeSpan timeLeft = midnight - currentTime;
+
+        if (timeLeft < TimeSpan.Zero)
+        {
+            timeLeft = TimeSpan.Zero;
+        }
 
         GetTMP((int)Texts.ResetTimeText).text = $"미션 새로 고침 {FormatTime(timeLeft)}";
     }
