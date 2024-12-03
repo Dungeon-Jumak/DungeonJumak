@@ -15,9 +15,9 @@ public class ResetQuest : UI_PopUp
 
     void Update()
     {
-        DateTime currentTime = DateTime.UtcNow;
-        CheckAndResetQuests(currentTime);
-        UpdateResetTimeDisplay(currentTime);
+        DateTime currentTimeKst = GameManager.UITimeManager.GetCurrentKST();
+        CheckAndResetQuests(currentTimeKst);
+        UpdateResetTimeDisplay(currentTimeKst);
     }
 
     public override void Init()
@@ -44,7 +44,7 @@ public class ResetQuest : UI_PopUp
     {
         foreach (Quest quest in g_QuestData.Data.QuestDictionary.Values)
         {
-            if (currentTime >= quest.NextResetTimeUTC)
+            if (currentTime >= quest.NextResetTimeKST)
             {
                 
                 GameManager.QuestManager.ResetQuests(quest);

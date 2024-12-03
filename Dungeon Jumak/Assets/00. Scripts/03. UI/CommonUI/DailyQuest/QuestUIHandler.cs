@@ -127,7 +127,6 @@ public class QuestUIHandler : UI_PopUp
 
     private void SetMaxRewardButtonState(bool _canGetMaxReward)
     {
-        Debug.Log(_canGetMaxReward);
         Button maxRewardButton = GetButton((int)Buttons.MaxReward);
         maxRewardButton.interactable = _canGetMaxReward;
 

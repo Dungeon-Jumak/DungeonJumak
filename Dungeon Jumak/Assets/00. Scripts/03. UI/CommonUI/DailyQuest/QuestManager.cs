@@ -83,12 +83,12 @@ public class QuestManager : MonoBehaviour
     public void ResetQuests(Quest _quest)
     {
         Init();
-        DateTime now = DateTime.UtcNow;
+        DateTime nowKst = GameManager.UITimeManager.GetCurrentKST();
 
         if (_quest.IsTimeLimitExceeded())
         {
             _quest.Reset();
-            _quest.UpdateNextResetTime(now);
+            _quest.UpdateNextResetTime(nowKst);
         }
     }
 

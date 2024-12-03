@@ -38,9 +38,11 @@ public class GameManager : MonoBehaviour
     UIManager m_ui = new UIManager();
     ResourceManager m_resource = new ResourceManager();
     QuestManager m_questManager = new QuestManager();
+    UITimeManager m_uITimeManager = new UITimeManager();
 
     public static UIManager UI { get { return Instance.m_ui; } }
     public static ResourceManager Resource { get { return Instance.m_resource; } }
     public static QuestManager QuestManager { get { return Instance.m_questManager; } }
+    public static UITimeManager UITimeManager { get { return Instance.m_uITimeManager;  } }
 
 }

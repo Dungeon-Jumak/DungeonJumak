@@ -7,7 +7,7 @@ public class Quest
     public bool IsCompleted { get; private set; }
     public bool IsProgressIncreased { get; set; }
     public bool HasReceivedReward { get; set; }
-    public DateTime NextResetTimeUTC { get; private set; }
+    public DateTime NextResetTimeKST { get; private set; }
 
     public Quest(QuestData _questData)
     {
@@ -16,7 +16,7 @@ public class Quest
         IsCompleted = false;
         IsProgressIncreased = false;
         HasReceivedReward = false;
-        UpdateNextResetTime(DateTime.UtcNow);
+        UpdateNextResetTime(GameManager.UITimeManager.GetCurrentKST());
     }
 
     public void UpdateProgress(int _amount)
@@ -34,7 +34,8 @@ public class Quest
 
     public bool IsTimeLimitExceeded()
     {
-        return DateTime.UtcNow > NextResetTimeUTC;
+        DateTime nowKst = GameManager.UITimeManager.GetCurrentKST();
+        return nowKst > NextResetTimeKST;
     }
 
     public void Reset()
@@ -43,7 +44,7 @@ public class Quest
         IsCompleted = false;
         IsProgressIncreased = false;
         HasReceivedReward = false;
-        UpdateNextResetTime(DateTime.UtcNow);
+        UpdateNextResetTime(GameManager.UITimeManager.GetCurrentKST());
     }
 
     public void UpdateNextResetTime(DateTime _now)
@@ -64,7 +65,7 @@ public class Quest
             resetTimeToday = resetTimeToday.AddDays((7 - (int)_now.DayOfWeek + (int)QuestData.ResetDayOfWeek.Value) % 7);
         }
 
-        NextResetTimeUTC = resetTimeToday;
+        NextResetTimeKST = resetTimeToday;
     }
 
     private int CalculateDaysUntilNextReset(DateTime _now)
