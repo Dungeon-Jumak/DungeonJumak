@@ -14,6 +14,7 @@ public class UI_Buttons_Height : UI_PopUp
     {
         Setting,
         Encyclopedia,
+        Daily,
     }
 
     private void Start()
@@ -22,6 +23,7 @@ public class UI_Buttons_Height : UI_PopUp
 
         GetButton((int)Buttons.Setting).gameObject.BindEvent(OpenSettingPopUp);
         GetButton((int)Buttons.Encyclopedia).gameObject.BindEvent(OpenEncyclopediaPopUp);
+        GetButton((int)Buttons.Daily).gameObject.BindEvent(OpenDailyQuestPopup);
     }
 
     public void OpenSettingPopUp(PointerEventData _data)
@@ -32,5 +34,10 @@ public class UI_Buttons_Height : UI_PopUp
     public void OpenEncyclopediaPopUp(PointerEventData _data)
     {
         GameManager.UI.ShowPopupUI<UI_PopUp>("EncyclopediaPopUp");
+    }
+
+    public void OpenDailyQuestPopup(PointerEventData _data)
+    {
+        GameManager.UI.ShowPopupUI<UI_PopUp>("DailyQuestPopup");
     }
 }
