@@ -88,7 +88,7 @@ public class BaseEncyclopedia : UI_PopUp
     {
         GameObject slot = Instantiate(slotPrefab, content);
 
-        slot.GetComponent<SlotData>().SetEntry(_entry);
+        slot.GetComponent<EncyclopediaSlotData>().SetEntry(_entry);
 
         Canvas slotCanvas = slot.GetComponentInChildren<Canvas>();
         if (slotCanvas != null)

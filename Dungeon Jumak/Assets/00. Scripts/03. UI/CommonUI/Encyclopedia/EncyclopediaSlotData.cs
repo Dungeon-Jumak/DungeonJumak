@@ -2,7 +2,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class SlotData : UI_PopUp
+public class EncyclopediaSlotData : UI_PopUp
 {
     enum Texts { E_Name }
     enum Images { E_Icon }
