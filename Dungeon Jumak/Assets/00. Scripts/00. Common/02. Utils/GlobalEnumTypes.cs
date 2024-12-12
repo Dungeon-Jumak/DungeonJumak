@@ -1,6 +1,3 @@
-﻿//Engine
-using UnityEngine;
-
 namespace Utils.EnumTypes {
 
     /// <summary>
@@ -32,5 +29,17 @@ namespace Utils.EnumTypes {
         MaxCount,
     }
 
+    /// <summary>
+    ///몬스터 이벤트 관리
+    /// </summary>
+    public enum MonsterEventType
+    {
+        HitBySkill, // 스킬에 맞았을 경우
+    }
+
+    public enum PlayerEventType
+    {
+        HitByMonster, // 몬스터와 충돌했을 경우
+    }
 }
 

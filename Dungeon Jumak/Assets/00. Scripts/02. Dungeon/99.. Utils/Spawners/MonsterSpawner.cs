@@ -22,7 +22,6 @@ public class MonsterSpawner : MonoBehaviour
 
     private PoolManager<Monster> poolManager;
     private float timer;
-
     private List<SpawnData> processedSpawns = new List<SpawnData>();
 
     private void Start()

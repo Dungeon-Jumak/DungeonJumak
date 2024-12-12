@@ -23,7 +23,7 @@ namespace UnistrokeGestureRecognition.Example
         [SerializeField] private NameController _nameController;
 
         [Header("01: FireRing")]
-        [SerializeField] private Skill.Controller.SkillController fireRing;
+        [SerializeField] private SkillController fireRing;
 
         private Camera _camera;
 

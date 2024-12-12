@@ -1,18 +1,22 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+// Engine
 using UnityEngine;
 
-public class Mo_EventHandler : MonoBehaviour
-{
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+// Ect
+using Utils.EnumTypes;
 
-    // Update is called once per frame
-    void Update()
+public class MO_EventHandler : MonoBehaviour
+{
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        
+        // 스킬과 충돌했을 경우
+        if (other.CompareTag("Skill"))
+        {
+            Skill skill = other.gameObject.GetComponent<Skill>();
+
+            EventManager<MonsterEventType>.Instance.PostNotification(
+                MonsterEventType.HitBySkill, 
+                this, 
+                new TransformEventArgs(transform, skill.data.damage));
+        }
     }
 }

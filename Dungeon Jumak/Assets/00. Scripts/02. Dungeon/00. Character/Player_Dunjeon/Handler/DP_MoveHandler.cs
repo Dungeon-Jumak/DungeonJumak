@@ -3,59 +3,53 @@ using UnityEngine;
 
 public class DP_MoveHandler
 {
-    public bool isMoving = false; // 초기 상태는 멈춘 상태
+    public bool isMoving = false;
 
-    private float speed; // 이동 속도
-    private float knockbackForce = 10.0f; // 넉백 힘
-    private const float MIN_SAFE_DISTANCE = 5.0f; // 최소 이동 거리
-
+    private float speed;
+    private const float MIN_SAFE_DISTANCE = 5.0f;
     private Rigidbody2D rigidbody;
     private Scanner scanner;
+    private LayerMask movementLayer; // 이동용 레이어 마스크
+    private Vector2 targetPosition;
 
-    private Vector2 targetPosition; // 이동 목표 지점
-
-    public DP_MoveHandler(Transform _transform, Rigidbody2D _rigidbody, float _speed, Scanner _scanner)
+    public DP_MoveHandler(Transform _transform, Rigidbody2D _rigidbody, float _speed, Scanner _scanner, LayerMask _movementLayer)
     {
         this.rigidbody = _rigidbody;
         this.speed = _speed;
         this.scanner = _scanner;
+        this.movementLayer = _movementLayer;
     }
 
     public void FixedUpdate()
     {
-        // 이동 X, 이동할 위치 계산
-        if (!isMoving && scanner.nearestTarget != null)
+        Transform target = scanner.GetNearestTarget(movementLayer); // 이동용 타겟 필터링
+
+        if (!isMoving && target != null)
         {
-            SetTargetPosition(scanner.nearestTarget);
-            isMoving = true; 
+            SetTargetPosition(target);
+            isMoving = true;
         }
 
-        // 이동
         if (isMoving)
         {
             MoveTowardsTarget();
         }
     }
 
-    //-- 이동할 위치 계산 --//
     private void SetTargetPosition(Transform target)
     {
         Vector2 directionAwayFromTarget = (rigidbody.position - (Vector2)target.position).normalized;
-
         targetPosition = rigidbody.position + directionAwayFromTarget * MIN_SAFE_DISTANCE;
     }
 
-    //-- 목표 지점으로의 이동 --//
     private void MoveTowardsTarget()
     {
         Vector2 newPosition = Vector2.MoveTowards(rigidbody.position, targetPosition, speed * Time.fixedDeltaTime);
         rigidbody.MovePosition(newPosition);
 
-        // 목표 지점에 도달하면 이동을 멈추고, 다시 스캔 시작
         if (Vector2.Distance(rigidbody.position, targetPosition) < 0.1f)
         {
             isMoving = false;
-            scanner.enabled = true;
         }
     }
 }

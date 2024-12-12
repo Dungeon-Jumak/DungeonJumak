@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: 02. MonsterData_BeanSprout
   m_EditorClassIdentifier: 
   name: "\uCF69\uB098\uBB3C \uC694\uAD34"
-  hp: 150
-  speed: 7
+  hp: 5
+  speed: 6
   dropRate: 60
-  damage: 150
+  damage: 1

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: 01. MonsterData_Pig
   m_EditorClassIdentifier: 
   name: "\uB3FC\uC9C0 \uC694\uAD34"
-  hp: 250
-  speed: 4
+  hp: 5
+  speed: 6
   dropRate: 60
-  damage: 20
+  damage: 1
